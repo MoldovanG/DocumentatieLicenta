@@ -1,0 +1,85 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[a4paper,inner = 1.7cm, outer = 2.7cm, top = 2cm, bottom = 2cm, bindingoffset = 1.2cm]{geometry}
+
+\usepackage[english]{babel}
+\usepackage{blindtext}
+\usepackage{fancyhdr}
+
+\fancyhf{}
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+\fancyhead[LE]{\leftmark}
+\fancyhead[RO]{\rightmark}
+\linespread{1.25}
+\begin{document}
+\begin{center}
+\pagestyle{empty}
+       \vspace*{1cm}
+
+       \textbf{UNIVERSITATEA DIN BUCUREȘTI
+FACULTATEA DE MATEMATICĂ ȘI INFORMATICĂ}
+
+       \vspace{0.5cm}
+        LUCRARE DE LICENȚĂ
+            
+       \vfill
+           
+       \vspace{0.8cm}
+\textbf{Coordonator:}
+\hfill
+\textbf{Absolvent:} \\
+\textbf{Prof. Dr. Radu Ionescu}
+\hfill
+\textbf{Moldovan George-Alexandru} \\
+
+\vspace{0.8cm}
+      București \\
+Iunie (fingers crossed), 2020
+\clearpage         
+\end{center}
+\newpage
+
+\begin{center}
+\pagestyle{empty}
+       \vspace*{1cm}
+
+       \textbf{UNIVERSITATEA DIN BUCUREȘTI
+FACULTATEA DE MATEMATICĂ ȘI INFORMATICĂ}
+
+       \vspace{0.5cm}
+        Sistem pentru detectarea anomaliilor in video
+            
+       \vfill
+           
+       \vspace{0.8cm}
+\textbf{Coordonator:}
+\hfill
+\textbf{Absolvent:} \\
+\textbf{Prof. Dr. Radu Ionescu}
+\hfill
+\textbf{Moldovan George-Alexandru} \\
+    
+\vspace{0.8cm}  
+	București \\
+Iunie (fingers crossed), 2020
+\clearpage
+\end{center}
+\newpage
+
+\tableofcontents
+\pagenumbering{arabic}
+\setcounter{page}{2}
+\begin{abstract}
+Având in vedere contextul actual, detectarea anomaliilor in video este un subiect de interes in mai multe arii, in mod special in securitatea publică. Aceasta problemă putem spune ca este încă nerezolvată, deoarece sistemele actuale nu depăşesc deocamdata omul cand vine vorba de detectarea anomaliilor. De asemenea, o altă problemă a sistemelor de detectare a anomaliilor în video este nevoia acestora de resurse computaţionale mari in partea de inferența, facând aproape imposibilă rularea acestora direct pe hardware-ul existent al sistemelor de supraveghere video actuale, acolo unde acestea prezinta un maxim interes. Aceasta lucrare îşi propune o implementare al sistemului state-of-the-art la momentul redactării, aşa cum este prezentat de Ionescu et al. \cite{ionescu2019object}. Obiectivul este obţinerea unei arhitecturi serverless si expunerea etapei de inferenţă printr-un API astfel încât convertirea unui sistem de supraveghere clasic într-unul inteligent să devină doar o problemă de implementare, fara a fi nevoie de schimbarea hardware-ului.
+\end{abstract}
+
+\chapter{Introducere}
+\section{Motivatie}
+\blindtext[1]
+
+\chapter{Plictiseala}
+\blindtext[3]
+
+\bibliographystyle{abbrv}
+\bibliography{References}
+\end{document}

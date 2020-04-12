@@ -1,0 +1,4 @@
+\babel@toc {english}{}
+\contentsline {chapter}{\numberline {1}Introducere}{1}%
+\contentsline {section}{\numberline {1.1}Motivatie}{1}%
+\contentsline {chapter}{\numberline {2}Plictiseala}{2}%

@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/W32TeX)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Licenta.aux
+The style file: abbrv.bst
+Database file #1: References.bib
+Warning--empty journal in ionescu2019object
+You've used 1 entry,
+            2118 wiz_defined-function locations,
+            503 strings with 3968 characters,
+and the built_in function-call counts, 533 in all, are:
+= -- 52
+> -- 23
+< -- 1
++ -- 9
+- -- 8
+* -- 35
+:= -- 83
+add.period$ -- 3
+call.type$ -- 1
+change.case$ -- 7
+chr.to.int$ -- 0
+cite$ -- 2
+duplicate$ -- 22
+empty$ -- 36
+format.name$ -- 8
+if$ -- 117
+int.to.chr$ -- 0
+int.to.str$ -- 1
+missing$ -- 1
+newline$ -- 8
+num.names$ -- 2
+pop$ -- 9
+preamble$ -- 1
+purify$ -- 6
+quote$ -- 0
+skip$ -- 22
+stack$ -- 0
+substring$ -- 41
+swap$ -- 11
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 4
+warning$ -- 1
+while$ -- 4
+width$ -- 2
+write$ -- 12
+(There was 1 warning)
