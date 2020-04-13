@@ -3,46 +3,48 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Licenta.aux
 The style file: abbrv.bst
 Database file #1: References.bib
+Warning--empty journal in christidis2019
 Warning--empty journal in ionescu2019object
-You've used 1 entry,
+Warning--empty journal in wang2019
+You've used 3 entries,
             2118 wiz_defined-function locations,
-            503 strings with 3968 characters,
-and the built_in function-call counts, 533 in all, are:
-= -- 52
-> -- 23
-< -- 1
-+ -- 9
-- -- 8
-* -- 35
-:= -- 83
-add.period$ -- 3
-call.type$ -- 1
-change.case$ -- 7
+            513 strings with 4396 characters,
+and the built_in function-call counts, 1421 in all, are:
+= -- 142
+> -- 59
+< -- 3
++ -- 23
+- -- 20
+* -- 89
+:= -- 213
+add.period$ -- 9
+call.type$ -- 3
+change.case$ -- 19
 chr.to.int$ -- 0
-cite$ -- 2
-duplicate$ -- 22
-empty$ -- 36
-format.name$ -- 8
-if$ -- 117
+cite$ -- 6
+duplicate$ -- 62
+empty$ -- 100
+format.name$ -- 20
+if$ -- 319
 int.to.chr$ -- 0
-int.to.str$ -- 1
-missing$ -- 1
-newline$ -- 8
-num.names$ -- 2
-pop$ -- 9
+int.to.str$ -- 3
+missing$ -- 3
+newline$ -- 18
+num.names$ -- 6
+pop$ -- 25
 preamble$ -- 1
-purify$ -- 6
+purify$ -- 16
 quote$ -- 0
-skip$ -- 22
+skip$ -- 60
 stack$ -- 0
-substring$ -- 41
-swap$ -- 11
-text.length$ -- 1
+substring$ -- 107
+swap$ -- 29
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 4
-warning$ -- 1
-while$ -- 4
-width$ -- 2
-write$ -- 12
-(There was 1 warning)
+type$ -- 12
+warning$ -- 3
+while$ -- 12
+width$ -- 4
+write$ -- 32
+(There were 3 warnings)
