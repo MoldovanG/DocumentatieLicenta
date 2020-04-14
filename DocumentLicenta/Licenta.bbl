@@ -1,5 +1,11 @@
 \begin{thebibliography}{1}
 
+\bibitem{cheng2015}
+K.~{Cheng}, Y.~{Chen}, and W.~{Fang}.
+\newblock Video anomaly detection and localization using hierarchical feature
+  representation and gaussian process regression.
+\newblock pages 2909--2917, 2015.
+
 \bibitem{christidis2019}
 A.~{Christidis}, R.~{Davies}, and S.~{Moschoyiannis}.
 \newblock Serving machine learning workloads in resource constrained
@@ -11,6 +17,11 @@ R.~T. {Ionescu}, F.~S. {Khan}, M.~{Georgescu}, and L.~{Shao}.
 \newblock Object-centric auto-encoders and dummy anomalies for abnormal event
   detection in video.
 \newblock pages 7834--7843, 2019.
+
+\bibitem{sultani2018}
+W.~{Sultani}, C.~{Chen}, and M.~{Shah}.
+\newblock Real-world anomaly detection in surveillance videos.
+\newblock pages 6479--6488, 2018.
 
 \bibitem{wang2019}
 H.~{Wang}, D.~{Niu}, and B.~{Li}.
