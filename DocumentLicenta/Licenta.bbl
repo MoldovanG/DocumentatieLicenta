@@ -6,17 +6,34 @@ K.~{Cheng}, Y.~{Chen}, and W.~{Fang}.
   representation and gaussian process regression.
 \newblock pages 2909--2917, 2015.
 
+\bibitem{2020keras}
+F.~Chollet et~al.
+\newblock Keras description, 04 2020.
+
 \bibitem{christidis2019}
 A.~{Christidis}, R.~{Davies}, and S.~{Moschoyiannis}.
 \newblock Serving machine learning workloads in resource constrained
   environments: a serverless deployment example.
 \newblock pages 55--63, 2019.
 
+\bibitem{fox2017status}
+G.~C. Fox, V.~Ishakian, V.~Muthusamy, and A.~Slominski.
+\newblock Status of serverless computing and function-as-a-service (faas) in
+  industry and research.
+\newblock {\em arXiv preprint arXiv:1708.08028}, 2017.
+
 \bibitem{ionescu2019object}
 R.~T. {Ionescu}, F.~S. {Khan}, M.~{Georgescu}, and L.~{Shao}.
 \newblock Object-centric auto-encoders and dummy anomalies for abnormal event
   detection in video.
 \newblock pages 7834--7843, 2019.
+
+\bibitem{jonas2019cloud}
+E.~Jonas, J.~Schleier-Smith, V.~Sreekanti, C.-C. Tsai, A.~Khandelwal, Q.~Pu,
+  V.~Shankar, J.~Carreira, K.~Krauth, N.~Yadwadkar, et~al.
+\newblock Cloud programming simplified: A berkeley view on serverless
+  computing.
+\newblock {\em arXiv preprint arXiv:1902.03383}, 2019.
 
 \bibitem{sultani2018}
 W.~{Sultani}, C.~{Chen}, and M.~{Shah}.
