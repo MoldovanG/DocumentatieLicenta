@@ -1,4 +1,16 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{2020autoscaling}
+Amazon autoscaling description, 04 2020.
+
+\bibitem{2020EC2}
+Amazon ec2 description, 04 2020.
+
+\bibitem{2020elb}
+Amazon elastic load balancing description, 04 2020.
+
+\bibitem{2020S3}
+Amazon s3 description, 04 2020.
 
 \bibitem{cheng2015}
 K.~{Cheng}, Y.~{Chen}, and W.~{Fang}.
@@ -16,11 +28,10 @@ A.~{Christidis}, R.~{Davies}, and S.~{Moschoyiannis}.
   environments: a serverless deployment example.
 \newblock pages 55--63, 2019.
 
-\bibitem{fox2017status}
-G.~C. Fox, V.~Ishakian, V.~Muthusamy, and A.~Slominski.
-\newblock Status of serverless computing and function-as-a-service (faas) in
-  industry and research.
-\newblock {\em arXiv preprint arXiv:1708.08028}, 2017.
+\bibitem{flask2014}
+M.~Grinberg.
+\newblock {\em Flask Web Development: Developing Web Applications with Python}.
+\newblock O’Reilly Media, Inc., 1st edition, 2014.
 
 \bibitem{ionescu2019object}
 R.~T. {Ionescu}, F.~S. {Khan}, M.~{Georgescu}, and L.~{Shao}.

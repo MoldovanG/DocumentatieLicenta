@@ -3,50 +3,54 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Licenta.aux
 The style file: abbrv.bst
 Database file #1: References.bib
+Warning--to sort, need author or key in 2020EC2
+Warning--to sort, need author or key in 2020S3
+Warning--to sort, need author or key in 2020autoscaling
+Warning--to sort, need author or key in 2020elb
 Warning--empty journal in cheng2015
 Warning--empty journal in christidis2019
 Warning--empty journal in ionescu2019object
 Warning--empty journal in sultani2018
 Warning--empty journal in wang2019
-You've used 8 entries,
+You've used 12 entries,
             2118 wiz_defined-function locations,
-            539 strings with 5427 characters,
-and the built_in function-call counts, 3435 in all, are:
-= -- 330
-> -- 189
+            550 strings with 5486 characters,
+and the built_in function-call counts, 3974 in all, are:
+= -- 376
+> -- 177
 < -- 5
-+ -- 74
-- -- 66
-* -- 227
-:= -- 543
-add.period$ -- 23
-call.type$ -- 8
-change.case$ -- 55
++ -- 72
+- -- 60
+* -- 248
+:= -- 587
+add.period$ -- 27
+call.type$ -- 12
+change.case$ -- 64
 chr.to.int$ -- 0
-cite$ -- 13
-duplicate$ -- 133
-empty$ -- 226
-format.name$ -- 66
-if$ -- 742
+cite$ -- 21
+duplicate$ -- 163
+empty$ -- 323
+format.name$ -- 60
+if$ -- 884
 int.to.chr$ -- 0
-int.to.str$ -- 8
-missing$ -- 7
-newline$ -- 42
+int.to.str$ -- 12
+missing$ -- 8
+newline$ -- 54
 num.names$ -- 16
-pop$ -- 70
+pop$ -- 106
 preamble$ -- 1
-purify$ -- 47
+purify$ -- 52
 quote$ -- 0
-skip$ -- 129
+skip$ -- 159
 stack$ -- 0
-substring$ -- 204
-swap$ -- 54
+substring$ -- 224
+swap$ -- 58
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 32
-warning$ -- 5
+type$ -- 46
+warning$ -- 9
 while$ -- 26
-width$ -- 9
-write$ -- 80
-(There were 5 warnings)
+width$ -- 14
+write$ -- 105
+(There were 9 warnings)
