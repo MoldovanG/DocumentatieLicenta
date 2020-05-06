@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.22)  28 APR 2020 12:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.22)  6 MAY 2020 19:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -390,29 +390,40 @@ Package pdftex.def Info: images/client_drawing.png  used on input line 186.
 (pdftex.def)             Requested size: 438.17273pt x 200.45187pt.
  [8 <./images/client_drawing.png>]
 Capitolul 3.
-
-Package blindtext Warning: romanian not defined, using English instead.
-(blindtext)                 on input line 196.
-
+<images/training_stage1_architecture.png, id=59, 1233.60875pt x 597.23125pt>
+File: images/training_stage1_architecture.png Graphic file (type png)
+<use images/training_stage1_architecture.png>
+Package pdftex.def Info: images/training_stage1_architecture.png  used on input
+ line 207.
+(pdftex.def)             Requested size: 438.17273pt x 212.13248pt.
 [9
 
-] (./Licenta.bbl [10]
+]
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
+
+ []
+
+[10 <./images/training_stage1_architecture.png>] [11]
+Capitolul 4.
+(./Licenta.bbl [12
+
+]
 Underfull \hbox (badness 2547) in paragraph at lines 43--48
 []\OT1/cmr/m/n/12 E. Jo-nas, J. Schleier-Smith, V. Sre-e-kanti, C.-C. Tsai, A. 
 Khan-de-lwal,
  []
 
-) [11
+) [13
 
 ] (./Licenta.aux) ) 
 Here is how much of TeX's memory you used:
- 3805 strings out of 480994
- 53891 string characters out of 5916032
- 327455 words of memory out of 5000000
- 19246 multiletter control sequences out of 15000+600000
+ 3815 strings out of 480994
+ 54246 string characters out of 5916032
+ 327471 words of memory out of 5000000
+ 19255 multiletter control sequences out of 15000+600000
  538263 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,7n,45p,1591b,261s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,7n,45p,1591b,265s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-supe
 r-ts1.enc}<c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb><c:/texli
@@ -422,12 +433,13 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2019/texmf-dist
 e1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmr6.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmr8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
-><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texl
-ive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on Licenta.pdf (16 pages, 236249 bytes).
+><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texli
+ve/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2019/t
+exmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on Licenta.pdf (18 pages, 484932 bytes).
 PDF statistics:
- 105 PDF objects out of 1000 (max. 8388607)
- 72 compressed objects within 1 object stream
+ 117 PDF objects out of 1000 (max. 8388607)
+ 79 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

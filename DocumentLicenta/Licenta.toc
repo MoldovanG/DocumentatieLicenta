@@ -7,4 +7,7 @@
 \contentsline {section}{\numberline {2.1}Etapa de antrenare}{4}%
 \contentsline {section}{\numberline {2.2}Etapa de inferenţă}{6}%
 \contentsline {section}{\numberline {2.3}Etapa de deployment}{6}%
-\contentsline {chapter}{\numberline {3}Plictiseala}{9}%
+\contentsline {chapter}{\numberline {3}Sistemul de detecţie a anomaliilor}{9}%
+\contentsline {section}{\numberline {3.1}Etapa de antrenare}{9}%
+\contentsline {section}{\numberline {3.2}Etapa de inferenţă}{11}%
+\contentsline {chapter}{\numberline {4}Plictiseala}{12}%

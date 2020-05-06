@@ -191,9 +191,41 @@ Pentru a lansa serverul in cloud, am folosit serviciul Amazon Elastic Beanstalk.
 
 Dezvoltatorul se ocupă doar de aplicaţia/serverul propriu zis, crează pachetul de deployment, iar Elastic Beanstalk crează instanţele EC2 necesare, administrează si rutează traficul către instanţe folosind un Load Balancer, iar atunci cand aplicaţia este suprasolicitată, lansează în mod automat noi servere folosindu-se de avantajele unui Auto Scaling Group.
 \par Aşa cum se poate observa în figura ~\ref{fig:client_design}, API-ul este creat în aşa fel încât evaluarea se face pentru fiecare cadru în parte. Dezvoltatorul ce implementează clientul pentru API are doar responsabilitatea urcării cadrelor necesare într-un spaţiu S3 prestabilit. Preprocesarea, extragerea obiectelor din imagine, şi rularea detecţiei de anomalii sunt toate executate in cloud. Astfel, efortul computaţional asupra clientului este minim. La momentul accesării API-ului, serverul trebuie să primeasca ca parametru în apelul HTTP cheia de acces pentru cadrele urcate de catre client. Folosind această informaţie, pe server se descarcă aceste cadre şi sunt analizate pentru a detecta anomaliile din cadrul central. Ca şi rezultat, clientul primeşte scorul de anormalitate al cadrului împreună cu toate poziţiile obiectelor anormale din cadru, date ce pot fi folosite pentru notificări ulterioare sau diferite aplicaţii pe partea de client. 
+
+\chapter{Sistemul de detecţie a anomaliilor}
+\quad În acest capitol va fi analizat în detaliu sistemul detecţie a anomaliilor în video, atât din punct de vedere al arhitecturii alese cât şi din punct de vedere al implementării. În acest sens, etapa de antrenare, şi cea de inferenţă a sistemului vor fi analizate în secţiuni separate.
+\par În ceea ce priveşte detecţia de obiecte, ce este comună tuturor etapelor sistemului, este folosit un detector de obiecte pre-antrenat pe setul de date COCO ce foloseşte o arhitectură SSD-Mobilenet, oferit de biblioteca \emph {gluoncv model-zoo}. Acesta are ca prim avantaj viteza de analiză a unei imagini, deoarece aşa cum se poate observa şi în analiza timpilor de execuţie a sistemului, o bună parte din timp este petrecută detectând obiecte, şi doar o mică parte analizând daca evenimentul este unul normal sau anormal. Astfel, viteza a fost cel mai important aspect luat în considerare pentru alegerea detectorului de obiecte.
+\section{Etapa de antrenare}
+\quad Din cauza complexităţii problemei de a identifica comportamentul anormal al obiectelor prezente în video, arhitectura sistemului presupune multiple etape de prelucare a datelor până la momentul clasificării finale. Astfel, etapa de antrenare este împărţită la rândul ei în 2 etape:
+\begin{itemize}
+\item Etapa de reducere a dimensionalităţii (antrenarea autoencoderelor)
+\item Etapa de antrenare a clasificatorilor finali
+\end{itemize}
+\par În etapa de reducere a dimensionalităţii sunt definite si antrenate autoencoderele pe baza imaginilor si gradienţilor extraşi din setul de date. Motivul pentru care obiectele sunt procesate de către autoencodere este că deoarece sunt antrenate doar pe obiectele din videourile de antrenare, acestea vor invăţa să reprezinte doar evenimentele normale. Astfel, atunci cand prin aceste autoencodere vor trece evenimente anormale, ce nu sunt asemanătoare cu cele de antrenament, autoencoderele vor genera o eroare de reconstrucţie ce va uşura sarcina clasificatorilor finali.
+\begin{figure}
+\begin{center}
+        \includegraphics[width=1\textwidth]{images/training_stage1_architecture}
+			 \label{fig:stage1_architecture}
+			 \caption{Arhitectura primei etape de antrenare}
+\end{center}
+\end{figure}
+\par Arhitectura aleasă pentru autoencodere este cea descrisă în \emph{Ionescu et al.}  \cite{ionescu2019object} si constă intr-o arhitectură convoluţională rapidă, formată dintr-un encoder cu 3 blocuri convoluţional + max-pooling şi un decoder format din 3 blocuri upsampling + convoluţional. Fiecare autoencoder primeşte ca input date de dimensiune \(64 \times 64\) si creează după encoder un vector de caracteristici de dimensiune \(8 \times 8 \times 16\).
+\par
+Implementarea respectă arhitectura prezentată în figura ~\ref{fig:stage1_architecture} şi constă în următorii paşi: \\
+\begin {itemize}
+\item Pentru toate videourile de antrenare se execută detecţia de obiecte pentru fiecare cadru, extrăgând astfel toate obiectele din video. Pentru fiecare obiect este calculat gradientul, ce reflectă mişcarea acestuia. Gradientul este calculat dupa formula: \[\sqrt{G_{x}^2 + G_{y}^2}\] Unde \(G_{x}\), \(G_{y}\) sunt imagini ce în fiecare punct conţin derivata orizontală respectiv verticală a imaginii iniţiale, obţinută prin aplicarea unui kernel Sobel de \(5 \times 5 \).
+\item Imaginile si gradienţii astfel obţinuţi sunt adaugaţi intr-o colecţie generală pentru tot setul de date. Cele 2 colecţii astfel create vor servi drept input pentru antrenarea autoencoderelor.
+\item Folosind cele 2 colecţii (de imagini, respectiv de grandienţi) este antrenat câte un autoencoder pentru fiecare colecţie. Antrenarea se realizează folosind optimizatorul Adam \cite{adam2017} şi funcţia loss ce constă în diferenţa medie pătratelor, dată de formula : 
+\(L(I,O) = \frac{1} {h*w} \sum_{1}^{h} \sum_{1}^{w} (I_{ij} * O_{ij})^2 \)   \cite{ionescu2019object} unde I si O reprezintă imaginea de input respectiv de output si h,w sunt dimensiunile imaginilor.
+\end{itemize}
+
+\par
+În etapa de antrenare a clasificatorilor finali.
+
+\section{Etapa de inferenţă}
+Scris de test
 \chapter{Plictiseala}
 In ceea ce priveşte FaaS, acesta este un domeniu nou, deoarece a apărut pentru prima data in 2010 fiind oferit de câteva start-upuri la acea vreme. Acest mod de dezvoltare orientat spre microservicii a devenit trendul in industrie în ultimii ani pentru sisteme cu potenţial de scalare mare, deoarece prezintă numeroase avantaje din punct de vedere al modului de dezvoltare si de executie in industrie. In momentul de faţă, pentru servicii de tip FaaS sunt 3 mari jucători: Amazon cu AWS Lambda, Google cu Google Cloud Functions si Microsoft cu Azure Functions.\cite{jonas2019cloud}. Numeroase lucrări din domeniu \cite{christidis2019, wang2019} arată ca rularea algoritmilor de machine learning folosind soluţii FaaS (Function as a service) precum AWS Lambda sau Google cloud functions, este în sine o problemă ce necesită soluţii de optimizare a codului pentru a indeplini restricţiile soluţiilor de rulare serverless, cum ar fi memoria limitată a mediului de execuţie. 
-\blindtext[3]
 
 \bibliographystyle{abbrv}
 \bibliography{References}
