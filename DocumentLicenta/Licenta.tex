@@ -7,6 +7,9 @@
 \usepackage{wrapfig}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage{caption}
+\usepackage{dirtytalk}
+\newcommand{\source}[1]{\caption*{Sursă: {#1}} }
 
 \fancyhf{}
 \renewcommand{\headrulewidth}{2pt}
@@ -100,6 +103,7 @@ Ca şi moduri de expunere a soluţiei software către utilizatori, aceasta se po
         \includegraphics[width=0.4\textwidth]{images/grafic_cloud_computing}
 			\label{fig:cloud_computing_graph}
        \caption{Statistică ce evidenţiază importanţa domeniului cloud computing în ultimii ani}
+       \source {https://www.statista.com/}
     \end{center}
 \end{wrapfigure}
 
@@ -227,8 +231,8 @@ Implementarea arhitecturii prezentate în figura ~\ref{fig:stage1_architecture} 
 \begin {itemize}
 \item Pentru toate videourile de antrenare se execută detecţia de obiecte pentru fiecare cadru, extrăgând astfel toate obiectele din video.Fiecare cadru este transformat în alb-negru pentru a fi prelucrat in etapele următoare. Pentru fiecare obiect extras, imaginea acestuia este redimensionată pentru a respecta dimensiunea de intrare a autoencodere-lor la \( 64 \times 64 \) iar apoi este calculat gradientul, ce reflectă mişcarea obiectului. Gradientul este calculat dupa formula: \[\sqrt{G_{x}^2 + G_{y}^2}\] Unde \(G_{x}\), \(G_{y}\) sunt imagini ce în fiecare punct conţin derivata orizontală respectiv verticală a imaginii iniţiale, obţinută prin aplicarea unui kernel Sobel de \(5 \times 5 \).
 \item Imaginile si gradienţii astfel obţinuţi sunt adaugaţi intr-o colecţie generală pentru tot setul de date. Cele 2 colecţii astfel create vor servi drept input pentru antrenarea autoencoderelor.
-\item Folosind cele 2 colecţii (de imagini, respectiv de gradienţi) este antrenat câte un autoencoder pentru fiecare colecţie. Înainte de a fi folosite pentru atrenarea autoencoderelor, atât imaginile, cat şi gradienţii, sunt normalizate în intervalul [0,1] .Antrenarea se realizează timp de 100 de epoci cu o rată de invaţare de \(10^{-3}\) folosind optimizatorul Adam \cite{adam2017} şi funcţia loss ce constă în diferenţa medie a pătratelor, dată de formula : 
-\(L(I,O) = \frac{1} {h*w} \sum_{1}^{h} \sum_{1}^{w} (I_{ij} * O_{ij})^2 \)   \cite{ionescu2019object} unde I si O reprezintă imaginea de input respectiv de output si h,w sunt dimensiunile imaginilor.
+\item Folosind cele 2 colecţii (de imagini, respectiv de gradienţi) este antrenat câte un autoencoder pentru fiecare colecţie. Înainte de a fi folosite pentru atrenarea autoencoderelor, atât imaginile, cat şi gradienţii, sunt normalizate în intervalul [0,1] .Antrenarea se realizează folosind optimizatorul Adam \cite{adam2017} şi funcţia loss ce constă în diferenţa medie a pătratelor, dată de formula : 
+\(L(I,O) = \frac{1} {h*w} \sum_{1}^{h} \sum_{1}^{w} (I_{ij} * O_{ij})^2 \)   \cite{ionescu2019object} unde I si O reprezintă imaginea de input respectiv de output si h,w sunt dimensiunile imaginilor. Aceasta este executată timp de 100 de epoci cu o rată de invaţare de \(10^{-3}\), dar având şi o regula de oprire rapidă, ce inseamnă că dacă timp de 2 epoci funcţia loss nu se imbunătaţeşte, antrenarea este finalizată.
 \end{itemize}
 
 \begin{figure}[h]
@@ -246,7 +250,35 @@ Aplicând algoritmul de \emph{k-means clustering} se obţin k categorii de norma
 \emph{\(g_{i}\)}. 
 
 \section{Analiza etapei de inferenţă}
-Scris de test
+În cadrul etapei de inferenţă este analizat un eveniment cu scopul de a determina daca acesta este sau nu anormal. Analiza unui singur eveniment stă la baza tuturor modurilor de utilizare a sistemului, deoarece, avand aceste date, putem obţine scoruri de normalitate pentru fiecare cadru, sau scoruri de normalitate la nivel de pixel sau chiar şi clasificări generale de normalitate a unui video în totalitate.
+
+\begin{figure}[h]
+\begin{center}
+        \includegraphics[width=1\textwidth,height=6cm]{images/inference_architecture}
+			 \label{fig:inference_architecture}
+			 \caption{Arhitectura etapei de inferenţă}
+\end{center}
+\end{figure}
+Pentru a obţine scorul unui eveniment, un pas foarte important este obţinerea vectorului de caracteristici corespunzător. Acesta se obţine folosind autoencoderele antrenate in etapa precedentă, după pre-procesarea cadrelor corespunzătoare evenimentului.  Pre-procesarea este asemanătoare etapei de antrenare, şi anume, pentru fiecare obiect dintr-un cadru \emph{t}, se selectează aceeaşi zonă din cadrele \emph{t-3} si \emph{t+3} cu scopul de a calcula gradienţii ce reflectă mişcarea obiectului relativ la cadrul t. Odată obţinute aceste 3 date (imaginea obiectului şi cei 2 gradienţi) aşa cum este descris şi in figura
+~\ref{fig:inference_architecture}, acestea sunt trecute prin autoencodere şi sunt obţinute reprezentările latente, ce sunt concatenate pentru a se obţine vectorul final de caracteristici. Vectorul de caracteristici este apoi clasificat de toţi cei k clasificatori binari antrenaţi anterior, iar scorul final de anormalitate este dat de formula : \[score = max(g_{i}(v)), i \in [1..k]\] unde v este vectorul de caracteristici, iar \(g_{i}\) este un clasificator binar.
+\par
+Filmarea propriu zisă şi selecţia cadrelor este realizată pe partea de client, în timp ce pre-procesarea cadrelor, detecţia obiectelor si calcularea scorului pentru fiecare dintre aceste obiecte este executat pe server. Astfel, atât timp cât există o conexiune la reţea, clientul nu este limitat de puterea de calcul proprie, şi poate analiza mai multe videouri simultan. Totuşi clientul trebuie sa încarce cadrele ce vor fi analizate catre destinaţie S3 a serverului. Pentru a nu încetini semnificativ procesul de analiză, trimitere cadrelor în reţea trebuie facută în paralel, folosind eventualele posibilităţi de multi-threading ale clientului.
+\par
+În ceea ce priveşte serverul pe care rulează analiza propriu zisă, acesta este un HTTP API, ce expune pentru public capacitatea de a rula inferenţa. În stadiul curent, API-ul este configurat cu un singur endpoint, de tip POST  : \say{upload/frame\_key} , unde frame\_key reprezintă cheia de acces cu care au fost urcate în cloud cadrele ce urmează sa fie analizate. Pentru ca o cheie de acces sa fie considerată validă de catre server, acesta trebuie sa găseasca in destinaţia S3 specifică 3 fişiere ce au următoarele chei :
+\begin{itemize}
+\item frame\_key
+\item frame\_key\_d3
+\item frame\_key\_p3
+\end{itemize}
+\par \emph{Frame\_key} este parametrul primit prin HTTP,  iar frame\_key\_d3 şi frame\_key\_p3 sunt chei obţinute prin concatenarea sufixului \textbf{\_d3} respectiv \textbf{\_p3} la cheia primită ca parametru. Daca parametrul primit reprezintă o cheia valida, atunci cadrele sunt descărcate temporar pe server, unde sunt folosite pentru a rula intregul proces de inferenţă, iar in final, rezultatele sunt transmise clientului în format json. 
+JSON-ul rezultat conţine 3 câmpuri : 
+\begin{itemize}
+\item Status code: ce reprezintă codul http rezultat în urma apelului
+\item Result: ce conţine scorul cadrului de anormalitate, ce reprezintă maximul dintre scorurile obiectelor din cadru.
+\item boxes: o listă ce conţine coordonatele obiectelor ce sunt considerate anormale din cadrul principal
+\end{itemize}
+\par Modul în care este structurat serverul face foarte uşoară crerea de noi API-uri, cu aceeaşi funcţionalitate, dar orientate spre tipuri de anormalitate diferite. Aşa cum a fost descris şi în introducere, detectarea anomaliilor este dependentă de setul de date de referinţă. Astfel, fiecare model antrenat pe un set de date diferit, acoperă o arie diferită de anomalii. Altfel spus, în funcţie de setul de date folosit la antrenare, sistemul va detecta un alt set de evenimente drept anomalii. În fine, un nou API este necesar pentru fiecare astfel de model. 
+\par Deoarece arhitectura curentă a serverului încarcă modelele pre-antrenate dintr-o destinaţie S3 la momentul iniţializării, pentru a creea un nou API ce a fost antrenat pe un alt set de date, este necesară doar crearea unei noi destinaţii S3, încarcarea modelelor pre-antrenate la acea destinaţie, schimbarea în cod a denumirii vechii destinaţii în cea nouă şi apoi un nou deployment. Astfel, cu un număr minim de paşi, poate fi creat un nou API ce execută etapa de inferenţă pentru un sistem ce a fost antrenat pe un nou set de date.
 \chapter{Plictiseala}
 In ceea ce priveşte FaaS, acesta este un domeniu nou, deoarece a apărut pentru prima data in 2010 fiind oferit de câteva start-upuri la acea vreme. Acest mod de dezvoltare orientat spre microservicii a devenit trendul in industrie în ultimii ani pentru sisteme cu potenţial de scalare mare, deoarece prezintă numeroase avantaje din punct de vedere al modului de dezvoltare si de executie in industrie. In momentul de faţă, pentru servicii de tip FaaS sunt 3 mari jucători: Amazon cu AWS Lambda, Google cu Google Cloud Functions si Microsoft cu Azure Functions.\cite{jonas2019cloud}. Numeroase lucrări din domeniu \cite{christidis2019, wang2019} arată ca rularea algoritmilor de machine learning folosind soluţii FaaS (Function as a service) precum AWS Lambda sau Google cloud functions, este în sine o problemă ce necesită soluţii de optimizare a codului pentru a indeplini restricţiile soluţiilor de rulare serverless, cum ar fi memoria limitată a mediului de execuţie. 
 
