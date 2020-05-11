@@ -74,7 +74,6 @@ Iunie (fingers crossed), 2020
 \newpage
 
 \tableofcontents
-\listoffigures
 \pagenumbering{arabic}
 \setcounter{page}{2}
 \begin{abstract}
@@ -197,15 +196,15 @@ Dezvoltatorul se ocupă doar de aplicaţia/serverul propriu zis, crează pachetu
 \par Aşa cum se poate observa în figura ~\ref{fig:client_design}, API-ul este creat în aşa fel încât evaluarea se face pentru fiecare cadru în parte. Dezvoltatorul ce implementează clientul pentru API are doar responsabilitatea urcării cadrelor necesare într-un spaţiu S3 prestabilit. Preprocesarea, extragerea obiectelor din imagine, şi rularea detecţiei de anomalii sunt toate executate in cloud. Astfel, efortul computaţional asupra clientului este minim. La momentul accesării API-ului, serverul trebuie să primeasca ca parametru în apelul HTTP cheia de acces pentru cadrele urcate de catre client. Folosind această informaţie, pe server se descarcă aceste cadre şi sunt analizate pentru a detecta anomaliile din cadrul central. Ca şi rezultat, clientul primeşte scorul de anormalitate al cadrului împreună cu toate poziţiile obiectelor anormale din cadru, date ce pot fi folosite pentru notificări ulterioare sau diferite aplicaţii pe partea de client. 
 
 \chapter{Sistemul de detecţie a anomaliilor}
-\quad În acest capitol va fi analizat în detaliu sistemul detecţie a anomaliilor în video, atât din punct de vedere al arhitecturii alese cât şi din punct de vedere al implementării. În acest sens, etapa de antrenare, şi cea de inferenţă a sistemului vor fi analizate în secţiuni separate.
-\par În ceea ce priveşte detecţia de obiecte, ce este comună tuturor etapelor sistemului, este folosit un detector de obiecte pre-antrenat pe setul de date COCO ce foloseşte o arhitectură SSD-Mobilenet, oferit de biblioteca \emph {gluoncv model-zoo}. Acesta are ca prim avantaj viteza de analiză a unei imagini, deoarece aşa cum se poate observa şi în analiza timpilor de execuţie a sistemului, o bună parte din timp este petrecută detectând obiecte, şi doar o mică parte analizând daca evenimentul este unul normal sau anormal. Astfel, viteza a fost cel mai important aspect luat în considerare pentru alegerea detectorului de obiecte.
+\quad În acest capitol va fi analizat în detaliu sistemul de detecţie a anomaliilor în video, atât din punct de vedere al arhitecturii alese cât şi din punct de vedere al implementării. În acest sens, etapa de antrenare, şi cea de inferenţă a sistemului vor fi analizate în secţiuni separate.
+\par În ceea ce priveşte detecţia de obiecte, ce este comună tuturor etapelor sistemului, este folosit un detector de obiecte pre-antrenat pe setul de date COCO ce foloseşte o arhitectură SSD-Mobilenet, din biblioteca \emph {gluoncv model-zoo}. Acesta are ca prim avantaj viteza de analiză a unei imagini, deoarece aşa cum se poate observa şi în analiza timpilor de execuţie a sistemului, o mare parte din timp este petrecută detectând obiecte, şi doar o mică parte analizând daca evenimentul este unul normal sau anormal. Astfel, viteza a fost cel mai important aspect luat în considerare pentru alegerea detectorului de obiecte.
 \section{Analiza antrenării sistemului}
 \quad Din cauza complexităţii problemei de a identifica comportamentul anormal al obiectelor prezente în video, arhitectura sistemului presupune multiple etape de prelucare a datelor până la momentul clasificării finale. Astfel, etapa de antrenare este împărţită la rândul ei în 2 etape:
 \begin{itemize}
 \item Etapa de reducere a dimensionalităţii (antrenarea autoencoderelor)
 \item Etapa de antrenare a clasificatorilor finali
 \end{itemize}
-\par În etapa de reducere a dimensionalităţii sunt definite si antrenate autoencoderele pe baza imaginilor si gradienţilor extraşi din setul de date. Motivul pentru care obiectele sunt procesate de către autoencodere este că datorită antrenării doar pe obiectele din videourile de antrenare, acestea vor invăţa să reprezinte doar evenimentele normale. Astfel, atunci cand prin aceste autoencodere vor trece evenimente anormale, ce nu sunt asemanătoare cu cele de antrenament, autoencoderele vor genera o eroare de reconstrucţie ce va uşura sarcina clasificatorilor finali.
+\par În etapa de reducere a dimensionalităţii sunt definite şi antrenate autoencoderele pe baza imaginilor si gradienţilor extraşi din setul de date. Motivul pentru care obiectele sunt procesate de către autoencodere este că datorită antrenării doar pe obiectele din videourile de antrenare, acestea vor invăţa să reprezinte doar evenimentele normale. Astfel, atunci cand prin aceste autoencodere vor trece evenimente anormale, ce nu sunt asemanătoare cu cele de antrenament, autoencoderele vor genera o eroare de reconstrucţie ce va uşura sarcina clasificatorilor finali.
 \par Arhitectura aleasă pentru autoencodere este cea descrisă de \emph{Ionescu et al.}  \cite{ionescu2019object} şi constă intr-o arhitectură convoluţională rapidă, formată dintr-un encoder cu 3 blocuri convoluţional + max-pooling şi un decoder format din 3 blocuri upsampling + convoluţional. Fiecare autoencoder primeşte ca input date de dimensiune \(64 \times 64\) si creează după encoder un vector de caracteristici de dimensiune \(8 \times 8 \times 16\).  Structura detaliată a autoencoderelor este : 
 \begin{itemize}
 \item Stratul de intrare, de dimensiune \( 64 \times 64 \times 1\)
@@ -215,7 +214,7 @@ Dezvoltatorul se ocupă doar de aplicaţia/serverul propriu zis, crează pachetu
 \item Bloc Convoluţional + UpSampling fprmat din : Un strat convoluţional bazat pe 16 de filtre de dimensiune \(3 \times 3\) urmat de funcţia de activare \emph{Relu} şi un strat UpSampling bazat pe filtre \(2 \times 2\).
 \item Bloc Convoluţional + UpSampling fprmat din : Un strat convoluţional bazat pe 32 de filtre de dimensiune \(3 \times 3\) urmat de funcţia de activare \emph{Relu} şi un strat UpSampling bazat pe filtre \(2 \times 2\).
 \item Bloc Convoluţional + UpSampling fprmat din : Un strat convoluţional bazat pe 32 de filtre de dimensiune \(3 \times 3\) urmat de funcţia de activare \emph{Relu} şi un strat UpSampling bazat pe filtre \(2 \times 2\).
-\item Un ultim strat Convoluţional ce are ca rol reducerea dimensiunii de iesire de la \(64 \times 64 \times 32\) la \(64 \times 64 \times 1\)\cite{ionescu2019object} .  Aceste este bazat pe 1 filtru de dimensiune \(3 \times 3 \) urmat de funcţia de activare \emph{Sigmoid}
+\item Un ultim strat Convoluţional ce are ca rol reducerea dimensiunii de ieşire de la \(64 \times 64 \times 32\) la \(64 \times 64 \times 1\)\cite{ionescu2019object} .  Aceste este bazat pe 1 filtru de dimensiune \(3 \times 3 \) urmat de funcţia de activare \emph{Sigmoid}
 \end{itemize}
 Primele 4 straturi reprezintă encoder-ul, în timp ce ultimele 4 straturi reprezintă decoderul. 
 \clearpage
@@ -229,9 +228,9 @@ Primele 4 straturi reprezintă encoder-ul, în timp ce ultimele 4 straturi repre
 \par
 Implementarea arhitecturii prezentate în figura ~\ref{fig:stage1_architecture} constă în următorii paşi:
 \begin {itemize}
-\item Pentru toate videourile de antrenare se execută detecţia de obiecte pentru fiecare cadru, extrăgând astfel toate obiectele din video.Fiecare cadru este transformat în alb-negru pentru a fi prelucrat in etapele următoare. Pentru fiecare obiect extras, imaginea acestuia este redimensionată pentru a respecta dimensiunea de intrare a autoencodere-lor la \( 64 \times 64 \) iar apoi este calculat gradientul, ce reflectă mişcarea obiectului. Gradientul este calculat dupa formula: \[\sqrt{G_{x}^2 + G_{y}^2}\] Unde \(G_{x}\), \(G_{y}\) sunt imagini ce în fiecare punct conţin derivata orizontală respectiv verticală a imaginii iniţiale, obţinută prin aplicarea unui kernel Sobel de \(5 \times 5 \).
+\item Pentru toate videourile de antrenare se execută detecţia de obiecte pentru fiecare cadru, extrăgând astfel toate obiectele din video.Fiecare cadru este transformat în alb-negru pentru a fi prelucrat în etapele următoare. Pentru fiecare obiect extras, imaginea acestuia este redimensionată pentru a respecta dimensiunea de intrare a autoencodere-lor la \( 64 \times 64 \) iar apoi este calculat gradientul, ce reflectă mişcarea obiectului. Gradientul este calculat dupa formula: \[\sqrt{G_{x}^2 + G_{y}^2}\] Unde \(G_{x}\), \(G_{y}\) sunt imagini ce în fiecare punct conţin derivata orizontală respectiv verticală a imaginii iniţiale, obţinută prin aplicarea unui kernel Sobel de \(5 \times 5 \).
 \item Imaginile si gradienţii astfel obţinuţi sunt adaugaţi intr-o colecţie generală pentru tot setul de date. Cele 2 colecţii astfel create vor servi drept input pentru antrenarea autoencoderelor.
-\item Folosind cele 2 colecţii (de imagini, respectiv de gradienţi) este antrenat câte un autoencoder pentru fiecare colecţie. Înainte de a fi folosite pentru atrenarea autoencoderelor, atât imaginile, cat şi gradienţii, sunt normalizate în intervalul [0,1] .Antrenarea se realizează folosind optimizatorul Adam \cite{adam2017} şi funcţia loss ce constă în diferenţa medie a pătratelor, dată de formula : 
+\item Folosind cele 2 colecţii (de imagini, respectiv de gradienţi) este antrenat câte un autoencoder pentru fiecare colecţie. Înainte de a fi folosite pentru antrenarea autoencoderelor, atât imaginile, cât şi gradienţii, sunt normalizate în intervalul [0,1] .Antrenarea se realizează folosind optimizatorul Adam \cite{adam2017} şi funcţia loss ce constă în diferenţa medie a pătratelor, dată de formula : 
 \(L(I,O) = \frac{1} {h*w} \sum_{1}^{h} \sum_{1}^{w} (I_{ij} * O_{ij})^2 \)   \cite{ionescu2019object} unde I si O reprezintă imaginea de input respectiv de output si h,w sunt dimensiunile imaginilor. Aceasta este executată timp de 100 de epoci cu o rată de invaţare de \(10^{-3}\), dar având şi o regula de oprire rapidă, ce inseamnă că dacă timp de 2 epoci funcţia loss nu se imbunătaţeşte, antrenarea este finalizată.
 \end{itemize}
 
@@ -244,7 +243,7 @@ Implementarea arhitecturii prezentate în figura ~\ref{fig:stage1_architecture} 
 \end{figure}
 
 \par
-În etapa de antrenare a clasificatorilor finali, se folosesc autoencoderele antrenate în etapa precedentă pentru a obţine vectorii de caracteristici specifici fiecărui eveniment prezent in setul de date. Ca şi prim pas, se detectează toate obiectele prezente în fiecare cadru din video-urile  de antrenare, iar pentru fiecare obiect, se folosesc coordonatele acestuia pentru a decupa acelaşi obiect din cadrul \emph{t-3} şi \emph{t+3}, respectiv la indexul \emph{t} curent. Se calculează gradienţii pentru imaginile decupate, astfel este reprezentată mişcarea obiectului faţă de cadrul curent, iar apoi se obţin vectorii caracteristici al fiecarui gradient prin trecerea acestora prin autoencoderul corespunzător antrenat in etapa precendentă. Odată obţinuti cei 3 vectori caracteristici specifici evenimentului, aşa cum este ilustrat şi în figura ~\ref{fig:stage2_architecture}, concatenarea acestora este stocată intr-o colecţie globală ce reţine datele pentru tot setul de date.
+În etapa de antrenare a clasificatorilor finali, se folosesc autoencoderele antrenate în etapa precedentă pentru a obţine vectorii de caracteristici specifici fiecărui eveniment prezent în setul de date. Ca şi prim pas, se detectează toate obiectele prezente în fiecare cadru din video-urile  de antrenare, iar pentru fiecare obiect, se folosesc coordonatele acestuia pentru a decupa acelaşi obiect din cadrul \emph{t-3} şi \emph{t+3}, respectiv la indexul \emph{t} curent. Se calculează gradienţii pentru imaginile decupate, astfel este reprezentată mişcarea obiectului faţă de cadrul curent, iar apoi se obţin vectorii caracteristici ai fiecarui gradient prin trecerea acestora prin autoencoderul corespunzător antrenat în etapa precendentă. Odată obţinuti cei 3 vectori caracteristici specifici evenimentului, aşa cum este ilustrat şi în figura ~\ref{fig:stage2_architecture}, concatenarea acestora este stocată intr-o colecţie globală ce reţine datele pentru tot setul de date.
 \par
 Aplicând algoritmul de \emph{k-means clustering} se obţin k categorii de normalitate. Astfel, pentru fiecare eveniment din colecţia globală este cunoscută categoria \emph{i} din care face parte. Folosind aceste date, putem antrena cei k clasificatori binari. Pentru fiecare categorie, un clasificator binar este antrenat folosind evenimentele din categoria curent drept date de antrenare pozitive, iar celelalte k-1 categorii drept date de antrenare negative. În final, se obţin k clasificatori binari ce au rolul de a evalua daca un eveniment aparţine sau nu categoriei de normalitate \emph{i} unde \emph{i} este indicele clasificatorului 
 \emph{\(g_{i}\)}. 
@@ -273,15 +272,86 @@ Filmarea propriu zisă şi selecţia cadrelor este realizată pe partea de clien
 \par \emph{Frame\_key} este parametrul primit prin HTTP,  iar frame\_key\_d3 şi frame\_key\_p3 sunt chei obţinute prin concatenarea sufixului \textbf{\_d3} respectiv \textbf{\_p3} la cheia primită ca parametru. Daca parametrul primit reprezintă o cheia valida, atunci cadrele sunt descărcate temporar pe server, unde sunt folosite pentru a rula intregul proces de inferenţă, iar in final, rezultatele sunt transmise clientului în format json. 
 JSON-ul rezultat conţine 3 câmpuri : 
 \begin{itemize}
-\item Status code: ce reprezintă codul http rezultat în urma apelului
+\item Codul de stare: ce reprezintă codul http rezultat în urma apelului
 \item Result: ce conţine scorul cadrului de anormalitate, ce reprezintă maximul dintre scorurile obiectelor din cadru.
 \item boxes: o listă ce conţine coordonatele obiectelor ce sunt considerate anormale din cadrul principal
 \end{itemize}
-\par Modul în care este structurat serverul face foarte uşoară crerea de noi API-uri, cu aceeaşi funcţionalitate, dar orientate spre tipuri de anormalitate diferite. Aşa cum a fost descris şi în introducere, detectarea anomaliilor este dependentă de setul de date de referinţă. Astfel, fiecare model antrenat pe un set de date diferit, acoperă o arie diferită de anomalii. Altfel spus, în funcţie de setul de date folosit la antrenare, sistemul va detecta un alt set de evenimente drept anomalii. În fine, un nou API este necesar pentru fiecare astfel de model. 
+\par Codul de stare respectă standardul HTTP1.1, mai precis \emph{RFC7231}\cite{RFC7231} şi respectă valorile prezentate în tabelul de mai jos: 
+\begin{table}[h]
+\begin{tabular}{|c|c|}
+\hline
+Valoarea codului & Semnificaţie                                                                   \\
+\hline
+1xx   & Apelul a fost primit, dar procesarea încă este în desfaşurare                  \\
+\hline
+2xx   & Apelul a fost primit şi procesat cu succes                                     \\
+\hline
+3xx   & Clientul trebuie să execute paşi suplimentari pentru ca apelul sa fie procesat \\
+\hline
+4xx   & Apelul este greşit din punct de vedere sintactic sau nu poate fi procesat      \\
+\hline
+5xx   & Apelul este valid dar serverul a întâmpinat o eroare în timpul procesării   \\
+\hline   
+\end{tabular}
+\caption{Descrierea codurilor returnate de către server}
+\end{table}
+\par Modul în care este structurat serverul face foarte uşoară crearea de noi API-uri, cu aceeaşi funcţionalitate, dar orientate spre tipuri de anormalitate diferite. Aşa cum a fost descris şi în introducere, detectarea anomaliilor este dependentă de setul de date de referinţă. Astfel, fiecare model antrenat pe un set de date diferit, acoperă o arie diferită de anomalii. Altfel spus, în funcţie de setul de date folosit la antrenare, sistemul va detecta un alt set de evenimente drept anomalii. În fine, un nou API este necesar pentru fiecare astfel de model. 
 \par Deoarece arhitectura curentă a serverului încarcă modelele pre-antrenate dintr-o destinaţie S3 la momentul iniţializării, pentru a creea un nou API ce a fost antrenat pe un alt set de date, este necesară doar crearea unei noi destinaţii S3, încarcarea modelelor pre-antrenate la acea destinaţie, schimbarea în cod a denumirii vechii destinaţii în cea nouă şi apoi un nou deployment. Astfel, cu un număr minim de paşi, poate fi creat un nou API ce execută etapa de inferenţă pentru un sistem ce a fost antrenat pe un nou set de date.
-\chapter{Plictiseala}
-In ceea ce priveşte FaaS, acesta este un domeniu nou, deoarece a apărut pentru prima data in 2010 fiind oferit de câteva start-upuri la acea vreme. Acest mod de dezvoltare orientat spre microservicii a devenit trendul in industrie în ultimii ani pentru sisteme cu potenţial de scalare mare, deoarece prezintă numeroase avantaje din punct de vedere al modului de dezvoltare si de executie in industrie. In momentul de faţă, pentru servicii de tip FaaS sunt 3 mari jucători: Amazon cu AWS Lambda, Google cu Google Cloud Functions si Microsoft cu Azure Functions.\cite{jonas2019cloud}. Numeroase lucrări din domeniu \cite{christidis2019, wang2019} arată ca rularea algoritmilor de machine learning folosind soluţii FaaS (Function as a service) precum AWS Lambda sau Google cloud functions, este în sine o problemă ce necesită soluţii de optimizare a codului pentru a indeplini restricţiile soluţiilor de rulare serverless, cum ar fi memoria limitată a mediului de execuţie. 
+
+\chapter{Execuţia în cloud a sistemului}
+\section{Cloud-computing în inteligenţă artificială}
+\quad Execuţia în cloud este un domeniu cu o creştere substanţială în ultimii ani, înlocuind practic o bună parte din infrastructurile clasice existente. Acest lucru are implicaţii şi în dezvoltarea sistemelor de inteligenţă artificială, acesta fiind un domeniu ştiut drept unul cu necesar de putere de execuţie mare, dar si cu un potenţial de scalare extraordinar. Tocmai acest potenţial, face ca inteligenţa artificială sa fie candidatul perfect pentru execuţia în cloud. Faptul că efortul de dezvoltare pentru a creea un sistem în cloud pregătit să deservească milioane de utilizatori este egal cu dezvoltarea unui sistem pentru câteva mii de utilizatori în mod clasic, arată din nou de ce această soluţie a devenit alegerea perfectă pentru multe companii.
+\par Deşi opţiunile pentru execuţia în cloud sunt vaste, de la sisteme complet adminsitrate de câtre utilizator, până la funcţii cloud complet administrate de distribuitor, tendinţa este ca acolo unde este posibil, clientul să se ocupe cât mai puţin de administrare, şi cât mai mult de dezvoltarea propriu zisă a produsului. Un alt subiect de interes pentru execuţia în cloud este comparaţia între arhitecturi \emph{serverfull} si \emph{serverless} dar alegerea între cele două diferă de la sistem la sistem deoarece pentru a alege o arhitectură serverless, sistemul trebuie construit pentru asta încă de la inceputul dezvoltării. 
+\par Sistemele de ML, sau IA, sunt deobicei folosite pentru a îmbunătaţii sisteme deja existente, sau pentru a uşura luarea deciziilor vitale. Din acest motiv, monitorizarea execuţiei, asigurarea disponibilităţii sistemului şi posibilitatea de a controla costurile sunt lucruri foarte importante pentru alegerea modului de execuţie a sistemului. Pe lângă asigurarea tuturor acestor facilităţi, soluţiile cloud oferă de multe ori si performanţe mai bune decât infrastructurile fizice echivalente, oferind astfel toate bazele necesare pentru găzduirea sistemelor IA/ML.
+\newpage
+\par La ora actuală, primii 3 distribuitori de soluţii cloud (Amazon,Microsoft,Google) oferă şi soluţii speciale de implementare rapidă a inteligenţei artificiale în aplicaţii deja existente, folosind sisteme special gândite să suporte întreg procesul de dezvoltare si execuţie, totul înglobat într-un singur serviciu :
+\begin{itemize}
+\item Amazon SageMaker
+\item Google AI Platform
+\item Azure Machine Learning
+\end{itemize} 
+\section{Analiza opţiunilor}
+\quad Opţiunile în ceea ce priveşte execuţia în cloud sunt diverse şi în continua dezvoltare. Deşi categoriile de soluţii sunt bine definite, serviciile propriu zise sunt modificate destul de des, avand din ce în ce mai multe facilităţi. \\
+Categoriile de servicii cloud sunt : 
+\begin{itemize}
+\item Infrastructure as a Service (IaaS)
+\item Software as a Service (SaaS) 
+\item Platform as a Service (PaaS) 
+\item Function as a Service (FaaS) 
+\end{itemize}
+\par Soluţiile de tip \emph{IaaS} presupun punerea la dispoziţia clientului doar a infrastructurii cerute, fara nici o administrare din partea distribuitorului. Din acest punct de vedere, soluţiile IaaS pot fi vazute de către client drept infrastructuri fizice, singura diferenţă fiind că locul în care este amplasată aparatura nu este deţinută de către client. În ceea ce priveşte securitatea, update-urile, softurile şi toate legăturile din cadrul infrastructurii, acestea sunt administrate strict de către client. Între a rula un sistem pe o infrastructură locală şi a rula un sistem pe o infrastructura aflată in cloud dar folosind o soluţie IaaS există doar diferenţe de natură economica. 
+
+\par \emph{SaaS} reprezintă o metoda pentru distribuirea softurilor pe internet la cerere şi pe bază de subscripţie. Soluţiile SaaS sunt folosite pentru găzduirea şi adminstrarea softurilor pentru a facilita distribuţia de update-uri sau pathcuri de securitate.
+
+\par Soluţiile \emph{PaaS} reprezintă un mod de a crea medii de dezvoltare, testare sau producţie la cerere. Este construit pentru a asigura o modalitate rapidă de a crea aplicaţii software diverse, de la aplicaţii web, la cele mobile sau API-uri ce fac parte dintr-un alt sistem. Practic, este un mod de a creea si administra soluţii IaaS în mod automat, asigurând toate uneltele necesare pentru scalabilitate automată, distribuirea traficului între servere, mentenanţă, asigurarea securităţii şi lansarea de noi versiuni. Deşi este un serviciu serverfull, acesta ia de pe umerii clientului sarcina creeri şi administrării infrastructurii, grăbind astfel procesul de dezvoltare şi lansare a unui nou sistem software.
+
+\par In ceea ce priveşte FaaS, acesta este un domeniu nou, deoarece a apărut pentru prima data in 2010 fiind oferit de câteva start-upuri la acea vreme. Acest mod de dezvoltare orientat spre microservicii a devenit trendul in industrie în ultimii ani pentru sisteme cu potenţial de scalare mare, deoarece prezintă numeroase avantaje din punct de vedere al modului de dezvoltare si de executie in industrie. In momentul de faţă, pentru servicii de tip FaaS sunt 3 mari jucători: Amazon cu AWS Lambda, Google cu Google Cloud Functions si Microsoft cu Azure Functions.\cite{jonas2019cloud}. Numeroase lucrări din domeniu \cite{christidis2019, wang2019} arată ca rularea algoritmilor de machine learning folosind soluţii FaaS (Function as a service) precum AWS Lambda sau Google cloud functions, este în sine o problemă ce necesită soluţii de optimizare a codului pentru a indeplini restricţiile soluţiilor de rulare serverless, cum ar fi memoria limitată a mediului de execuţie. 
+\par 
+O altă caracteristica a soluţiilor cloud este tipul de execuţie şi anume: \emph{serverfull} sau \emph{serverless}.
+Prin serverfull, se intelege o soluţie ce rulează pe servere ce pot fi indentificate în mod unic, care rulează în mod continuu, dar pe care se execută diferite operaţii în funcţie de nevoile sistemului. IaaS si PaaS sunt mereu soluţii serverfull, în timp ce un serviciu SaaS poate fi atat serverfull cât si serverless.
+Prin serverless se inţelege o soluţie ce lansează noi micro-instanţe pentru fiecare cerere, ce este mai apoi oprită dupa execuţia codului. Costul unei soluţii serverless este direct proporţional cu timpul de execuţie, în timp ce pentru soluţiile serverfull costul este constant. \\
+\par Caracteristicile celor 2 tipuri sunt prezentate în tabelul de mai jos :
+\begin{table}[h]
+\begin{tabular}{|l|l|l|}
+\hline
+Caracteristici             & Soluţii AWS serverfull                  & Soluţii AWS serverless                           \\ \hline
+Când este activ serviciul & Când este declanşat de un eveniment     & Continuu, până la oprire \\ \hline
+Limbaj de programare      & Python, Java, Go, C\#,  şi altele...    & Orice limbaj                                     \\ \hline
+Max RAM                   & 0.125 - 3 Gb                            & 0.5-1952 Gb                                      \\ \hline
+Max Capacitate de stocare & 0.5 Gb                                  & 0-3600 Gb                                        \\ \hline
+Max Timp de rulare        & 900 secunde                             & Nelimitat                                        \\ \hline
+Unitatea minimă taxată    & 0.1 secunde                             & 60 de secunde                                    \\ \hline
+Preţ minim pe unitate     & \$0.0000002                             & \$0.0000867                                      \\ \hline
+Sistem de operare         & Ales de distribuitorul de soluţii cloud & Ales de către client                             \\ \hline
+\end{tabular}
+\end{table}
+
+\section{Comparaţie între soluţiile PaaS si FaaS}
+\section{Descrierea soluţiei curente}
+
 
 \bibliographystyle{abbrv}
+\listoffigures
+\listoftables
 \bibliography{References}
 \end{document}

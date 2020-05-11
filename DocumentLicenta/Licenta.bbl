@@ -28,6 +28,11 @@ A.~{Christidis}, R.~{Davies}, and S.~{Moschoyiannis}.
   environments: a serverless deployment example.
 \newblock pages 55--63, 2019.
 
+\bibitem{RFC7231}
+R.~Fielding and J.~Reschke.
+\newblock Hypertext transfer protocol (http/1.1): Semantics and content.
+\newblock RFC 7231, RFC Editor, June 2014.
+
 \bibitem{flask2014}
 M.~Grinberg.
 \newblock {\em Flask Web Development: Developing Web Applications with Python}.

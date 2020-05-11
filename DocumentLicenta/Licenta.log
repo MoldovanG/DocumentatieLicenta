@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.22)  10 MAY 2020 15:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.22)  11 MAY 2020 18:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -323,63 +323,57 @@ Package caption Info: End \AtBeginDocument code.
 \openout3 = `Licenta.toc'.
 
 
-[3
+[2
 
-
-] (./Licenta.lof)
-\tf@lof=\write4
-\openout4 = `Licenta.lof'.
-
- [2
 
 ] [1]
 Capitolul 1.
 [1
 
 ]
-<images/grafic_cloud_computing.png, id=26, 1003.75pt x 745.78625pt>
+<images/grafic_cloud_computing.png, id=23, 1003.75pt x 745.78625pt>
 File: images/grafic_cloud_computing.png Graphic file (type png)
 <use images/grafic_cloud_computing.png>
 Package pdftex.def Info: images/grafic_cloud_computing.png  used on input line 
-103.
+102.
 (pdftex.def)             Requested size: 175.2664pt x 130.21867pt.
 
-Underfull \hbox (badness 2495) in paragraph at lines 110--111
+Underfull \hbox (badness 2495) in paragraph at lines 109--110
 [][]\OT1/cmr/m/n/12 Folosirea ser-ve-re-lor pro-prii pre-su-pune,
  []
 
 
-Underfull \hbox (badness 2717) in paragraph at lines 110--111
+Underfull \hbox (badness 2717) in paragraph at lines 109--110
 \OT1/cmr/m/n/12 pe l^ang^^Ua prezen[]a fi-zic^^Ua a ser-ve-re-lor ^^Xsi
  []
 
 
-Underfull \hbox (badness 2608) in paragraph at lines 110--111
+Underfull \hbox (badness 2608) in paragraph at lines 109--110
 \OT1/cmr/m/n/12 ar fi ser-vere de baze de date, sis-teme
  []
 
 
-Underfull \hbox (badness 1210) in paragraph at lines 110--111
+Underfull \hbox (badness 1210) in paragraph at lines 109--110
 \OT1/cmr/m/n/12 fap-tul c^^Ua sca-la-rea solu[]iilor software este
  []
 
 
-Underfull \hbox (badness 1242) in paragraph at lines 110--111
+Underfull \hbox (badness 1242) in paragraph at lines 109--110
 \OT1/cmr/m/n/12 in-fras-truc-tura pro-prie, fac aceast^^Ua solu[]ie
  []
 
 
-Underfull \hbox (badness 4303) in paragraph at lines 110--111
+Underfull \hbox (badness 4303) in paragraph at lines 109--110
 \OT1/cmr/m/n/12 s^^Ua nu mai fie fo-lo-sit^^Ua ^^^Pn mod cu-rent
  []
 
 
-Package caption Warning: \label without proper reference on input line 104.
+Package caption Warning: \label without proper reference on input line 103.
 See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `fig:cloud_computing_graph' on page 2 undefined on inp
-ut line 113.
+ut line 112.
 
 [2 <./images/grafic_cloud_computing.png>] [3]
 Capitolul 2.
@@ -387,111 +381,144 @@ Capitolul 2.
 
 ]
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 1
-44.
+43.
  (c:/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 144.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 143.
  [5] [6]
-Overfull \hbox (2.13243pt too wide) in paragraph at lines 182--184
+Overfull \hbox (2.13243pt too wide) in paragraph at lines 181--183
 []\OT1/cmr/m/n/12 Auto Sca-ling Group : acest ser-vi-ciu ofer^^Ua un mod auto-m
 at de lan-sare a instan[]elor
  []
 
 [7]
-<images/client_drawing.png, id=54, 610.53094pt x 279.29344pt>
+<images/client_drawing.png, id=51, 610.53094pt x 279.29344pt>
 File: images/client_drawing.png Graphic file (type png)
 <use images/client_drawing.png>
-Package pdftex.def Info: images/client_drawing.png  used on input line 190.
+Package pdftex.def Info: images/client_drawing.png  used on input line 189.
 (pdftex.def)             Requested size: 438.17273pt x 200.45187pt.
 
 
-Package caption Warning: \label without proper reference on input line 191.
+Package caption Warning: \label without proper reference on input line 190.
 See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `fig:client_design' on page 8 undefined on input line 
-197.
+196.
 
 [8 <./images/client_drawing.png>]
 Capitolul 3.
 [9
 
 ] [10]
-<images/training_stage1_architecture.png, id=65, 1233.60875pt x 597.23125pt>
+<images/training_stage1_architecture.png, id=62, 1233.60875pt x 597.23125pt>
 File: images/training_stage1_architecture.png Graphic file (type png)
 <use images/training_stage1_architecture.png>
 Package pdftex.def Info: images/training_stage1_architecture.png  used on input
- line 224.
+ line 223.
 (pdftex.def)             Requested size: 438.17273pt x 212.13248pt.
 
 
-Package caption Warning: \label without proper reference on input line 225.
+Package caption Warning: \label without proper reference on input line 224.
 See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `fig:stage1_architecture' on page 11 undefined on inpu
-t line 230.
+t line 229.
 
-<images/training_stage2_architecture.png, id=66, 1591.9475pt x 597.23125pt>
+<images/training_stage2_architecture.png, id=63, 1591.9475pt x 597.23125pt>
 File: images/training_stage2_architecture.png Graphic file (type png)
 <use images/training_stage2_architecture.png>
 Package pdftex.def Info: images/training_stage2_architecture.png  used on input
- line 240.
+ line 239.
 (pdftex.def)             Requested size: 438.16342pt x 227.62459pt.
 [11
 
  <./images/training_stage1_architecture.png>]
 
-Package caption Warning: \label without proper reference on input line 241.
+Package caption Warning: \label without proper reference on input line 240.
 See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `fig:stage2_architecture' on page 12 undefined on inpu
-t line 247.
+t line 246.
 
 [12 <./images/training_stage2_architecture.png>]
-<images/inference_architecture.png, id=76, 1620.0525pt x 463.7325pt>
+<images/inference_architecture.png, id=73, 1620.0525pt x 463.7325pt>
 File: images/inference_architecture.png Graphic file (type png)
 <use images/inference_architecture.png>
 Package pdftex.def Info: images/inference_architecture.png  used on input line 
-257.
+256.
 (pdftex.def)             Requested size: 438.16162pt x 170.71506pt.
 
 
-Package caption Warning: \label without proper reference on input line 258.
+Package caption Warning: \label without proper reference on input line 257.
 See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `fig:inference_architecture' on page 13 undefined on i
-nput line 263.
+nput line 262.
 
-[13 <./images/inference_architecture.png>] [14]
+[13 <./images/inference_architecture.png>]
+Overfull \hbox (65.28343pt too wide) in paragraph at lines 281--296
+[][] 
+ []
+
+[14] [15]
 Capitolul 4.
-(./Licenta.bbl [15
+[16
 
 ]
-Underfull \hbox (badness 2547) in paragraph at lines 43--48
+Overfull \hbox (4.41219pt too wide) in paragraph at lines 326--327
+[]\OT1/cmr/m/n/12 Solu[]iile \OT1/cmr/m/it/12 PaaS \OT1/cmr/m/n/12 re-pre-zint^
+^Ua un mod de a crea me-dii de dezvol-tare, tes-tare sau produc[]ie
+ []
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 330--333
+
+ []
+
+
+Overfull \hbox (54.36702pt too wide) in paragraph at lines 335--347
+[][] 
+ []
+
+[18] (./Licenta.lof)
+\tf@lof=\write4
+\openout4 = `Licenta.lof'.
+
+ [19
+
+] (./Licenta.lot)
+\tf@lot=\write5
+\openout5 = `Licenta.lot'.
+
+ (./Licenta.bbl [20
+
+]
+Underfull \hbox (badness 2547) in paragraph at lines 48--53
 []\OT1/cmr/m/n/12 E. Jo-nas, J. Schleier-Smith, V. Sre-e-kanti, C.-C. Tsai, A. 
 Khan-de-lwal,
  []
 
-) [16
+[21
 
-] (./Licenta.aux)
+]) [22] (./Licenta.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 4904 strings out of 480994
- 73828 string characters out of 5916032
- 345662 words of memory out of 5000000
- 20345 multiletter control sequences out of 15000+600000
+ 4911 strings out of 480994
+ 73899 string characters out of 5916032
+ 345667 words of memory out of 5000000
+ 20349 multiletter control sequences out of 15000+600000
  538263 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,7n,45p,1591b,345s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,12n,45p,1591b,345s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/tex
 live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2019
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb><c:/texlive/2019/texmf-dis
@@ -504,10 +531,10 @@ live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2019
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2019/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2019/texmf-dist/fonts/t
 ype1/public/cm-super/sfrm1200.pfb>
-Output written on Licenta.pdf (21 pages, 927784 bytes).
+Output written on Licenta.pdf (26 pages, 937055 bytes).
 PDF statistics:
- 131 PDF objects out of 1000 (max. 8388607)
- 86 compressed objects within 1 object stream
+ 147 PDF objects out of 1000 (max. 8388607)
+ 97 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
