@@ -14,4 +14,4 @@
 \contentsline {section}{\numberline {4.1}Cloud-computing în inteligenţă artificială}{16}%
 \contentsline {section}{\numberline {4.2}Analiza opţiunilor}{17}%
 \contentsline {section}{\numberline {4.3}Comparaţie între soluţiile PaaS si FaaS}{18}%
-\contentsline {section}{\numberline {4.4}Descrierea soluţiei curente}{18}%
+\contentsline {section}{\numberline {4.4}Descrierea soluţiei curente}{20}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.22)  11 MAY 2020 18:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.22)  12 MAY 2020 21:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -486,17 +486,23 @@ Overfull \hbox (54.36702pt too wide) in paragraph at lines 335--347
 [][] 
  []
 
-[18] (./Licenta.lof)
+[18] [19]
+Overfull \hbox (5.89464pt too wide) in paragraph at lines 362--365
+ \OT1/cmr/m/n/12 Solu[]ia aleas^^Ua pen-tru execu[]ia eta-pei de inferen[]^^Ua 
+^^^Pn cloud este \OT1/cmr/m/it/12 AWS Elas-tic Beanstalk\OT1/cmr/m/n/12 .
+ []
+
+[20] [21] (./Licenta.lof)
 \tf@lof=\write4
 \openout4 = `Licenta.lof'.
 
- [19
+ [22
 
 ] (./Licenta.lot)
 \tf@lot=\write5
 \openout5 = `Licenta.lot'.
 
- (./Licenta.bbl [20
+ (./Licenta.bbl [23
 
 ]
 Underfull \hbox (badness 2547) in paragraph at lines 48--53
@@ -504,18 +510,18 @@ Underfull \hbox (badness 2547) in paragraph at lines 48--53
 Khan-de-lwal,
  []
 
-[21
+[24
 
-]) [22] (./Licenta.aux)
+]) [25] (./Licenta.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 4911 strings out of 480994
- 73899 string characters out of 5916032
- 345667 words of memory out of 5000000
- 20349 multiletter control sequences out of 15000+600000
+ 4912 strings out of 480994
+ 73907 string characters out of 5916032
+ 349667 words of memory out of 5000000
+ 20350 multiletter control sequences out of 15000+600000
  538263 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,12n,45p,1591b,345s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -531,10 +537,10 @@ live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2019
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2019/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2019/texmf-dist/fonts/t
 ype1/public/cm-super/sfrm1200.pfb>
-Output written on Licenta.pdf (26 pages, 937055 bytes).
+Output written on Licenta.pdf (29 pages, 944777 bytes).
 PDF statistics:
- 147 PDF objects out of 1000 (max. 8388607)
- 97 compressed objects within 1 object stream
+ 157 PDF objects out of 1000 (max. 8388607)
+ 103 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
