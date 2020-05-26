@@ -8,10 +8,12 @@
 \contentsline {section}{\numberline {2.2}Etapa de inferenţă}{6}%
 \contentsline {section}{\numberline {2.3}Etapa de deployment}{6}%
 \contentsline {chapter}{\numberline {3}Sistemul de detecţie a anomaliilor}{9}%
-\contentsline {section}{\numberline {3.1}Analiza antrenării sistemului}{9}%
-\contentsline {section}{\numberline {3.2}Analiza etapei de inferenţă}{13}%
-\contentsline {chapter}{\numberline {4}Execuţia în cloud a sistemului}{16}%
-\contentsline {section}{\numberline {4.1}Cloud-computing în inteligenţă artificială}{16}%
-\contentsline {section}{\numberline {4.2}Analiza opţiunilor}{17}%
-\contentsline {section}{\numberline {4.3}Comparaţie între soluţiile PaaS si FaaS}{18}%
-\contentsline {section}{\numberline {4.4}Descrierea soluţiei curente}{20}%
+\contentsline {section}{\numberline {3.1}Detecţia obiectelor}{9}%
+\contentsline {section}{\numberline {3.2}Analiza antrenării sistemului}{10}%
+\contentsline {section}{\numberline {3.3}Analiza etapei de inferenţă}{14}%
+\contentsline {section}{\numberline {3.4} Scenarii de utilizare}{16}%
+\contentsline {chapter}{\numberline {4}Execuţia în cloud a sistemului}{18}%
+\contentsline {section}{\numberline {4.1}Cloud-computing în inteligenţă artificială}{18}%
+\contentsline {section}{\numberline {4.2}Analiza opţiunilor}{19}%
+\contentsline {section}{\numberline {4.3}Comparaţie între soluţiile PaaS si FaaS}{20}%
+\contentsline {section}{\numberline {4.4}Descrierea soluţiei curente}{22}%

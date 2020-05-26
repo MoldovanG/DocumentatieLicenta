@@ -44,6 +44,11 @@ R.~T. {Ionescu}, F.~S. {Khan}, M.~{Georgescu}, and L.~{Shao}.
   detection in video.
 \newblock pages 7834--7843, 2019.
 
+\bibitem{jiao2019}
+L.~{Jiao}, F.~{Zhang}, F.~{Liu}, S.~{Yang}, L.~{Li}, Z.~{Feng}, and R.~{Qu}.
+\newblock A survey of deep learning-based object detection.
+\newblock {\em IEEE Access}, 7:128837--128868, 2019.
+
 \bibitem{jonas2019cloud}
 E.~Jonas, J.~Schleier-Smith, V.~Sreekanti, C.-C. Tsai, A.~Khandelwal, Q.~Pu,
   V.~Shankar, J.~Carreira, K.~Krauth, N.~Yadwadkar, et~al.

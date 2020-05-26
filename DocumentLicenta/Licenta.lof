@@ -4,7 +4,9 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Arhitectura abstractizată a API-ului\relax }}{8}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Arhitectura primei etape de antrenare\relax }}{11}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Arhitectura etapei finale de antrenare\relax }}{12}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Arhitectura etapei de inferenţă\relax }}{13}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Prezentarea principiului de funcţionare a autoencoderelor şi arhitectura lor generală\relax }}{11}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Arhitectura primei etape de antrenare\relax }}{12}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Gradienţi obţinuţi în urma aplicării unui kernel \(3 \times 3 \), respectiv unul de dimensiune \(21 \times 21 \)\relax }}{13}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Arhitectura etapei finale de antrenare\relax }}{14}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Arhitectura etapei de inferenţă\relax }}{14}%
 \addvspace {10\p@ }

@@ -100,8 +100,8 @@ Ca şi moduri de expunere a soluţiei software către utilizatori, aceasta se po
 \begin{wrapfigure}{r}{0.45\textwidth}
 	  \begin{center}
         \includegraphics[width=0.4\textwidth]{images/grafic_cloud_computing}
-			\label{fig:cloud_computing_graph}
        \caption{Statistică ce evidenţiază importanţa domeniului cloud computing în ultimii ani}
+			\label{fig:cloud_computing_graph}
        \source {https://www.statista.com/}
     \end{center}
 \end{wrapfigure}
@@ -109,7 +109,7 @@ Ca şi moduri de expunere a soluţiei software către utilizatori, aceasta se po
 Folosirea serverelor proprii presupune, pe lângă prezenţa fizică a serverelor şi cumpărarea tuturor serviciilor conexe, cum ar fi servere de baze de date, sisteme de distribuire a fişierelor, infrastructură de reţea, ş.a.m.d., este nevoie si de o echipă dedicată pentru întreţinerea infrastructurii şi repararea eventualelor probleme ce pot apărea. Aceste considerente, împreuna cu faptul că scalarea soluţiilor software este foarte anevoioasă atunci când este folosită infrastructura proprie, fac această soluţie să nu mai fie folosită în mod curent deoarece incetineşte dezvoltarea aplicaţiei, iar rezultatul final este şi el unul mai puţin calitativ decât ce se poate obţine folosind soluţii în cloud. 
 \par
 Folosirea serviciilor cloud oferă multiple posibilităţi de dezvoltare a aplicaţiilor, de la creeare unei infrastructuri complete care este administrată în totalitate de către dezvoltator, la medii de execuţie serverless care sunt complet administrate de către provider-ul de servicii cloud. 
-Deşi creearea unei infrastructuri proprii încă este necesară acolo unde legislaţia nu permite ca datele sa fie stocate în cloud, în toate celelalte cazuri se face migrarea spre soluţii cloud, lucru vizibil şi în evoluţia cotei de piaţă a domeniului cloud-computing la nivel global, aşa cum se poate observa şi in figura ~\ref{fig:cloud_computing_graph}. 
+Deşi creearea unei infrastructuri proprii încă este necesară acolo unde legislaţia nu permite ca datele sa fie stocate în cloud, în toate celelalte cazuri se face migrarea spre soluţii cloud, lucru vizibil şi în evoluţia cotei de piaţă a domeniului cloud-computing la nivel global, aşa cum se poate observa şi în figura ~\ref{fig:cloud_computing_graph}. 
 
 \section{Conţinutul lucrării}
  Ca şi structură, lucrarea este împărţită în 2 părţi:
@@ -136,7 +136,7 @@ Pentru etapa de antrenare, sistemul trece prin următoarea serie de etape:
 \item Stabileşte k clase de normalitate folosind reprezentările latente
 \item Antrenează k clasificatori de tipul one-versus-rest
 \end{itemize}
-\par Ca prim pas, pentru obţinerea obiectelor dintr-o imagine, atât în etapa de antrenare cât şi în cea de inferenţă este folosit un detector de obiecte pre-antrenat. Un detector de obiecte este un sistem ce primeşte ca input o imagine si după procesarea acesteia rezolvă problema detecţiei de obiecte şi întoarce poziţiile la care sunt plasate obiectele în imagine, şi etichetele asociate acestora. Deşi detectorul de obiecte face parte din arhitectură, deoarece detectarea de obiecte este un subiect în sine, implementarea unui astfel de algoritm nu face obiectul acestei lucrări. Datorită acestui lucru, este folosit un detector deja antrenat din biblioteca \emph{gluoncv} si testat pe setul de date COCO. 
+\par Ca prim pas, pentru obţinerea obiectelor dintr-o imagine, atât în etapa de antrenare cât şi în cea de inferenţă este folosit un detector de obiecte pre-antrenat. Un detector de obiecte este un sistem ce primeşte ca input o imagine si după procesarea acesteia rezolvă problema detecţiei de obiecte şi întoarce poziţiile la care sunt plasate obiectele în imagine, şi etichetele asociate acestora. Deşi detectorul de obiecte face parte din arhitectură, deoarece detectarea de obiecte este un subiect în sine, implementarea unui astfel de algoritm nu face obiectul acestei lucrări. Datorită acestui lucru, este folosit un detector deja antrenat şi testat pe setul de date COCO. 
 \par După aceasta etapă sunt antrenate cele două autoencodere convoluţionale. Unul pentru imaginea propriu-zisă şi altul pentru gradient. Un autoencoder este un tip de reţea neuronală alcătuit din 2 parţi (encoder si decoder) care este folosit pentru a obţine reprezentarea latentă a unui obiect folosind un mod de învăţare nesupervizată. În timpul antrenării, autoencoder-ele au ca scop modificarea parametrilor interni pentru a obţine la ieşire, datele primite la intrare. Deşi ieşirea unui autoencoder nu prezintă interes, ceea ce este folositor este reprezentarea latentă (rezultatul encoder-ului) a datelor. Folosind această tehnică, se obţine o reducere a dimensionalităţii ce imbunătăţeşte semnificativ performanţele clasificatorilor ulteriori. 
 \par Obţinerea reprezentării latente a fiecărui obiect se realizează trecând imaginea, respectiv gradientul său prin encoderul autoencoderului corespunzător si păstrarea rezultatului.
 \par Odată obţinut vectorul de caracteristici pentru toate obiectele din setul de date, urmează stabilirea claselor de normalitate. Acest lucru se realizează prin aplicarea algoritmului k-means de clustering. Pentru implementare a fost folosit algoritmul \emph{LLoyd} implementat în biblioteca python \emph{sklearn}. Aplicând acest algoritm peste vectorii de caracteristici obţinuţi, rezultă k categorii de normalitate cu vectorii de caracteristici aferenţi. 
@@ -187,8 +187,8 @@ Pentru a lansa serverul in cloud, am folosit serviciul Amazon Elastic Beanstalk.
 \begin{figure}
 \begin{center}
         \includegraphics[width=1\textwidth]{images/client_drawing}
-			 \label{fig:client_design}
 			 \caption{Arhitectura abstractizată a API-ului}
+			 \label{fig:client_design}
 \end{center}
 \end{figure}
 
@@ -196,14 +196,34 @@ Dezvoltatorul se ocupă doar de aplicaţia/serverul propriu zis, crează pachetu
 \par Aşa cum se poate observa în figura ~\ref{fig:client_design}, API-ul este creat în aşa fel încât evaluarea se face pentru fiecare cadru în parte. Dezvoltatorul ce implementează clientul pentru API are doar responsabilitatea urcării cadrelor necesare într-un spaţiu S3 prestabilit. Preprocesarea, extragerea obiectelor din imagine, şi rularea detecţiei de anomalii sunt toate executate in cloud. Astfel, efortul computaţional asupra clientului este minim. La momentul accesării API-ului, serverul trebuie să primeasca ca parametru în apelul HTTP cheia de acces pentru cadrele urcate de catre client. Folosind această informaţie, pe server se descarcă aceste cadre şi sunt analizate pentru a detecta anomaliile din cadrul central. Ca şi rezultat, clientul primeşte scorul de anormalitate al cadrului împreună cu toate poziţiile obiectelor anormale din cadru, date ce pot fi folosite pentru notificări ulterioare sau diferite aplicaţii pe partea de client. 
 
 \chapter{Sistemul de detecţie a anomaliilor}
-\quad În acest capitol va fi analizat în detaliu sistemul de detecţie a anomaliilor în video, atât din punct de vedere al arhitecturii alese cât şi din punct de vedere al implementării. În acest sens, etapa de antrenare, şi cea de inferenţă a sistemului vor fi analizate în secţiuni separate.
-\par În ceea ce priveşte detecţia de obiecte, ce este comună tuturor etapelor sistemului, este folosit un detector de obiecte pre-antrenat pe setul de date COCO ce foloseşte o arhitectură SSD-Mobilenet, din biblioteca \emph {gluoncv model-zoo}. Acesta are ca prim avantaj viteza de analiză a unei imagini, deoarece aşa cum se poate observa şi în analiza timpilor de execuţie a sistemului, o mare parte din timp este petrecută detectând obiecte, şi doar o mică parte analizând daca evenimentul este unul normal sau anormal. Astfel, viteza a fost cel mai important aspect luat în considerare pentru alegerea detectorului de obiecte.
+\quad În acest capitol va fi analizat în detaliu sistemul de detecţie a anomaliilor în video, atât din punct de vedere al arhitecturii alese cât şi din punct de vedere al implementării.
+\section{Detecţia obiectelor}
+\par În ceea ce priveşte detecţia de obiecte, aceasta este comună tuturor etapelor sistemului. Aşa cum se poate observa şi in secţiunea de analiză a performanţelor sistemului,detecţia obiectelor din imagine joacă un rol esenţial în viteza finală de analiză. 
+\par Prima opţiune a fost un detector de obiecte pre-antrenat pe setul de date COCO ce foloseşte o arhitectură \textbf{SSD-Mobilenet}, din biblioteca \emph {gluoncv model-zoo}. Acesta are ca prim avantaj viteza de analiză a unei imagini, dar şi precizia bună a detecţiilor. Fiind asemănător cu cel folosit de \emph{Ionescu et al.}, acesta foloseşte o arhitectură ce poate fi exploatată la potenţialul ei maxim doar pe o maşina ce posedă un GPU puternic, având o viteza insuficientă pe sisteme bazate doar pe CPU. 
+\par Deoarece sistemul actual are ca scop final rularea pe o platforma ce necesită resurse minime, atât in cazul rulării offline cât şi online, am ales folosirea unui model cu o arhitectură optimizată pentru rularea pe CPU. Mai precis, un model cu o arhitectură \textbf{YOLOv3-tiny} preluat din biblioteca \emph{libcv}.
+Această schimbare a adus o imbunatăţire de \textbf{10x} în ceea ce priveşte timpul de detecţie a obiectelor per cadru, de la o medie de  1200 de ms la 110 ms.
+\par Detectorul YOLO este un tip de detector cu o singură etapă, ceea ce semnifică ca nu mai este executată etapa de propunere a regiunilor întalnite în detectoarele cu 2 etape, precum \emph{R-CNN} sau \emph{Fast R-CNN}. Astfel, imaginea este împarţită în \( S \times S \) pătrate. Fiecare pătrat este responsabil să detecteze obiectul aflat în interiorul acestuia.Fiecare pătrat are atribuit un scor ce arată probabilitatea ca un obiect să se afle în acesta, şi încă un scor, ce reprezintă intersecţia supra reuniune dintre perimetrul prezis şi poziţia adevărată a obiectulului din imagine.   Pentru fiecare astfel de pătrat sunt propuse \emph{bounding box-uri} şi scorul de încredere aferent. Un astfel de detector are la bază nivele convoluţionale ce extrag caracteristici din imagine urmată de nivele conectate complet pentru clasificare. Desigur, YOLOv3-tiny a suferit numeroase modificări în scopul optimizării arhitecturii din punct de vedere al timpului de execuţie.\cite{jiao2019}
+Odată cu viteza apare în schimb un dezavantaj în ceea ce priveşte detecţia de obiecte: datorită arhitecturii minimaliste, detectorul ales detecteză obiectele în integritatea lor doar dacă sunt relativ aproape de cameră şi nu sunt foarte mici. 
+\par Implementarea detecţiei de obiecte a fost realizată la nivelul sistemului în cadrul clasei \emph{ObjectDetector} ce prezintă următoarele funcţionalităţi :
+\begin{itemize}
+\item La momentul instanţierii rulează detectorul de obiecte pre-antrenat pe imaginea primită ca parametru, obţinând astfel marginile delimitatoare ale obiectelor din imagine împreuna cu scorurile şi clasele aferente. 
+\item Oferă prin intermediul functiei \emph{get\_object\_detections} obiectele extrase din imagine pe baza marginilor delimitatoare obţinute în timpul instanţierii. Obiectele sunt redimensionate la \( 64 \times 64\) şi returnate sub forma unui vector de imagini.
+\item Oferă prin intermediul funcţiei \emph{get\_detections\_and\_cropped\_sections} ce primeşte ca parametru şi imaginea de la indexul t-3 si imaginea de la indexul t + 3 relativ la indexul t  al imaginii folosite pentru instanţiere pachetul complet pentru trecerea prin sistemul de detecţie şi anume : Folosind marginile delimitatoare obţinute în timpul instanţierii, sunt extrase obiectele din toate cele 3 imagini, şi returnate sub forma a 3 vectori de imagini. Astfel un eveniment va fi format din cele 3 imagini aflate la un acelaşi index \emph{i} în cei 3 vectori. 
+
+\end{itemize}
 \section{Analiza antrenării sistemului}
 \quad Din cauza complexităţii problemei de a identifica comportamentul anormal al obiectelor prezente în video, arhitectura sistemului presupune multiple etape de prelucare a datelor până la momentul clasificării finale. Astfel, etapa de antrenare este împărţită la rândul ei în 2 etape:
 \begin{itemize}
 \item Etapa de reducere a dimensionalităţii (antrenarea autoencoderelor)
 \item Etapa de antrenare a clasificatorilor finali
 \end{itemize}
+\begin{figure}[h]
+\begin{center}
+        \includegraphics[width=1\textwidth]{images/arhitectura_autoencoder}
+			 \caption{Prezentarea principiului de funcţionare a autoencoderelor şi arhitectura lor generală}
+			 \label{fig:arhitectura_autoencoder}
+\end{center}
+\end{figure}
 \par În etapa de reducere a dimensionalităţii sunt definite şi antrenate autoencoderele pe baza imaginilor si gradienţilor extraşi din setul de date. Motivul pentru care obiectele sunt procesate de către autoencodere este că datorită antrenării doar pe obiectele din videourile de antrenare, acestea vor invăţa să reprezinte doar evenimentele normale. Astfel, atunci cand prin aceste autoencodere vor trece evenimente anormale, ce nu sunt asemanătoare cu cele de antrenament, autoencoderele vor genera o eroare de reconstrucţie ce va uşura sarcina clasificatorilor finali.
 \par Arhitectura aleasă pentru autoencodere este cea descrisă de \emph{Ionescu et al.}  \cite{ionescu2019object} şi constă intr-o arhitectură convoluţională rapidă, formată dintr-un encoder cu 3 blocuri convoluţional + max-pooling şi un decoder format din 3 blocuri upsampling + convoluţional. Fiecare autoencoder primeşte ca input date de dimensiune \(64 \times 64\) si creează după encoder un vector de caracteristici de dimensiune \(8 \times 8 \times 16\).  Structura detaliată a autoencoderelor este : 
 \begin{itemize}
@@ -217,33 +237,40 @@ Dezvoltatorul se ocupă doar de aplicaţia/serverul propriu zis, crează pachetu
 \item Un ultim strat Convoluţional ce are ca rol reducerea dimensiunii de ieşire de la \(64 \times 64 \times 32\) la \(64 \times 64 \times 1\)\cite{ionescu2019object} .  Aceste este bazat pe 1 filtru de dimensiune \(3 \times 3 \) urmat de funcţia de activare \emph{Sigmoid}
 \end{itemize}
 Primele 4 straturi reprezintă encoder-ul, în timp ce ultimele 4 straturi reprezintă decoderul. 
-\clearpage
 \begin{figure}[h]
 \begin{center}
         \includegraphics[width=1\textwidth]{images/training_stage1_architecture}
-			 \label{fig:stage1_architecture}
 			 \caption{Arhitectura primei etape de antrenare}
+			 \label{fig:stage1_architecture}
 \end{center}
 \end{figure}
 \par
 Implementarea arhitecturii prezentate în figura ~\ref{fig:stage1_architecture} constă în următorii paşi:
 \begin {itemize}
-\item Pentru toate videourile de antrenare se execută detecţia de obiecte pentru fiecare cadru, extrăgând astfel toate obiectele din video.Fiecare cadru este transformat în alb-negru pentru a fi prelucrat în etapele următoare. Pentru fiecare obiect extras, imaginea acestuia este redimensionată pentru a respecta dimensiunea de intrare a autoencodere-lor la \( 64 \times 64 \) iar apoi este calculat gradientul, ce reflectă mişcarea obiectului. Gradientul este calculat dupa formula: \[\sqrt{G_{x}^2 + G_{y}^2}\] Unde \(G_{x}\), \(G_{y}\) sunt imagini ce în fiecare punct conţin derivata orizontală respectiv verticală a imaginii iniţiale, obţinută prin aplicarea unui kernel Sobel de \(5 \times 5 \).
+\item Pentru toate videourile de antrenare se execută detecţia de obiecte pentru fiecare cadru, extrăgând astfel toate obiectele din video.Fiecare cadru este transformat în alb-negru pentru a fi prelucrat în etapele următoare. Pentru fiecare obiect extras, imaginea acestuia este redimensionată pentru a respecta dimensiunea de intrare a autoencodere-lor la \( 64 \times 64 \) iar apoi este calculat gradientul, ce reflectă mişcarea obiectului. Gradientul este calculat dupa formula: \[\sqrt{G_{x}^2 + G_{y}^2}\] Unde \(G_{x}\), \(G_{y}\) sunt imagini ce în fiecare punct conţin derivata orizontală respectiv verticală a imaginii iniţiale, obţinută prin aplicarea unui kernel Sobel de \(3 \times 3 \).
+\par Dimensiunea kernelului folosit pentru calcularea gradienţilor este foarte importantă pentru extragerea precisă a detaliilor, deoarece, asa cum se poate observa in figura ~\ref{fig:gradient_kernel}, cu cât kernelul este mai mare, cu atât trasaturile extrase sunt mai generale.
 \item Imaginile si gradienţii astfel obţinuţi sunt adaugaţi intr-o colecţie generală pentru tot setul de date. Cele 2 colecţii astfel create vor servi drept input pentru antrenarea autoencoderelor.
 \item Folosind cele 2 colecţii (de imagini, respectiv de gradienţi) este antrenat câte un autoencoder pentru fiecare colecţie. Înainte de a fi folosite pentru antrenarea autoencoderelor, atât imaginile, cât şi gradienţii, sunt normalizate în intervalul [0,1] .Antrenarea se realizează folosind optimizatorul Adam \cite{adam2017} şi funcţia loss ce constă în diferenţa medie a pătratelor, dată de formula : 
 \(L(I,O) = \frac{1} {h*w} \sum_{1}^{h} \sum_{1}^{w} (I_{ij} * O_{ij})^2 \)   \cite{ionescu2019object} unde I si O reprezintă imaginea de input respectiv de output si h,w sunt dimensiunile imaginilor. Aceasta este executată timp de 100 de epoci cu o rată de invaţare de \(10^{-3}\), dar având şi o regula de oprire rapidă, ce inseamnă că dacă timp de 2 epoci funcţia loss nu se imbunătaţeşte, antrenarea este finalizată.
 \end{itemize}
 
-\begin{figure}[h]
-\begin{center}
-        \includegraphics[width=1\textwidth,height=8cm]{images/training_stage2_architecture}
-			 \label{fig:stage2_architecture}
-			 \caption{Arhitectura etapei finale de antrenare}
-\end{center}
-\end{figure}
+\begin{wrapfigure}{r}{0.45\textwidth}
+	  \begin{center}
+        \includegraphics[width=0.4\textwidth]{images/gradients}
+        \caption{Gradienţi obţinuţi în urma aplicării unui kernel \(3 \times 3 \), respectiv unul de dimensiune   \(21 \times 21 \)}
+			\label{fig:gradient_kernel}
+    \end{center}
+\end{wrapfigure}
 
 \par
 În etapa de antrenare a clasificatorilor finali, se folosesc autoencoderele antrenate în etapa precedentă pentru a obţine vectorii de caracteristici specifici fiecărui eveniment prezent în setul de date. Ca şi prim pas, se detectează toate obiectele prezente în fiecare cadru din video-urile  de antrenare, iar pentru fiecare obiect, se folosesc coordonatele acestuia pentru a decupa acelaşi obiect din cadrul \emph{t-3} şi \emph{t+3}, respectiv la indexul \emph{t} curent. Se calculează gradienţii pentru imaginile decupate, astfel este reprezentată mişcarea obiectului faţă de cadrul curent, iar apoi se obţin vectorii caracteristici ai fiecarui gradient prin trecerea acestora prin autoencoderul corespunzător antrenat în etapa precendentă. Odată obţinuti cei 3 vectori caracteristici specifici evenimentului, aşa cum este ilustrat şi în figura ~\ref{fig:stage2_architecture}, concatenarea acestora este stocată intr-o colecţie globală ce reţine datele pentru tot setul de date.
+\begin{figure}[h]
+\begin{center}
+        \includegraphics[width=1\textwidth,height=8cm]{images/training_stage2_architecture}
+			 \caption{Arhitectura etapei finale de antrenare}
+			 \label{fig:stage2_architecture}
+\end{center}
+\end{figure}
 \par
 Aplicând algoritmul de \emph{k-means clustering} se obţin k categorii de normalitate. Astfel, pentru fiecare eveniment din colecţia globală este cunoscută categoria \emph{i} din care face parte. Folosind aceste date, putem antrena cei k clasificatori binari. Pentru fiecare categorie, un clasificator binar este antrenat folosind evenimentele din categoria curent drept date de antrenare pozitive, iar celelalte k-1 categorii drept date de antrenare negative. În final, se obţin k clasificatori binari ce au rolul de a evalua daca un eveniment aparţine sau nu categoriei de normalitate \emph{i} unde \emph{i} este indicele clasificatorului 
 \emph{\(g_{i}\)}. 
@@ -254,8 +281,8 @@ Aplicând algoritmul de \emph{k-means clustering} se obţin k categorii de norma
 \begin{figure}[h]
 \begin{center}
         \includegraphics[width=1\textwidth,height=6cm]{images/inference_architecture}
-			 \label{fig:inference_architecture}
 			 \caption{Arhitectura etapei de inferenţă}
+			 \label{fig:inference_architecture}
 \end{center}
 \end{figure}
 Pentru a obţine scorul unui eveniment, un pas foarte important este obţinerea vectorului de caracteristici corespunzător. Acesta se obţine folosind autoencoderele antrenate in etapa precedentă, după pre-procesarea cadrelor corespunzătoare evenimentului.  Pre-procesarea este asemanătoare etapei de antrenare, şi anume, pentru fiecare obiect dintr-un cadru \emph{t}, se selectează aceeaşi zonă din cadrele \emph{t-3} si \emph{t+3} cu scopul de a calcula gradienţii ce reflectă mişcarea obiectului relativ la cadrul t. Odată obţinute aceste 3 date (imaginea obiectului şi cei 2 gradienţi) aşa cum este descris şi in figura
@@ -298,6 +325,11 @@ Valoarea codului & Semnificaţie                                                
 \par Modul în care este structurat serverul face foarte uşoară crearea de noi API-uri, cu aceeaşi funcţionalitate, dar orientate spre tipuri de anormalitate diferite. Aşa cum a fost descris şi în introducere, detectarea anomaliilor este dependentă de setul de date de referinţă. Astfel, fiecare model antrenat pe un set de date diferit, acoperă o arie diferită de anomalii. Altfel spus, în funcţie de setul de date folosit la antrenare, sistemul va detecta un alt set de evenimente drept anomalii. În fine, un nou API este necesar pentru fiecare astfel de model. 
 \par Deoarece arhitectura curentă a serverului încarcă modelele pre-antrenate dintr-o destinaţie S3 la momentul iniţializării, pentru a creea un nou API ce a fost antrenat pe un alt set de date, este necesară doar crearea unei noi destinaţii S3, încarcarea modelelor pre-antrenate la acea destinaţie, schimbarea în cod a denumirii vechii destinaţii în cea nouă şi apoi un nou deployment. Astfel, cu un număr minim de paşi, poate fi creat un nou API ce execută etapa de inferenţă pentru un sistem ce a fost antrenat pe un nou set de date.
 
+\section{ Scenarii de utilizare}
+\quad Acest sistem de detecţie a anomaliilor are aplicaţii multiple în domeniul supravegherii inteligente. Este cunoscut faptul ca datele înseamnă putere şi control, însă acest lucru este adevărat doar atunci când datele sunt analizate. Există nenumărate sisteme de supraveghere actuale ce nu conţin nici o forma de analiză pasivă, sub forma unui program. Majoritatea se bazează pe monitorizarea activă a datelor de către o persoană, fapt ce limitează capacitatea sistemului de a fi monitorizat, deoarece pentru pentru supravegherea unei suprafeţe mari, nu este posibilă monitorizarea activă a tuturor datelor. 
+\par Deoarece sistemul actual a fost dezvoltat să ruleze folosind relativ puţine resurse, acesta este pretabil pentru a fi folosit atât pe echipamente independente din industria IoT cât şi pe sisteme complexe de analiză a datelor agregate din mai multe surse.
+\par Un scenariu de utilizare în industria IoT, ar fi detecţia braconajului, sau a defrişărilor de padure. Deoarece deobicei conexiunea la internet în parcurile naturale este foarte slabă, trimiterea imaginilor către server nu este o opţiune. Astfel, sistemul trebuie rulat local, pe dispozitivul propriu-zis, urmând mai apoi, în cazul detectării unei anomalii, să fie trimisă către server doar o notificare, fapt ce reduce semnificativ cantitatea de date trimisă prin reţea. În acest caz, sistemul ar putea fi combinat cu un senzor fizic de mişcare, pentru a analiza doar imaginile în care există mişcare. Astfel, consumul de energie al dispozitivului ar fi de asemenea redus. 
+\par În ceea ce priveşte sistemele de analiză a datelor, sistemul actual este pretabil pentru a fi distribuit într-o reţea de servere şi pentru a analiza în paralele înregistrări din surse multiple.În acest caz, sistemul poate analiza atât date în timp real, cât şi date istorice în funcţie de necesităţi. Astfel, sisteme complexe precum sistemul de supraveghere al unui oraş poate fi monitorizat pasiv, iar monitorizarea activă să se facă doar asupra anomaliilor detectate de sistem. Astfel, sanşele ca anumite evenimente să treacă neobservate sunt reduse semnificativ. 
 \chapter{Execuţia în cloud a sistemului}
 \section{Cloud-computing în inteligenţă artificială}
 \quad Execuţia în cloud este un domeniu cu o creştere substanţială în ultimii ani, înlocuind practic o bună parte din infrastructurile clasice existente. Acest lucru are implicaţii şi în dezvoltarea sistemelor de inteligenţă artificială, acesta fiind un domeniu ştiut drept unul cu necesar de putere de execuţie mare, dar si cu un potenţial de scalare extraordinar. Tocmai acest potenţial, face ca inteligenţa artificială sa fie candidatul perfect pentru execuţia în cloud. Faptul că efortul de dezvoltare pentru a creea un sistem în cloud pregătit să deservească milioane de utilizatori este egal cu dezvoltarea unui sistem pentru câteva mii de utilizatori în mod clasic, arată din nou de ce această soluţie a devenit alegerea perfectă pentru multe companii.
