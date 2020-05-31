@@ -28,10 +28,20 @@ A.~{Christidis}, R.~{Davies}, and S.~{Moschoyiannis}.
   environments: a serverless deployment example.
 \newblock pages 55--63, 2019.
 
+\bibitem{dumoulin2016guide}
+V.~{Dumoulin} and F.~{Visin}.
+\newblock {A guide to convolution arithmetic for deep learning}.
+\newblock {\em ArXiv e-prints}, mar 2016.
+
 \bibitem{RFC7231}
 R.~Fielding and J.~Reschke.
 \newblock Hypertext transfer protocol (http/1.1): Semantics and content.
 \newblock RFC 7231, RFC Editor, June 2014.
+
+\bibitem{goodfellow2016}
+I.~Goodfellow, Y.~Bengio, and A.~Courville.
+\newblock {\em Deep Learning}.
+\newblock MIT Press.
 
 \bibitem{flask2014}
 M.~Grinberg.

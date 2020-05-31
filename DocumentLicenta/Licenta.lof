@@ -2,11 +2,15 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Statistică ce evidenţiază importanţa domeniului cloud computing în ultimii ani\relax }}{2}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Arhitectura abstractizată a API-ului\relax }}{8}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Aplicarea operatorului de convoluţie\relax }}{5}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Arhitectura abstractizată a API-ului\relax }}{9}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Prezentarea principiului de funcţionare a autoencoderelor şi arhitectura lor generală\relax }}{11}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Arhitectura primei etape de antrenare\relax }}{12}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Gradienţi obţinuţi în urma aplicării unui kernel \(3 \times 3 \), respectiv unul de dimensiune \(21 \times 21 \)\relax }}{13}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Arhitectura etapei finale de antrenare\relax }}{14}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Arhitectura etapei de inferenţă\relax }}{14}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Prezentarea principiului de funcţionare a autoencoderelor şi arhitectura lor generală\relax }}{12}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Arhitectura primei etape de antrenare\relax }}{13}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Gradienţi obţinuţi în urma aplicării unui kernel \(3 \times 3 \), respectiv unul de dimensiune \(21 \times 21 \)\relax }}{14}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Arhitectura etapei finale de antrenare\relax }}{15}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Arhitectura etapei de inferenţă\relax }}{16}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Componentele diverselor modele de procesare în cloud\relax }}{21}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Scorurile la nivel de cadru pentru video-ul nr.6 din setul de date Avenue. Scorul fiecărui cadru este marcat cu albastru închis, în timp ce zonele cu fundal albastru deschis reprezintă perioadele în care au existat anomalii.\relax }}{26}%

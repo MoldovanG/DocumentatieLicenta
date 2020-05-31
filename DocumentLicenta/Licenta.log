@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.22)  26 MAY 2020 12:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.22)  31 MAY 2020 17:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -372,162 +372,214 @@ Capitolul 2.
 [4
 
 ]
+<images/convolution_operator.png, id=37, 269.33958pt x 201.41917pt>
+File: images/convolution_operator.png Graphic file (type png)
+<use images/convolution_operator.png>
+Package pdftex.def Info: images/convolution_operator.png  used on input line 14
+5.
+(pdftex.def)             Requested size: 175.2664pt x 131.0715pt.
+
+Overfull \hbox (11.18169pt too wide) in paragraph at lines 152--153
+[][]\OT1/cmr/m/n/12 Operatorul de convolu[]ie per-mite ^^^Pntelegerea
+ []
+
+
+Underfull \hbox (badness 2856) in paragraph at lines 152--153
+\OT1/cmr/m/n/12 da-te-lor asu-pra c^^Uarora este apli-cat, fapt
+ []
+
+
+Underfull \hbox (badness 1817) in paragraph at lines 152--153
+\OT1/cmr/m/n/12 ilus-trat ^^^Pn fi-gura  2.1[]. Auto-en-co-de-rele
+ []
+
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 1
-43.
- (c:/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
+55.
+(c:/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 143.
- [5] [6]
-Overfull \hbox (2.13243pt too wide) in paragraph at lines 181--183
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 155.
+ [5 <./images/convolution_operator.PNG>] [6] [7]
+Overfull \hbox (2.13243pt too wide) in paragraph at lines 193--195
 []\OT1/cmr/m/n/12 Auto Sca-ling Group : acest ser-vi-ciu ofer^^Ua un mod auto-m
 at de lan-sare a instan[]elor
  []
 
-[7]
-<images/client_drawing.png, id=51, 610.53094pt x 279.29344pt>
+[8]
+<images/client_drawing.png, id=56, 610.53094pt x 279.29344pt>
 File: images/client_drawing.png Graphic file (type png)
 <use images/client_drawing.png>
-Package pdftex.def Info: images/client_drawing.png  used on input line 189.
+Package pdftex.def Info: images/client_drawing.png  used on input line 201.
 (pdftex.def)             Requested size: 438.17273pt x 200.45187pt.
- [8 <./images/client_drawing.png>]
+ [9 <./images/client_drawing.png>]
 Capitolul 3.
 
-Overfull \hbox (0.28938pt too wide) in paragraph at lines 201--202
+Overfull \hbox (0.28938pt too wide) in paragraph at lines 213--214
 \OT1/cmr/m/n/12 A^^Xsa cum se poate ob-serva ^^Xsi in sec[]iunea de ana-liz^^Ua
  a performan[]elor sistemului,detec[]ia
  []
 
-[9
+[10
 
 ]
-<images/arhitectura_autoencoder.png, id=59, 530.98375pt x 308.15125pt>
+<images/arhitectura_autoencoder.png, id=64, 530.98375pt x 308.15125pt>
 File: images/arhitectura_autoencoder.png Graphic file (type png)
 <use images/arhitectura_autoencoder.png>
 Package pdftex.def Info: images/arhitectura_autoencoder.png  used on input line
- 222.
+ 234.
 (pdftex.def)             Requested size: 438.17273pt x 254.29373pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[10] [11 <./images/arhitectura_autoencoder.png>]
-<images/training_stage1_architecture.png, id=67, 1233.60875pt x 597.23125pt>
+[11] [12 <./images/arhitectura_autoencoder.png>]
+<images/training_stage1_architecture.png, id=72, 1233.60875pt x 597.23125pt>
 File: images/training_stage1_architecture.png Graphic file (type png)
 <use images/training_stage1_architecture.png>
 Package pdftex.def Info: images/training_stage1_architecture.png  used on input
- line 242.
+ line 261.
 (pdftex.def)             Requested size: 438.17273pt x 212.13248pt.
- [12 <./images/training_stage1_architecture.png>]
-<images/gradients.png, id=72, 845.40843pt x 310.15875pt>
+ [13 <./images/training_stage1_architecture.png>]
+<images/gradients.png, id=77, 845.40843pt x 310.15875pt>
 File: images/gradients.png Graphic file (type png)
 <use images/gradients.png>
-Package pdftex.def Info: images/gradients.png  used on input line 259.
+Package pdftex.def Info: images/gradients.png  used on input line 279.
 (pdftex.def)             Requested size: 175.2664pt x 64.29758pt.
-<images/training_stage2_architecture.png, id=73, 1591.9475pt x 597.23125pt>
+<images/training_stage2_architecture.png, id=78, 1591.9475pt x 597.23125pt>
 File: images/training_stage2_architecture.png Graphic file (type png)
 <use images/training_stage2_architecture.png>
 Package pdftex.def Info: images/training_stage2_architecture.png  used on input
- line 269.
+ line 289.
 (pdftex.def)             Requested size: 438.16342pt x 227.62459pt.
 
-Underfull \hbox (badness 1655) in paragraph at lines 266--274
+Underfull \hbox (badness 1655) in paragraph at lines 286--294
 \OT1/cmr/m/n/12 se de-tec-teaz^^Ua toate obiec-tele pre-zente ^^^Pn
  []
 
 
-Underfull \hbox (badness 2057) in paragraph at lines 266--274
+Underfull \hbox (badness 2057) in paragraph at lines 286--294
 \OT1/cmr/m/n/12 cu-rent. Se cal-cu-leaz^^Ua gradien[]ii pen-tru
+ []
+
+[14
+
+ <./images/gradients.png>] [15 <./images/training_stage2_architecture.png>]
+<images/inference_architecture.png, id=88, 1620.0525pt x 463.7325pt>
+File: images/inference_architecture.png Graphic file (type png)
+<use images/inference_architecture.png>
+Package pdftex.def Info: images/inference_architecture.png  used on input line 
+303.
+(pdftex.def)             Requested size: 438.16162pt x 170.71506pt.
+
+[16 <./images/inference_architecture.png>]
+Overfull \hbox (65.28343pt too wide) in paragraph at lines 328--343
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--347
+
+ []
+
+[17] [18] [19]
+Capitolul 4.
+[20
+
+]
+<images/cloudDiagram.png, id=105, 697.60625pt x 250.9375pt>
+File: images/cloudDiagram.png Graphic file (type png)
+<use images/cloudDiagram.png>
+Package pdftex.def Info: images/cloudDiagram.png  used on input line 372.
+(pdftex.def)             Requested size: 438.17273pt x 157.61665pt.
+ [21 <./images/cloudDiagram.png>]
+Overfull \hbox (4.41219pt too wide) in paragraph at lines 389--390
+[]\OT1/cmr/m/n/12 Solu[]iile \OT1/cmr/m/it/12 PaaS \OT1/cmr/m/n/12 re-pre-zint^
+^Ua un mod de a crea me-dii de dezvol-tare, tes-tare sau produc[]ie
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 393--396
+
+ []
+
+
+Overfull \hbox (54.36702pt too wide) in paragraph at lines 398--410
+[][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[13 <./images/gradients.png>]
-<images/inference_architecture.png, id=78, 1620.0525pt x 463.7325pt>
-File: images/inference_architecture.png Graphic file (type png)
-<use images/inference_architecture.png>
-Package pdftex.def Info: images/inference_architecture.png  used on input line 
-283.
-(pdftex.def)             Requested size: 438.16162pt x 170.71506pt.
- [14 <./images/training_stage2_architecture.png> <./images/inference_architectu
-re.png>] [15]
-Overfull \hbox (65.28343pt too wide) in paragraph at lines 308--323
-[][] 
- []
-
-[16] [17]
-Capitolul 4.
-[18
-
-]
-Overfull \hbox (4.41219pt too wide) in paragraph at lines 358--359
-[]\OT1/cmr/m/n/12 Solu[]iile \OT1/cmr/m/it/12 PaaS \OT1/cmr/m/n/12 re-pre-zint^
-^Ua un mod de a crea me-dii de dezvol-tare, tes-tare sau produc[]ie
- []
-
-[19]
-Underfull \hbox (badness 10000) in paragraph at lines 362--365
-
- []
-
-
-Overfull \hbox (54.36702pt too wide) in paragraph at lines 367--379
-[][] 
- []
-
-[20] [21]
-Overfull \hbox (5.89464pt too wide) in paragraph at lines 394--397
+[22] [23]
+Overfull \hbox (5.89464pt too wide) in paragraph at lines 425--428
  \OT1/cmr/m/n/12 Solu[]ia aleas^^Ua pen-tru execu[]ia eta-pei de inferen[]^^Ua 
 ^^^Pn cloud este \OT1/cmr/m/it/12 AWS Elas-tic Beanstalk\OT1/cmr/m/n/12 .
  []
 
-[22] [23] (./Licenta.lof)
+[24] [25]
+Capitolul 5.
+<images/rezultate_video_6.png, id=123, 642.4pt x 481.8pt>
+File: images/rezultate_video_6.png Graphic file (type png)
+<use images/rezultate_video_6.png>
+Package pdftex.def Info: images/rezultate_video_6.png  used on input line 446.
+(pdftex.def)             Requested size: 219.08636pt x 164.30974pt.
+
+Overfull \hbox (21.90999pt too wide) in paragraph at lines 446--447
+ [] 
+ []
+
+[26
+
+ <./images/rezultate_video_6.png>] [27] (./Licenta.lof)
 \tf@lof=\write4
 \openout4 = `Licenta.lof'.
 
- [24
+ [28
 
 ] (./Licenta.lot)
 \tf@lot=\write5
 \openout5 = `Licenta.lot'.
 
- (./Licenta.bbl [25
+(./Licenta.bbl [29
 
 ]
-Underfull \hbox (badness 2547) in paragraph at lines 53--58
+Underfull \hbox (badness 2547) in paragraph at lines 63--68
 []\OT1/cmr/m/n/12 E. Jo-nas, J. Schleier-Smith, V. Sre-e-kanti, C.-C. Tsai, A. 
 Khan-de-lwal,
  []
 
-[26
+[30
 
-]) [27] (./Licenta.aux) ) 
+]) [31] (./Licenta.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 4931 strings out of 480994
- 74415 string characters out of 5916032
- 350480 words of memory out of 5000000
- 20367 multiletter control sequences out of 15000+600000
+ 4960 strings out of 480994
+ 75190 string characters out of 5916032
+ 348522 words of memory out of 5000000
+ 20393 multiletter control sequences out of 15000+600000
  538263 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,12n,45p,1591b,341s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/c
-m-super-ts1.enc}<c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
-12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb><c:
-/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/
-2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2019/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2019/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr6.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
-10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:
-/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/
-2019/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on Licenta.pdf (31 pages, 1069204 bytes).
+{c:/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/tex
+live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2019
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb><c:/texlive/2019/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2019/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.
+pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/tex
+live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2019
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2019/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2019/texmf-dist/fonts/t
+ype1/public/cm-super/sfrm1200.pfb>
+Output written on Licenta.pdf (35 pages, 1254756 bytes).
 PDF statistics:
- 167 PDF objects out of 1000 (max. 8388607)
- 108 compressed objects within 2 object streams
+ 185 PDF objects out of 1000 (max. 8388607)
+ 116 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
