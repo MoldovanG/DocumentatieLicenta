@@ -17,4 +17,5 @@
 \contentsline {section}{\numberline {4.2}Analiza opţiunilor}{21}%
 \contentsline {section}{\numberline {4.3}Comparaţie între soluţiile PaaS si FaaS}{22}%
 \contentsline {section}{\numberline {4.4}Descrierea soluţiei curente}{24}%
-\contentsline {chapter}{\numberline {5}Rezultate şi performanţe}{26}%
+\contentsline {chapter}{\numberline {5}Rezultate şi analiza timpilor de execuţie}{26}%
+\contentsline {section}{\numberline {5.1}Timp de execuţie}{28}%

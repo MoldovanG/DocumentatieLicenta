@@ -14,3 +14,4 @@
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Componentele diverselor modele de procesare în cloud\relax }}{21}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Scorurile la nivel de cadru pentru video-ul nr.6 din setul de date Avenue. Scorul fiecărui cadru este marcat cu albastru închis, în timp ce zonele cu fundal albastru deschis reprezintă perioadele în care au existat anomalii.\relax }}{26}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Detecţii fals pozitive datorate detecţiei deficitare a marginilor obiectelor de către detectorul de obiecte. În prima imagine se poate observa un cadran ce conţine 2 persoane, în timp ce in cea de a 2-a imagine, cadranul ce ar fi trebuit sa încadreze persoana în totalitate, conţine doar o mică parte din aceasta.\relax }}{27}%

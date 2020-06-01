@@ -213,7 +213,7 @@ Dezvoltatorul se ocupă doar de aplicaţia/serverul propriu zis, crează pachetu
 \par În ceea ce priveşte detecţia de obiecte, aceasta este comună tuturor etapelor sistemului. Aşa cum se poate observa şi in secţiunea de analiză a performanţelor sistemului,detecţia obiectelor din imagine joacă un rol esenţial în viteza finală de analiză. 
 \par Prima opţiune a fost un detector de obiecte pre-antrenat pe setul de date COCO ce foloseşte o arhitectură \textbf{SSD-Mobilenet}, din biblioteca \emph {gluoncv model-zoo}. Acesta are ca prim avantaj viteza de analiză a unei imagini, dar şi precizia bună a detecţiilor. Fiind asemănător cu cel folosit de \emph{Ionescu et al.}, acesta foloseşte o arhitectură ce poate fi exploatată la potenţialul ei maxim doar pe o maşina ce posedă un GPU puternic, având o viteza insuficientă pe sisteme bazate doar pe CPU. 
 \par Deoarece sistemul actual are ca scop final rularea pe o platforma ce necesită resurse minime, atât in cazul rulării offline cât şi online, am ales folosirea unui model cu o arhitectură optimizată pentru rularea pe CPU. Mai precis, un model cu o arhitectură \textbf{YOLOv3-tiny} preluat din biblioteca \emph{libcv}.
-Această schimbare a adus o imbunatăţire de \textbf{8x} în ceea ce priveşte timpul de detecţie a obiectelor per cadru, de la o medie de  1040 de ms la 130 ms.
+Această schimbare a adus o imbunatăţire de \textbf{10x} în ceea ce priveşte timpul de detecţie a obiectelor per cadru, de la o medie de  1200 de ms la 120 ms.
 \par Detectorul YOLO este un tip de detector cu o singură etapă, ceea ce semnifică ca nu mai este executată etapa de propunere a regiunilor întalnite în detectoarele cu 2 etape, precum \emph{R-CNN} sau \emph{Fast R-CNN}. Astfel, imaginea este împarţită în \( S \times S \) pătrate. Fiecare pătrat este responsabil să detecteze obiectul aflat în interiorul acestuia.Fiecare pătrat are atribuit un scor ce arată probabilitatea ca un obiect să se afle în acesta, şi încă un scor, ce reprezintă intersecţia supra reuniune dintre perimetrul prezis şi poziţia adevărată a obiectulului din imagine.   Pentru fiecare astfel de pătrat sunt propuse \emph{bounding box-uri} şi scorul de încredere aferent. Un astfel de detector are la bază nivele convoluţionale ce extrag caracteristici din imagine urmată de nivele conectate complet pentru clasificare. Desigur, YOLOv3-tiny a suferit numeroase modificări în scopul optimizării arhitecturii din punct de vedere al timpului de execuţie.\cite{jiao2019}
 Odată cu viteza apare în schimb un dezavantaj în ceea ce priveşte detecţia de obiecte: datorită arhitecturii minimaliste, detectorul ales detecteză obiectele în integritatea lor doar dacă sunt relativ aproape de cameră şi nu sunt foarte mici. 
 \par Implementarea detecţiei de obiecte a fost realizată la nivelul sistemului în cadrul clasei \emph{ObjectDetector} ce prezintă următoarele funcţionalităţi :
@@ -436,9 +436,9 @@ Pentru a lansa o aplicaţie folosind elastic beanstalk, este necesar să creezi 
 \par Capacitatea de multi-threading din cadrul serverelor, la care se adaugă scalarea automată a numarului acestora în funcţie de traficul ce accesează API-ul, face ca resursele sa fie folosite la maxim, atât din punct de vedere al performanţei disponibile, cât şi din punct de vedere economic. 
 \par Un alt avantaj al acestei soluţii este usurinţa cu care se poate schimba mediul de execuţie. Spre exemplu, într-un anumit scenariu, în care se observă în panoul de monitorizare că instanţele EC2 curente sunt suprasolicitate, cu ajutorul interfeţei web, sau celei din linia de comandă, pot fi schimbate tipurile de instanţe EC2 folosite cu unele mai performante fără a avea serviciul indisponibil pe durata acestei modificări.
 
-\chapter {Rezultate şi performanţe}
+\chapter {Rezultate şi analiza timpilor de execuţie}
 
-Sistemul a fost evaluat pe setul de date \emph{Avenue} . Ca şi modalitate de evaluare a fost luată în considerare aria de sub curba (eng: \emph {area under the curve (AUC)}) raportată la scorul fiecărui cadru. 
+\quad Sistemul a fost evaluat pe setul de date \emph{Avenue} . Ca şi modalitate de evaluare a fost luată în considerare aria de sub curba (eng: \emph {area under the curve (AUC)}) raportată la scorul fiecărui cadru. 
 \par Scorul unui cadru reprezintă maximul dintre scorurile obţinute de obiectele din imagine. Această valoare este valoroasă şi în practică, deoarece pe baza acesteia se pot izola cadrele ce au un scor de anomalie peste un anumit nivel. Pentru a evalua întregul set de date, au fost evaluate individual video-urile de test, iar mai apoi a fost calculată media scorurilor obţinute, metodă folosită şi de către  \emph{Ionescu et al.} \cite{ionescu2019object}.
 \par 
 \begin{wrapfigure}{r}{0.45\textwidth}
@@ -449,9 +449,27 @@ Sistemul a fost evaluat pe setul de date \emph{Avenue} . Ca şi modalitate de ev
 \end{center}
 \end{wrapfigure}
 \quad Rezultatele sistemului sunt de (xxx \%), sub cele prezentate în lucrarea iniţiala  \cite{ionescu2019object}, datorate orientării spre viteză pe sisteme ce nu posedă GPU, limitărilor fizice ale maşinii folosite pentru antrenare şi a folosirii unei librării diferite pentru etapa de inferenţă.
-\par Aşa cum se observă şi în figura ~\ref{fig:results_6} sistemul izolează cu succes evenimentele anormale. Totuşi, detecţia obiectelor rămâne cel mai mare dezavantaj al sistemului, deoarece, atât din punct de vedere al timpului de execuţie, cât şi al performanţei, acesta este locul în care sistemul poate fi imbunătăţit. Faţă de sistemul de referinţă  \cite{ionescu2019object}, alegerea unui nou tip de detector de obiecte optimizat pentru execuţia pe CPU, a crescut viteza de la 0.5 FPS la 4 FPS ceea ce reprezintă o îmbunătăţire semnificativă a sistemului. Însă, deşi mai rapid, noul detector nu realizează operaţia de segmentare la fel de bine pentru obiectele mici, sau îndepărtate de cameră lucru ce face ca pe setul de date Avenue, să nu obţine performanţe la fel de bune ca sistemul iniţial. 
-\par Majoritatea detecţiilor fals pozitive ale sistemului sunt în mare parte cauzate de segmentarea imperfectă a detectorului de obiecte. În urma experimentelor a reieşit ca situaţiile în care mai multe se află în acelaşi bounding-box, sau 1 obiect nu este încadrat complet de către bounding-box pun probleme sistemului şi generează detecţii fals pozitive. În următoarele versiuni ale ale sistemului se vor încerca modalităţi de filtrare şi validare a detecţiilor de obiecte, pentru a elimina aceste probleme. 
-
+\par Aşa cum se observă şi în figura ~\ref{fig:results_6} sistemul izolează cu succes evenimentele anormale. Totuşi, detecţia obiectelor rămâne cel mai mare dezavantaj al sistemului, deoarece, atât din punct de vedere al timpului de execuţie, cât şi al performanţei, acesta este locul în care sistemul poate fi imbunătăţit. Faţă de sistemul de referinţă  \cite{ionescu2019object}, alegerea unui nou tip de detector de obiecte optimizat pentru execuţia pe CPU, a crescut viteza de la 0.8 FPS la 8 FPS pe sisteme ce nu posedă GPU, ceea ce reprezintă o îmbunătăţire semnificativă a sistemului. Însă, deşi mai rapid, noul detector nu realizează operaţia de segmentare la fel de bine pentru obiectele mici, sau îndepărtate de cameră lucru ce face ca pe setul de date Avenue, să nu obţine performanţe la fel de bune ca sistemul iniţial. 
+\par Majoritatea detecţiilor fals pozitive ale sistemului sunt în mare parte cauzate de segmentarea imperfectă a detectorului de obiecte(fig.  ~\ref{fig:eroare_detectie}). În urma experimentelor a reieşit ca situaţiile în care mai multe se află în acelaşi bounding-box, sau 1 obiect nu este încadrat complet de către bounding-box pun probleme sistemului şi generează detecţii fals pozitive. În următoarele versiuni ale ale sistemului se vor încerca modalităţi de filtrare şi validare a detecţiilor de obiecte, pentru a elimina aceste probleme. 
+\begin{figure}[h]
+\begin{center}
+        \includegraphics[width = 1\textwidth]{images/eroare_detectie}
+			 \caption{Detecţii fals pozitive datorate detecţiei deficitare a marginilor obiectelor de către detectorul de obiecte. În prima imagine se poate observa un cadran ce conţine 2 persoane, în timp ce in cea de a 2-a imagine, cadranul ce ar fi trebuit sa încadreze persoana în totalitate, conţine doar o mică parte din aceasta.}
+			 \label{fig:eroare_detectie}
+\end{center}
+\end{figure}
+\par Pentru a demonstra capacităţile sistemului de a detecta anomalii în absenţa erorilor de detecţie a obiectelor, am construit un nou set de date, ce conţine persoane în plan apropiat, simulând o sală de aşteptare de capacitate redusă (e.g. cabinet dentar, secretariat, clinica de dimensiune redusă, etc.). Acest set de date conţine 4 videouri de antrenament ce reprezintă comportamentul normal al subiecţilor, şi 5 video-uri de test în care sunt exemplificate diverse comportamente anormale, precum :
+\begin{itemize}
+\item Alergare
+\item Mutarea scaunelor
+\item Confruntări
+\item Leşin
+\item Vandalism 
+\end{itemize}
+\par Rezultatele empirice obţinute pe acest set de date, sunt satisfăcătoare, fiind detectate toate evenimentele anormale. 
+\section {Timp de execuţie}
+\par Din punct de vedere al timpului de execuţie al întregului sistem, acesta necesită 130 de milisecunde , din care 120 de milisecunde sunt petrecute detectând obiecte, şi 10 milisecunde trecând obiectele prin encoder şi apoi prin clasificatorul final. Astfel, sistemul evaluează cadrele cu o viteză de  8 cadre pe secundă. 
+\par Toate măsurătorile au fost realizate pe un laptop cu procesor i7-6600U 2.6 GHz şi 16 GB RAM.
 \bibliographystyle{abbrv}
 \listoffigures
 \listoftables

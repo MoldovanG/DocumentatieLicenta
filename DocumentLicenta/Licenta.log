@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.22)  31 MAY 2020 17:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.22)  1 JUN 2020 15:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -529,19 +529,31 @@ Overfull \hbox (21.90999pt too wide) in paragraph at lines 446--447
  [] 
  []
 
+
+Underfull \hbox (badness 2035) in paragraph at lines 452--453
+\OT1/cmr/m/n/12 GPU, ceea ce re-pre-zint^^Ua o ^^^Pmbun^^Uat^^Ua[]ire
+ []
+
 [26
 
- <./images/rezultate_video_6.png>] [27] (./Licenta.lof)
+ <./images/rezultate_video_6.png>]
+<images/eroare_detectie.png, id=128, 959.83594pt x 264.23718pt>
+File: images/eroare_detectie.png Graphic file (type png)
+<use images/eroare_detectie.png>
+Package pdftex.def Info: images/eroare_detectie.png  used on input line 456.
+(pdftex.def)             Requested size: 438.17273pt x 120.62726pt.
+ [27 <./images/eroare_detectie.png>]
+[28] (./Licenta.lof)
 \tf@lof=\write4
 \openout4 = `Licenta.lof'.
 
- [28
+ [29
 
 ] (./Licenta.lot)
 \tf@lot=\write5
 \openout5 = `Licenta.lot'.
 
-(./Licenta.bbl [29
+ (./Licenta.bbl [30
 
 ]
 Underfull \hbox (badness 2547) in paragraph at lines 63--68
@@ -549,37 +561,33 @@ Underfull \hbox (badness 2547) in paragraph at lines 63--68
 Khan-de-lwal,
  []
 
-[30
+[31
 
-]) [31] (./Licenta.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+]) [32] (./Licenta.aux) ) 
 Here is how much of TeX's memory you used:
- 4960 strings out of 480994
- 75190 string characters out of 5916032
- 348522 words of memory out of 5000000
- 20393 multiletter control sequences out of 15000+600000
+ 4969 strings out of 480994
+ 75427 string characters out of 5916032
+ 348533 words of memory out of 5000000
+ 20401 multiletter control sequences out of 15000+600000
  538263 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,12n,45p,1591b,341s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/tex
-live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2019
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb><c:/texlive/2019/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2019/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmi8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.
-pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/tex
-live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2019
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2019/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2019/texmf-dist/fonts/t
-ype1/public/cm-super/sfrm1200.pfb>
-Output written on Licenta.pdf (35 pages, 1254756 bytes).
+{c:/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/c
+m-super-ts1.enc}<c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
+12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb><c:
+/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/
+2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2019/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2019/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr6.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:
+/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/
+2019/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on Licenta.pdf (36 pages, 1963349 bytes).
 PDF statistics:
- 185 PDF objects out of 1000 (max. 8388607)
- 116 compressed objects within 2 object streams
+ 189 PDF objects out of 1000 (max. 8388607)
+ 118 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
