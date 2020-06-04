@@ -7,15 +7,16 @@
 \contentsline {section}{\numberline {2.1}Etapa de antrenare}{4}%
 \contentsline {section}{\numberline {2.2}Etapa de inferenţă}{7}%
 \contentsline {section}{\numberline {2.3}Etapa de deployment}{7}%
-\contentsline {chapter}{\numberline {3}Sistemul de detecţie a anomaliilor}{10}%
-\contentsline {section}{\numberline {3.1}Detecţia obiectelor}{10}%
-\contentsline {section}{\numberline {3.2}Analiza antrenării sistemului}{11}%
-\contentsline {section}{\numberline {3.3}Analiza etapei de inferenţă}{15}%
-\contentsline {section}{\numberline {3.4}Scenarii de utilizare}{18}%
-\contentsline {chapter}{\numberline {4}Execuţia în cloud a sistemului}{20}%
-\contentsline {section}{\numberline {4.1}Cloud-computing în inteligenţă artificială}{20}%
-\contentsline {section}{\numberline {4.2}Analiza opţiunilor}{21}%
-\contentsline {section}{\numberline {4.3}Comparaţie între soluţiile PaaS si FaaS}{22}%
-\contentsline {section}{\numberline {4.4}Descrierea soluţiei curente}{24}%
-\contentsline {chapter}{\numberline {5}Rezultate şi analiza timpilor de execuţie}{26}%
-\contentsline {section}{\numberline {5.1}Timp de execuţie}{28}%
+\contentsline {section}{\numberline {2.4}Tehnologii folosite în dezvoltarea interfeţei}{10}%
+\contentsline {chapter}{\numberline {3}Sistemul de detecţie a anomaliilor}{11}%
+\contentsline {section}{\numberline {3.1}Detecţia obiectelor}{11}%
+\contentsline {section}{\numberline {3.2}Analiza antrenării sistemului}{12}%
+\contentsline {section}{\numberline {3.3}Analiza etapei de inferenţă}{16}%
+\contentsline {section}{\numberline {3.4}Scenarii de utilizare}{19}%
+\contentsline {chapter}{\numberline {4}Execuţia în cloud a sistemului}{21}%
+\contentsline {section}{\numberline {4.1}Cloud-computing în inteligenţă artificială}{21}%
+\contentsline {section}{\numberline {4.2}Analiza opţiunilor}{22}%
+\contentsline {section}{\numberline {4.3}Comparaţie între soluţiile PaaS si FaaS}{23}%
+\contentsline {section}{\numberline {4.4}Descrierea soluţiei curente}{25}%
+\contentsline {chapter}{\numberline {5}Rezultate şi analiza timpilor de execuţie}{27}%
+\contentsline {section}{\numberline {5.1}Timpi de execuţie şi necesarul de resurse}{29}%

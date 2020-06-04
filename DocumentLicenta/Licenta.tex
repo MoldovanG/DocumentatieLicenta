@@ -207,6 +207,16 @@ Pentru a lansa serverul in cloud, am folosit serviciul Amazon Elastic Beanstalk.
 Dezvoltatorul se ocupă doar de aplicaţia/serverul propriu zis, crează pachetul de deployment, iar Elastic Beanstalk crează instanţele EC2 necesare, administrează si rutează traficul către instanţe folosind un Load Balancer, iar atunci cand aplicaţia este suprasolicitată, lansează în mod automat noi servere folosindu-se de avantajele unui Auto Scaling Group.
 \par Aşa cum se poate observa în figura ~\ref{fig:client_design}, API-ul este creat în aşa fel încât evaluarea se face pentru fiecare cadru în parte. Dezvoltatorul ce implementează clientul pentru API are doar responsabilitatea urcării cadrelor necesare într-un spaţiu S3 prestabilit. Preprocesarea, extragerea obiectelor din imagine, şi rularea detecţiei de anomalii sunt toate executate in cloud. Astfel, efortul computaţional asupra clientului este minim. La momentul accesării API-ului, serverul trebuie să primeasca ca parametru în apelul HTTP cheia de acces pentru cadrele urcate de catre client. Folosind această informaţie, pe server se descarcă aceste cadre şi sunt analizate pentru a detecta anomaliile din cadrul central. Ca şi rezultat, clientul primeşte scorul de anormalitate al cadrului împreună cu toate poziţiile obiectelor anormale din cadru, date ce pot fi folosite pentru notificări ulterioare sau diferite aplicaţii pe partea de client. Un avantaj important al unui HTTP API este abilitatea de a fi accesat prin internet, interfaţa API-ului fiind accesibilă pentru toţi utilizatorii fară să necesite instrucţiuni speciale, precum \emph{SOAP} ce este bazat pe \emph{XML}.
 
+\section {Tehnologii folosite în dezvoltarea interfeţei}
+\quad Pentru a putea vizualiza capacităţile sistemului de detecţie a anomaliilor, am dezvoltat un program ce simulează cele 2 moduri în care poate fi acest sistem folosit : prin rulare locală, sau prin execuţie în cloud.
+\par Pentru a creea interfaţa grafică, am ales să folosesc librăria \emph{EasyGui}. EasyGui este un modul pentru dezvoltarea rapidă a interfeţelor grafice în python. Spre deosebire de celelalte librării disponibile pentru dezvoltarea interfeţelor grafice, acesta nu este bazat pe evenimente, ci fiecare interacţiune cu interfaţa grafică este realizată prin apeluri sincrone ale metodelor modulului. 
+\par Un avantaj al acestei librării este că, deoarece abstractizează foarte eficient operaţiunile realizate în \emph{tkinter}(librăria standard pentru creerea interfeţelor grafice în python) programatorul poate creea elementele de bază a unei interfeţe fără a aprofunda modul de funcţionare a \emph{tkinter}. Un alt avantaj este faptul ca EasyGui nu adaugă depedinţe suplimentare, şi este disponibil atât pentru Python 2 cât si pentru Python 3.
+\par Programul creat simulează un client ce foloseşte sistemul de detecţie a anomaliilor şi anume : rulează detecţia de anomalii (local sau în cloud, în funcţie de metoda selectată) folosind o cameră video ataşată sistemului de pe care este rulat. Modul în care sunt evidenţiate evenimentele anormale este deasemenea configurabil :
+\begin{itemize}
+\item Modul standard : Încadrarea în cadrane verzi a obiectelor ce sunt detectate de către sistem ca având un comportament anormal. 
+\item Modul alertă : Programul extrage obiectul din imagine atunci cand acesta este detectat ca fiind anormal, şi creează o alertă conţinând doar această imagine pe care o afişează pe ecran. Acest mod de alertă simulează scenariul în care este necesară atragarea atenţiei în mod suplimentar a operatorului în momentul apariţiei unei anomalii.  
+\end{itemize}
+
 \chapter{Sistemul de detecţie a anomaliilor}
 \quad În acest capitol va fi analizat în detaliu sistemul de detecţie a anomaliilor în video, atât din punct de vedere al arhitecturii alese cât şi din punct de vedere al implementării.
 \section{Detecţia obiectelor}
@@ -458,7 +468,7 @@ Pentru a lansa o aplicaţie folosind elastic beanstalk, este necesar să creezi 
 			 \label{fig:eroare_detectie}
 \end{center}
 \end{figure}
-\par Pentru a demonstra capacităţile sistemului de a detecta anomalii în absenţa erorilor de detecţie a obiectelor, am construit un nou set de date, ce conţine persoane în plan apropiat, simulând o sală de aşteptare de capacitate redusă (e.g. cabinet dentar, secretariat, clinica de dimensiune redusă, etc.). Acest set de date conţine 4 videouri de antrenament ce reprezintă comportamentul normal al subiecţilor, şi 5 video-uri de test în care sunt exemplificate diverse comportamente anormale, precum :
+\par Pentru a demonstra capacităţile sistemului de a detecta anomalii în absenţa erorilor de detecţie a obiectelor, am înregistrat un nou set de date, ce conţine persoane în plan apropiat, simulând o sală de aşteptare de capacitate redusă (e.g. cabinet dentar, secretariat, clinica de dimensiune redusă, etc.). Acest set de date conţine 4 videouri de antrenament ce reprezintă comportamentul normal al subiecţilor, şi 5 video-uri de test în care sunt exemplificate diverse comportamente anormale, precum :
 \begin{itemize}
 \item Alergare
 \item Mutarea scaunelor
@@ -467,9 +477,22 @@ Pentru a lansa o aplicaţie folosind elastic beanstalk, este necesar să creezi 
 \item Vandalism 
 \end{itemize}
 \par Rezultatele empirice obţinute pe acest set de date, sunt satisfăcătoare, fiind detectate toate evenimentele anormale. 
-\section {Timp de execuţie}
-\par Din punct de vedere al timpului de execuţie al întregului sistem, acesta necesită 130 de milisecunde , din care 120 de milisecunde sunt petrecute detectând obiecte, şi 10 milisecunde trecând obiectele prin encoder şi apoi prin clasificatorul final. Astfel, sistemul evaluează cadrele cu o viteză de  8 cadre pe secundă. 
-\par Toate măsurătorile au fost realizate pe un laptop cu procesor i7-6600U 2.6 GHz şi 16 GB RAM.
+\section {Timpi de execuţie şi necesarul de resurse}
+\quad Din punct de vedere al timpului de execuţie al întregului sistem, acesta necesită 130 de milisecunde , din care 120 de milisecunde sunt petrecute detectând obiecte, şi 10 milisecunde trecând obiectele prin encoder şi apoi prin clasificatorul final. Astfel, sistemul evaluează cadrele cu o viteză de  8 cadre pe secundă. 
+\begin{figure}[h]
+\begin{center}
+        \includegraphics[width = 1\textwidth]{images/comparatie_cpu_usage}
+			 \caption{Comparaţie între resursele folosite în timpul execuţiei sistemului timp de 1 minute local, versus folosind API-ul.}
+			 \label{fig:comparatie_cpu}
+\end{center}
+\end{figure}
+\par Din punct de vedere al necesarului de resurse, am comparat cele 2 moduri de utilizare a sistemului : prin rulare locală, sau prin accesarea HTTP API-ului. 
+Rezultatele prezentate in figura ~\ref{fig:comparatie_cpu} demonstrează economia de resurse făcută accesând API-ul. Astfel, sistemul poate fi folosit în 2 moduri : 
+\begin{itemize}
+\item Rapid dar ce foloseşte intens procesorul sistemului. În acest mod se pot rula şi analize în timp real.
+\item Lent dar cu un necesar foarte scăzut de resurse. Acest mod poate fi folosit atunci când viteza de analiză nu este importantă.
+\end{itemize}
+\par Menţionez ca toate măsurătorile au fost realizate pe un sistem cu i7-6600U 2.6 GHz CPU şi 16 GB RAM.
 \bibliographystyle{abbrv}
 \listoffigures
 \listoftables
