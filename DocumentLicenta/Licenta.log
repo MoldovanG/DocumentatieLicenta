@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.22)  4 JUN 2020 20:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.22)  5 JUN 2020 17:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -584,7 +584,7 @@ Here is how much of TeX's memory you used:
  20409 multiletter control sequences out of 15000+600000
  538263 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,12n,45p,1591b,341s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,12n,45p,1802b,341s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/c
 m-super-ts1.enc}<c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
 12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb><c:
@@ -597,7 +597,7 @@ nts/cm/cmr8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
 10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:
 /texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/
 2019/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on Licenta.pdf (37 pages, 2030127 bytes).
+Output written on Licenta.pdf (37 pages, 2030393 bytes).
 PDF statistics:
  196 PDF objects out of 1000 (max. 8388607)
  123 compressed objects within 2 object streams

@@ -6,7 +6,7 @@
 \contentsline {chapter}{\numberline {2}Analiza arhitecturii si a tehnologiilor folosite}{4}%
 \contentsline {section}{\numberline {2.1}Etapa de antrenare}{4}%
 \contentsline {section}{\numberline {2.2}Etapa de inferenţă}{7}%
-\contentsline {section}{\numberline {2.3}Etapa de deployment}{7}%
+\contentsline {section}{\numberline {2.3}Etapa de lansare în cloud}{7}%
 \contentsline {section}{\numberline {2.4}Tehnologii folosite în dezvoltarea interfeţei}{10}%
 \contentsline {chapter}{\numberline {3}Sistemul de detecţie a anomaliilor}{11}%
 \contentsline {section}{\numberline {3.1}Detecţia obiectelor}{11}%
