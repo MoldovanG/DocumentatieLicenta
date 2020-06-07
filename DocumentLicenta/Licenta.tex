@@ -9,6 +9,7 @@
 \usepackage{amsmath}
 \usepackage{caption}
 \usepackage{dirtytalk}
+\usepackage{url}
 \newcommand{\source}[1]{\caption*{Sursă: {#1}} }
 
 \fancyhf{}
@@ -41,7 +42,7 @@ FACULTATEA DE MATEMATICĂ ȘI INFORMATICĂ}
 
 \vspace{0.8cm}
       București \\
-Iunie (fingers crossed), 2020
+Iulie, 2020
 \clearpage         
 \end{center}
 \newpage
@@ -54,7 +55,7 @@ Iunie (fingers crossed), 2020
 FACULTATEA DE MATEMATICĂ ȘI INFORMATICĂ}
 
        \vspace{0.5cm}
-        Sistem pentru detectarea anomaliilor in video
+        Sistem pentru detectarea anomaliilor în video
             
        \vfill
            
@@ -68,7 +69,7 @@ FACULTATEA DE MATEMATICĂ ȘI INFORMATICĂ}
     
 \vspace{0.8cm}  
 	București \\
-Iunie (fingers crossed), 2020
+Iulie, 2020
 \clearpage
 \end{center}
 \newpage
@@ -281,7 +282,7 @@ Implementarea arhitecturii prezentate în figura ~\ref{fig:stage1_architecture} 
 \par Dimensiunea kernelului folosit pentru calcularea gradienţilor este foarte importantă pentru extragerea precisă a detaliilor, deoarece, asa cum se poate observa in figura ~\ref{fig:gradient_kernel}, cu cât kernelul este mai mare, cu atât trasaturile extrase sunt mai generale.
 \item Imaginile şi gradienţii astfel obţinuţi sunt adaugaţi într-o colecţie generală pentru tot setul de date. Cele 2 colecţii astfel create vor servi drept input pentru antrenarea autoencoderelor.
 \item Folosind cele 2 colecţii (de imagini, respectiv de gradienţi) este antrenat câte un autoencoder pentru fiecare colecţie. Înainte de a fi folosite pentru antrenarea autoencoderelor, atât imaginile, cât şi gradienţii, sunt normalizate în intervalul [0,1] .Antrenarea se realizează folosind optimizatorul Adam \cite{adam2017} şi funcţia loss ce constă în diferenţa medie a pătratelor, dată de formula : 
-\(L(I,O) = \frac{1} {h*w} \sum_{1}^{h} \sum_{1}^{w} (I_{ij} * O_{ij})^2 \)   \cite{ionescu2019object} unde I şi O reprezintă imaginea de input respectiv de output şi h,w sunt dimensiunile imaginilor. Aceasta este executată timp de 100 de epoci cu o rată de învăţare de \(10^{-3}\), dar având şi o regula de oprire rapidă, ce inseamnă că dacă timp de 2 epoci funcţia loss nu se imbunătaţeşte, antrenarea este finalizată.
+\(L(I,O) = \frac{1} {h*w} \sum_{1}^{h} \sum_{1}^{w} (I_{ij} - O_{ij})^2 \)   \cite{ionescu2019object} unde I şi O reprezintă imaginea de input respectiv de output şi h,w sunt dimensiunile imaginilor. Aceasta este executată timp de 100 de epoci cu o rată de învăţare de \(10^{-3}\), dar având şi o regula de oprire rapidă, ce inseamnă că dacă timp de 2 epoci funcţia loss nu se imbunătaţeşte, antrenarea este finalizată.
 \end{itemize}
 
 \begin{wrapfigure}{r}{0.45\textwidth}
@@ -403,6 +404,7 @@ Categoriile de servicii cloud sunt :
 O altă caracteristica a soluţiilor cloud este tipul de execuţie şi anume: \emph{serverfull} sau \emph{serverless}.
 Prin serverfull, se inţelege o soluţie ce rulează pe servere ce pot fi indentificate în mod unic, care rulează în mod continuu, dar pe care se execută diferite operaţii în funcţie de nevoile sistemului. IaaS si PaaS sunt mereu soluţii serverfull, în timp ce un serviciu SaaS poate fi atât serverfull cât si serverless.
 Prin serverless se inţelege o soluţie ce lansează noi micro-instanţe pentru fiecare cerere, ce este mai apoi oprită dupa execuţia codului. Costul unei soluţii serverless este direct proporţional cu timpul de execuţie, în timp ce pentru soluţiile serverfull costul este constant. \\
+\clearpage
 \par Caracteristicile celor 2 tipuri sunt prezentate în tabelul de mai jos :
 \begin{table}[h]
 \begin{tabular}{|l|l|l|}
@@ -446,7 +448,7 @@ Pentru a lansa o aplicaţie folosind elastic beanstalk, este necesar să creezi 
 \par Capacitatea de multi-threading din cadrul serverelor, la care se adaugă scalarea automată a numarului acestora în funcţie de traficul ce accesează API-ul, face ca resursele sa fie folosite la maxim, atât din punct de vedere al performanţei disponibile, cât şi din punct de vedere economic. 
 \par Un alt avantaj al acestei soluţii este usurinţa cu care se poate schimba mediul de execuţie. Spre exemplu, într-un anumit scenariu, în care se observă în panoul de monitorizare că instanţele EC2 curente sunt suprasolicitate, cu ajutorul interfeţei web, sau celei din linia de comandă, pot fi schimbate tipurile de instanţe EC2 folosite cu unele mai performante fără a avea serviciul indisponibil pe durata acestei modificări.
 
-\chapter {Rezultate şi analiza timpilor de execuţie}
+\chapter {Rezultate şi Concluzii}
 
 \quad Sistemul a fost evaluat pe setul de date \emph{Avenue} . Ca şi modalitate de evaluare a fost luată în considerare aria de sub curbă (eng: \emph {area under the curve (AUC)}) raportată la scorul fiecărui cadru. 
 \par Scorul unui cadru reprezintă maximul dintre scorurile obţinute de obiectele din imagine. Această valoare este valoroasă şi în practică, deoarece pe baza acesteia se pot izola cadrele ce au un scor de anomalie peste un anumit nivel. Pentru a evalua întregul set de date, au fost evaluate individual video-urile de test, iar mai apoi a fost calculată media scorurilor obţinute, metodă folosită şi de către  \emph{Ionescu et al.} \cite{ionescu2019object}.
@@ -468,17 +470,16 @@ Pentru a lansa o aplicaţie folosind elastic beanstalk, este necesar să creezi 
 			 \label{fig:eroare_detectie}
 \end{center}
 \end{figure}
-\par Pentru a demonstra capacităţile sistemului de a detecta anomalii în absenţa erorilor de detecţie a obiectelor, am înregistrat un nou set de date, ce conţine persoane în plan apropiat, simulând o sală de aşteptare de capacitate redusă (e.g. cabinet dentar, secretariat, clinica de dimensiune redusă, etc.). Acest set de date conţine 4 videouri de antrenament ce reprezintă comportamentul normal al subiecţilor, şi 5 video-uri de test în care sunt exemplificate diverse comportamente anormale, precum :
+\par Pentru a demonstra capacităţile sistemului de a detecta anomalii în absenţa erorilor de detecţie a obiectelor, am înregistrat un nou set de date, ce conţine persoane în plan apropiat, simulând o sală de aşteptare de capacitate redusă (e.g. cabinet dentar, secretariat, clinica de dimensiune redusă, etc.). Acest set de date conţine 4 videouri de antrenament ce reprezintă comportamentul normal al subiecţilor, şi 4 video-uri de test în care sunt exemplificate diverse comportamente anormale, precum :
 \begin{itemize}
 \item Alergare
-\item Mutarea scaunelor
 \item Confruntări
 \item Leşin
 \item Vandalism 
 \end{itemize}
 \par Rezultatele empirice obţinute pe acest set de date, sunt satisfăcătoare, fiind detectate toate evenimentele anormale. 
 \section {Timpi de execuţie şi necesarul de resurse}
-\quad Din punct de vedere al timpului de execuţie al întregului sistem, acesta necesită 130 de milisecunde, din care 120 de milisecunde sunt petrecute detectând obiecte, şi 10 milisecunde trecând obiectele prin encoder şi apoi prin clasificatorul final. Astfel, sistemul evaluează cadrele cu o viteză de  8 cadre pe secundă. 
+\quad Din punct de vedere al timpului de execuţie al întregului sistem, acesta necesită 130 de milisecunde, din care 120 de milisecunde sunt petrecute detectând obiecte, şi 10 milisecunde trecând obiectele prin encoder şi apoi prin clasificatorul final. Astfel, sistemul evaluează cadrele cu o viteză de  8 cadre pe secundă. În ceea ce priveşte accesarea API-ului, sunt necesare în medie 1.1 secunde pentru încărcarea imaginilor ce vor fi procesate în cloud, şi 0.7 secunde pentru execuţia apelului HTTP propriu zis.
 \begin{figure}[h]
 \begin{center}
         \includegraphics[width = 1\textwidth]{images/comparatie_cpu_usage}
@@ -493,6 +494,10 @@ Rezultatele prezentate in figura ~\ref{fig:comparatie_cpu} demonstrează economi
 \item Lent dar cu un necesar foarte scăzut de resurse. Acest mod poate fi folosit atunci când viteza de analiză nu este importantă.
 \end{itemize}
 \par Menţionez ca toate măsurătorile au fost realizate pe un sistem cu i7-6600U 2.6 GHz CPU şi 16 GB RAM.
+
+\section{Concluzii}
+\quad Sistemul de detectare a anomaliilor dezvoltat a îndeplinit asteptările iniţiale, îmbunătăţind viteza pe sisteme ce posedă resurse limitate. De asemenea, a fost creat un cadru ce face posibilă convertirea sistemelor clasice de supraveghere în sisteme inteligente, prin rularea sistemului de detecţie a anomaliilor fie local, fie prin intermediul arhitecturii client-server. 
+\parÎn versiunile viitoare, se propune îmbunătăţirea preciziei sistemului, menţinând viteza curentă de execuţie. 
 \bibliographystyle{abbrv}
 \listoffigures
 \listoftables

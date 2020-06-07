@@ -1,17 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{2020autoscaling}
-Amazon autoscaling description, 04 2020.
-
-\bibitem{2020EC2}
-Amazon ec2 description, 04 2020.
-
-\bibitem{2020elb}
-Amazon elastic load balancing description, 04 2020.
-
-\bibitem{2020S3}
-Amazon s3 description, 04 2020.
-
 \bibitem{cheng2015}
 K.~{Cheng}, Y.~{Chen}, and W.~{Fang}.
 \newblock Video anomaly detection and localization using hierarchical feature
@@ -80,5 +68,25 @@ W.~{Sultani}, C.~{Chen}, and M.~{Shah}.
 H.~{Wang}, D.~{Niu}, and B.~{Li}.
 \newblock Distributed machine learning with a serverless architecture.
 \newblock pages 1288--1296, 2019.
+
+\bibitem{2020EC2}
+Amazon ec2 description.
+\newblock \url{https://aws.amazon.com/ec2/},.
+\newblock Accesat la data de : 25-04-2020.
+
+\bibitem{2020S3}
+Amazon s3 description.
+\newblock \url{https://aws.amazon.com/s3/}.
+\newblock Accesat la data de : 25-04-2020.
+
+\bibitem{2020autoscaling}
+Amazon autoscaling description.
+\newblock \url{https://aws.amazon.com/autoscaling/}.
+\newblock Accesat la data de : 25-04-2020.
+
+\bibitem{2020elb}
+Amazon elastic load balancing description.
+\newblock \url{https://aws.amazon.com/elasticloadbalancing/}.
+\newblock Accesat la data de : 25-04-2020.
 
 \end{thebibliography}

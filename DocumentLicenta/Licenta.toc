@@ -16,7 +16,8 @@
 \contentsline {chapter}{\numberline {4}Execuţia în cloud a sistemului}{21}%
 \contentsline {section}{\numberline {4.1}Cloud-computing în inteligenţă artificială}{21}%
 \contentsline {section}{\numberline {4.2}Analiza opţiunilor}{22}%
-\contentsline {section}{\numberline {4.3}Comparaţie între soluţiile PaaS si FaaS}{23}%
+\contentsline {section}{\numberline {4.3}Comparaţie între soluţiile PaaS si FaaS}{24}%
 \contentsline {section}{\numberline {4.4}Descrierea soluţiei curente}{25}%
-\contentsline {chapter}{\numberline {5}Rezultate şi analiza timpilor de execuţie}{27}%
-\contentsline {section}{\numberline {5.1}Timpi de execuţie şi necesarul de resurse}{29}%
+\contentsline {chapter}{\numberline {5}Rezultate şi Concluzii}{27}%
+\contentsline {section}{\numberline {5.1}Timpi de execuţie şi necesarul de resurse}{28}%
+\contentsline {section}{\numberline {5.2}Concluzii}{29}%
