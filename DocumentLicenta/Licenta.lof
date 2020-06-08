@@ -2,17 +2,17 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Statistică ce evidenţiază importanţa domeniului cloud computing în ultimii ani\relax }}{2}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Aplicarea operatorului de convoluţie\relax }}{5}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Arhitectura abstractizată a API-ului\relax }}{9}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Aplicarea operatorului de convoluţie\relax }}{6}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Arhitectura abstractizată a API-ului\relax }}{10}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Prezentarea principiului de funcţionare a autoencoderelor şi arhitectura lor generală\relax }}{13}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Arhitectura primei etape de antrenare\relax }}{14}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Gradienţi obţinuţi în urma aplicării unui kernel \(3 \times 3 \), respectiv unul de dimensiune \(21 \times 21 \)\relax }}{15}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Arhitectura etapei finale de antrenare\relax }}{16}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Arhitectura etapei de inferenţă\relax }}{17}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Prezentarea principiului de funcţionare a autoencoderelor şi arhitectura lor generală\relax }}{14}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Arhitectura primei etape de antrenare\relax }}{17}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Gradienţi obţinuţi în urma aplicării unui kernel \(3 \times 3 \), respectiv unul de dimensiune \(21 \times 21 \)\relax }}{18}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Arhitectura etapei finale de antrenare\relax }}{19}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Arhitectura etapei de inferenţă\relax }}{20}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Componentele diverselor modele de procesare în cloud\relax }}{22}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Componentele diverselor modele de procesare în cloud\relax }}{26}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Scorurile la nivel de cadru pentru video-ul nr.6 din setul de date Avenue. Scorul fiecărui cadru este marcat cu albastru închis, în timp ce zonele cu fundal albastru deschis reprezintă perioadele în care au existat anomalii.\relax }}{27}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Detecţii fals pozitive datorate detecţiei deficitare a marginilor obiectelor de către detectorul de obiecte. În prima imagine se poate observa un cadran ce conţine 2 persoane, în timp ce in cea de a 2-a imagine, cadranul ce ar fi trebuit să încadreze persoana în totalitate, conţine doar o mică parte din aceasta.\relax }}{28}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Comparaţie între resursele folosite în timpul execuţiei sistemului timp de 1 minut, execuţie locală versus folosind API-ul.\relax }}{29}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Scorurile la nivel de cadru pentru video-ul nr.6 din setul de date Avenue. Scorul fiecărui cadru este marcat cu albastru închis, în timp ce zonele cu fundal albastru deschis reprezintă perioadele în care au existat anomalii.\relax }}{31}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Detecţii fals pozitive datorate detecţiei deficitare a marginilor obiectelor de către detectorul de obiecte. În prima imagine se poate observa un cadran ce conţine 2 persoane, în timp ce in cea de a 2-a imagine, cadranul ce ar fi trebuit să încadreze persoana în totalitate, conţine doar o mică parte din aceasta.\relax }}{32}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Comparaţie între resursele folosite în timpul execuţiei sistemului timp de 1 minut, execuţie locală versus folosind API-ul.\relax }}{33}%

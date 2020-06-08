@@ -1,14 +1,16 @@
 \begin{thebibliography}{10}
 
+\bibitem{borislav2011}
+B.~{Antić} and B.~{Ommer}.
+\newblock Video parsing for abnormality detection.
+\newblock In {\em 2011 International Conference on Computer Vision}, pages
+  2415--2422, 2011.
+
 \bibitem{cheng2015}
 K.~{Cheng}, Y.~{Chen}, and W.~{Fang}.
 \newblock Video anomaly detection and localization using hierarchical feature
   representation and gaussian process regression.
 \newblock pages 2909--2917, 2015.
-
-\bibitem{2020keras}
-F.~Chollet et~al.
-\newblock Keras description, 04 2020.
 
 \bibitem{christidis2019}
 A.~{Christidis}, R.~{Davies}, and S.~{Moschoyiannis}.
@@ -16,10 +18,20 @@ A.~{Christidis}, R.~{Davies}, and S.~{Moschoyiannis}.
   environments: a serverless deployment example.
 \newblock pages 55--63, 2019.
 
+\bibitem{hannah2004}
+H.~M. Dee and D.~C. Hogg.
+\newblock Detecting inexplicable behaviour.
+\newblock In {\em BMVC}, 2004.
+
 \bibitem{dumoulin2016guide}
 V.~{Dumoulin} and F.~{Visin}.
 \newblock {A guide to convolution arithmetic for deep learning}.
 \newblock {\em ArXiv e-prints}, mar 2016.
+
+\bibitem{dutta2015}
+J.~K. Dutta and B.~Banerjee.
+\newblock Online detection of abnormal events using incremental coding length.
+\newblock In {\em AAAI}, 2015.
 
 \bibitem{RFC7231}
 R.~Fielding and J.~Reschke.
@@ -42,6 +54,16 @@ R.~T. {Ionescu}, F.~S. {Khan}, M.~{Georgescu}, and L.~{Shao}.
   detection in video.
 \newblock pages 7834--7843, 2019.
 
+\bibitem{alexe2018}
+R.~T. Ionescu, S.~Smeureanu, B.~Alexe, and M.~Popescu.
+\newblock Unmasking the abnormal events in video.
+\newblock {\em CoRR}, abs/1705.08182, 2017.
+
+\bibitem{smeureanu2018}
+R.~T. Ionescu, S.~Smeureanu, M.~Popescu, and B.~Alexe.
+\newblock Detecting abnormal events in video using narrowed motion clusters.
+\newblock {\em CoRR}, abs/1801.05030, 2018.
+
 \bibitem{jiao2019}
 L.~{Jiao}, F.~{Zhang}, F.~{Liu}, S.~{Yang}, L.~{Li}, Z.~{Feng}, and R.~{Qu}.
 \newblock A survey of deep learning-based object detection.
@@ -54,10 +76,28 @@ E.~Jonas, J.~Schleier-Smith, V.~Sreekanti, C.-C. Tsai, A.~Khandelwal, Q.~Pu,
   computing.
 \newblock {\em arXiv preprint arXiv:1902.03383}, 2019.
 
+\bibitem{lu2013}
+C.~{Lu}, J.~{Shi}, and J.~{Jia}.
+\newblock Abnormal event detection at 150 fps in matlab.
+\newblock In {\em 2013 IEEE International Conference on Computer Vision}, pages
+  2720--2727, 2013.
+
 \bibitem{adam2017}
 {Peng Qi}, {Wei Zhou}, and {Jizhong Han}.
 \newblock {\em A method for stochastic L-BFGS optimization}.
 \newblock 2017.
+
+\bibitem{sobokrou2017}
+M.~Sabokrou, M.~Fayyaz, M.~Fathy, and R.~Klette.
+\newblock Deep-cascade: Cascading 3d deep neural networks for fast anomaly
+  detection and localization in crowded scenes.
+\newblock volume~PP, 02 2017.
+
+\bibitem{shet2006}
+V.~Shet, D.~Harwood, and L.~Davis.
+\newblock Multivalued default logic for identity maintenance in visual
+  surveillance.
+\newblock pages 119--132, 05 2006.
 
 \bibitem{sultani2018}
 W.~{Sultani}, C.~{Chen}, and M.~{Shah}.
@@ -68,6 +108,18 @@ W.~{Sultani}, C.~{Chen}, and M.~{Shah}.
 H.~{Wang}, D.~{Niu}, and B.~{Li}.
 \newblock Distributed machine learning with a serverless architecture.
 \newblock pages 1288--1296, 2019.
+
+\bibitem{xu2015}
+D.~Xu, E.~Ricci, Y.~Yan, J.~Song, and N.~Sebe.
+\newblock Learning deep representations of appearance and motion for anomalous
+  event detection.
+\newblock 09 2015.
+
+\bibitem{zhao2011}
+B.~{Zhao}, L.~{Fei-Fei}, and E.~P. {Xing}.
+\newblock Online detection of unusual events in videos via dynamic sparse
+  coding.
+\newblock In {\em CVPR 2011}, pages 3313--3320, 2011.
 
 \bibitem{2020EC2}
 Amazon ec2 description.
@@ -88,5 +140,10 @@ Amazon autoscaling description.
 Amazon elastic load balancing description.
 \newblock \url{https://aws.amazon.com/elasticloadbalancing/}.
 \newblock Accesat la data de : 25-04-2020.
+
+\bibitem{2020keras}
+Keras description.
+\newblock \url{https://keras.io},.
+\newblock Accesat la data de : 2020-04-25.
 
 \end{thebibliography}

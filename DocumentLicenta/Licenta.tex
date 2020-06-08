@@ -1,5 +1,5 @@
 \documentclass[a4paper,12pt]{report}
-\usepackage[a4paper,inner = 1.7cm, outer = 2.7cm, top = 2cm, bottom = 2cm, bindingoffset = 1.2cm]{geometry}
+\usepackage[a4paper,inner = 0.5cm, outer = 0.5cm, top = 2cm, bottom = 2cm]{geometry}
 
 \usepackage[romanian]{babel}
 \usepackage{blindtext}
@@ -10,6 +10,8 @@
 \usepackage{caption}
 \usepackage{dirtytalk}
 \usepackage{url}
+\usepackage{listings}
+
 \newcommand{\source}[1]{\caption*{Sursă: {#1}} }
 
 \fancyhf{}
@@ -18,62 +20,65 @@
 \fancyhead[LE]{\leftmark}
 \fancyhead[RO]{\rightmark}
 \linespread{1.25}
-\hyphenpenalty=5000
+\hyphenpenalty=50000
 \begin{document}
-\begin{center}
-\pagestyle{empty}
-       \vspace*{1cm}
+\begin{titlepage}
+    \begin{center}
+        \begin{figure}[htbp]
+            \centering
+            \begin{minipage}{0.2\textwidth}
+              \includegraphics[width=\linewidth]{images/poza_stanga.png}
+            \end{minipage}\
+            \begin{minipage}{0.5\textwidth}
+                \begin{large}
+                    \textbf{UNIVERSITATEA DIN BUCUREȘTI}\\
+                    \\
+                    \begin{center}
+                    \textbf{FACULTATEA\\
+                                DE\\
+                    MATEMATICĂ ȘI INFORMATICĂ}
+								\end{center}
+                \end{large}
+            \end{minipage}
+            \begin{minipage}{0.2\textwidth}
+              \includegraphics[width=\linewidth]{images/poza_dreapta.png}
+            \end{minipage}
+        \end{figure}
+        
+        \vspace*{1cm}
+        
+        \begin{large}
+            \textbf{SPECIALIZAREA INFORMATICĂ}
+        \end{large}
 
-       \textbf{UNIVERSITATEA DIN BUCUREȘTI
-FACULTATEA DE MATEMATICĂ ȘI INFORMATICĂ}
-
-       \vspace{0.5cm}
-        LUCRARE DE LICENȚĂ
+        \vspace{2.5cm}
+        \begin{LARGE}
+            \textbf{LUCRARE DE LICENȚĂ}\\
+            \vspace*{0.5cm}
+            \textbf{SISTEM DE DETECTARE A ANOMALIILOR ÎN VIDEO}
+        \end{LARGE}
             
-       \vfill
-           
-       \vspace{0.8cm}
-\textbf{Coordonator:}
-\hfill
-\textbf{Absolvent:} \\
-\textbf{Prof. Dr. Radu Ionescu}
-\hfill
-\textbf{Moldovan George-Alexandru} \\
-
-\vspace{0.8cm}
-      București \\
-Iulie, 2020
-\clearpage         
-\end{center}
-\newpage
-
-\begin{center}
-\pagestyle{empty}
-       \vspace*{1cm}
-
-       \textbf{UNIVERSITATEA DIN BUCUREȘTI
-FACULTATEA DE MATEMATICĂ ȘI INFORMATICĂ}
-
-       \vspace{0.5cm}
-        Sistem pentru detectarea anomaliilor în video
-            
-       \vfill
-           
-       \vspace{0.8cm}
-\textbf{Coordonator:}
-\hfill
-\textbf{Absolvent:} \\
-\textbf{Prof. Dr. Radu Ionescu}
-\hfill
-\textbf{Moldovan George-Alexandru} \\
-    
-\vspace{0.8cm}  
-	București \\
-Iulie, 2020
-\clearpage
-\end{center}
-\newpage
-
+        \vspace{2.5cm}
+        \begin{large}
+            \textbf{Absolvent}\\
+            \vspace*{0.25cm}
+            \textbf{Moldovan George-Alexandru}
+        \end{large}
+        
+        \vspace{2cm}
+        \begin{large}
+            \textbf{Coordonator științific}\\
+            \vspace*{0.25cm}
+            \textbf{Prof. dr. Radu Ionescu}
+        \end{large}
+        
+        \vspace{2.5cm}
+        \begin{large}
+            \textbf{București, iulie 2020}
+        \end{large}
+    \end{center}
+\end{titlepage}
+\newgeometry{a4paper,inner = 1.7cm, outer = 2.7cm, top = 2cm, bottom = 2cm, bindingoffset = 1.2cm}
 \tableofcontents
 \pagenumbering{arabic}
 \setcounter{page}{2}
@@ -111,7 +116,13 @@ Folosirea serverelor proprii presupune, pe lângă prezenţa fizică a serverelo
 \par
 Folosirea serviciilor cloud oferă multiple posibilităţi de dezvoltare a aplicaţiilor, de la creeare unei infrastructuri complete care este administrată în totalitate de către dezvoltator, la medii de execuţie serverless care sunt complet administrate de către provider-ul de servicii cloud. 
 Deşi creearea unei infrastructuri proprii încă este necesară acolo unde legislaţia nu permite ca datele sa fie stocate în cloud, în toate celelalte cazuri se face migrarea spre soluţii cloud, lucru vizibil şi în evoluţia cotei de piaţă a domeniului cloud-computing la nivel global, aşa cum se poate observa şi în figura ~\ref{fig:cloud_computing_graph}. 
-
+\section{Alte abordări}
+\quad Detectarea anomaliilor vizuale este un subiect intens cercetat, numeroase lucrări fiind publicate având aceasta arie de interes. În general, detectarea anomaliilor este abordată din perspectiva invăţării evenimentelor normale ca mai apoi să fie detectate evenimentele ce nu se potrivesc şabloanelor create folosind evenimentele normale \cite{cheng2015,ionescu2019object,sultani2018,smeureanu2018,alexe2018}.
+\par Nivelul de supervizare variază destul de mult în abordările existente, fiind atât lucrări ce definesc normalitatea pe baza unor constrângeri \cite{hannah2004,shet2006}, dar şi metode ce se bazează complet pe învăţarea nesupervizată a comportamentului normal \cite{dutta2015,zhao2011}. 
+\par\emph{Antic et al.} \cite{borislav2011} foloseşte o arhitectură în două etape, ce propune evaluarea unui video prin folosirea unui algoritm de separarea a foreground ului de background, pe baza faptului că filmarea este făcută dintr-un punct static. Prin această metoda, acesta obţine o serie de \say{ipoteze} ce urmează mai apoi vor fi analizate şi clasificate prin metode statistice folosind caracteristici spaţio-temporale, dar şi legătura dintre aceasta şi celelalte ipoteze.
+\par \emph{Lu et al.} \cite{lu2013} foloseşte o reprezentare e evenimentelor folosind o structură piramidală ce reprezintă caracteristicile spaţio-temporale ale evenimentelor prezente într-un cadru. Această reprezentare este obţinută prin scalarea imaginii la diferite dimensiuni şi impărţirea acesteia în regiuni ce nu se suprapun. Regiunile ce corespund aceleiaşi zone din imagine sunt apoi concatenate pentru a obţine reprezentarea. O modalitate asemănatoare de reprezentare a evenimentelor este folosită şi de \emph{Ionescu et al.} \cite{smeureanu2018}.  
+\par \emph{Sultani et al.} \cite{sultani2018} defineşte anomaliile la nivel de video, şi tratează segmente din video drept evenimente în cadrul videoului. Acestea sunt analizate folosind un MIL (\say{multiple instance learning})adânc. Această abordare este minim-supervizată, iar prin etichetarea la nivel de video, în locul etichetelor la nivel de cadru clasice, a fost posibilă creerea si evaluarea pe un set de dimensiuni deosebit de mari, însumând 128 de ore de filmare.
+\par Asemănator metodei alese spre implementare\cite{ionescu2019object}, au fost propuse multiple arhitecturi \cite{sobokrou2017,xu2015} ce propun extragerea caracteristicilor unui eveniment în mod nesupervizat folosind autoencodere. 
 \section{Conţinutul lucrării}
  Ca şi structură, lucrarea este împărţită în 2 părţi:
 \begin{itemize}
@@ -266,7 +277,89 @@ Primele 4 straturi reprezintă encoder-ul, în timp ce ultimele 4 straturi repre
 \item Prin intermediul metodei \emph{\_\_train\_autoencoder} antrenează autoencoderul pe baza unui vector de imagini primit ca parametru. Inainte de a incepe antrenarea propriu zisă se verifică dacă există deja un model pre-antrenat în sistemul de fişiere. Daca nu există, se realizează antrenarea completă, urmată de salvarea modelului în sistemul de fişiere.
 \item Prin intermediul metodei \emph{get\_encoded\_state} ce primeşte ca parametru o imagine, returnează reprezentarea latentă a acelei imagini. 
 \end{itemize}
+Implementarea clasei \textbf{AutoEncoderModel} este : 
+\begin{footnotesize}
+\begin{lstlisting}
+class AutoEncoderModel:
+    """
+    ----------
+    autoencoder = Modelul pentru autoencoderul complet, 
+    contine atat encoderul cat si decoderul
+    encoder = doar encoderul, extras din autoencoder,avand aceleasi greutati.
+    """
+    def __init__(self, input_images, checkpoints_name):
+        self.checkpoints_name = checkpoints_name
+       #fisierul in care vor fi salvate modelele dupa antrenare
+        self.checkpoint_dir = '/home/some_directory_%s' % self.checkpoints_name
+        self.num_epochs = 100
+        self.batch_size = 64
+        self.autoencoder, self.encoder = self.__generate_autoencoder()
+        self.__train_autoencoder(input_images)
 
+    def __generate_autoencoder(self):
+        input_img = Input(shape=(64, 64, 1))
+        x = Conv2D(32, (3, 3), activation='relu', padding='same')(input_img)
+        x = MaxPooling2D((2, 2), strides=2, padding='same')(x)
+        x = Conv2D(32, (3, 3), activation='relu', padding='same')(x)
+        x = MaxPooling2D((2, 2), strides=2, padding='same')(x)
+        x = Conv2D(16, (3, 3), activation='relu', padding='same')(x)
+        encoded = MaxPooling2D((2, 2), strides=2, padding='same')(x)
+        x = Conv2D(16, (3, 3), activation='relu', padding='same')(encoded)
+        x = UpSampling2D((2, 2))(x)
+        x = Conv2D(32, (3, 3), activation='relu', padding='same')(x)
+        x = UpSampling2D((2, 2))(x)
+        x = Conv2D(32, (3, 3), activation='relu', padding='same')(x)
+        x = UpSampling2D((2, 2))(x)
+        decoded = Conv2D(1, (3, 3), activation='sigmoid', padding='same')(x)
+        autoencoder = Model(input_img, decoded)
+        encoder = Model(input_img, encoded)
+        # compileaza modelele folosind optimizatorul Adam si 
+        # diferenta medie patratica drept functie loss
+        optimizer = Adam(lr=10 ** -3)
+        encoder.compile(optimizer=optimizer, loss='mse')
+        autoencoder.compile(optimizer=optimizer, loss='mse')
+        print(autoencoder.summary())
+        return autoencoder, encoder
+
+    def __train_autoencoder(self, input_images):
+        """
+        Parametri
+        ----------
+        input_images = np.array ce contine imagini de dimensiune 64x64x1
+        ce vor fi folosite pentru a antrena autoencoderul
+        """
+        if not os.path.exists(self.checkpoint_dir):
+            os.makedirs(self.checkpoint_dir)
+            checkpoint_callback = 
+		ModelCheckpoint(filepath=self.checkpoint_dir + '/weights.hdf5', 
+			verbose=1,
+			save_best_only=True)
+            early_stopping_monitor = EarlyStopping(patience=2)
+            data_train, data_test, gt_train, gt_test = 
+		train_test_split(input_images, input_images, test_size=0.20,
+			random_state=42)
+            self.autoencoder.fit(data_train, data_train,
+                          epochs=self.num_epochs,
+                          batch_size=self.batch_size,
+                          validation_data=(data_test, data_test),
+                          callbacks=[checkpoint_callback, early_stopping_monitor])
+        else:
+            self.autoencoder.load_weights(self.checkpoint_dir + '/weights.hdf5')
+
+    def get_encoded_state(self, image):
+        """
+        Parametri
+        ----------
+        images - np.array ce contine imaginea ce trebuie codificata 
+        Rezultat
+        -------
+        np.array ce contine imaginea codificata de catre encoder
+        """
+        input = np.expand_dims(image,axis = 0)
+        encodings = self.encoder.predict(input)
+        return encodings[0]
+\end{lstlisting}
+\end{footnotesize}
 \begin{figure}[h]
 \begin{center}
         \includegraphics[width=1\textwidth]{images/training_stage1_architecture}
@@ -274,7 +367,6 @@ Primele 4 straturi reprezintă encoder-ul, în timp ce ultimele 4 straturi repre
 			 \label{fig:stage1_architecture}
 \end{center}
 \end{figure}
-\clearpage
 \par
 Implementarea arhitecturii prezentate în figura ~\ref{fig:stage1_architecture} constă în următorii paşi:
 \begin {itemize}
@@ -292,9 +384,52 @@ Implementarea arhitecturii prezentate în figura ~\ref{fig:stage1_architecture} 
 			\label{fig:gradient_kernel}
     \end{center}
 \end{wrapfigure}
-
 \par
 În etapa de antrenare a clasificatorilor finali, se folosesc autoencoderele antrenate în etapa precedentă pentru a obţine vectorii de caracteristici specifici fiecărui eveniment prezent în setul de date. Ca şi prim pas, se detectează toate obiectele prezente în fiecare cadru din video-urile  de antrenare, iar pentru fiecare obiect, se folosesc coordonatele acestuia pentru a decupa acelaşi obiect din cadrul \emph{t-3} şi \emph{t+3}, respectiv la indexul \emph{t} curent. Se calculează gradienţii pentru imaginile decupate, astfel este reprezentată mişcarea obiectului faţă de cadrul curent, iar apoi se obţin vectorii caracteristici ai fiecarui gradient prin trecerea acestora prin autoencoderul corespunzător antrenat în etapa precendentă. Odată obţinuţi cei 3 vectori caracteristici specifici evenimentului, aşa cum este ilustrat şi în figura ~\ref{fig:stage2_architecture}, concatenarea acestora este stocată într-o colecţie globală ce reţine datele pentru tot setul de date.
+Obţinerea vectorului de caracterisitici pentru un anumit eveniment este realizată în cadrul funcţiei :
+\\
+\begin{footnotesize}
+\begin{lstlisting}
+def __get_feature_vectors_and_bboxes(self, frame, frame_d3, frame_p3):
+      """
+      :param frame: np.array - Cadrul ce trebuie analizat
+      :param frame_d3 : np.array - Cadrul de la indexul t-3 comparativ 
+      cu indexul t al cadrul ce trebuie analizat. d3 vine de la delta3
+      :param frame_p3 : np.array  - Cadrul de la indexul t+3 comparativ 
+      cu indexul t al cadrul ce trebuie analizat. p3 vine de la plus3
+      """
+      object_detector = ObjectDetector(frame)
+      bounding_boxes = object_detector.bounding_boxes
+      cropped_detections, cropped_d3, cropped_p3 = 
+	object_detector.get_detections_and_cropped_sections(frame_d3,frame_p3)
+      gradient_calculator = GradientCalculator()
+      gradients_d3 = 
+	self.__prepare_data_for_CNN(gradient_calculator
+			.calculate_gradient_bulk(cropped_d3))
+      gradients_p3 = 
+	self.__prepare_data_for_CNN(gradient_calculator
+			.calculate_gradient_bulk(cropped_p3))
+      cropped_detections = self.__prepare_data_for_CNN(cropped_detections)
+      list_of_feature_vectors = []
+      for i in range(cropped_detections.shape[0]):
+          apperance_features = 
+          self.trainer_stage2.autoencoder_images
+			.get_encoded_state(np.resize(cropped_detections[i]
+						, (64, 64, 1)))
+          motion_features_d3 = self.trainer_stage2.autoencoder_gradients
+			.get_encoded_state(np.resize(gradients_d3[i]
+						, (64, 64, 1)))
+          motion_features_p3 = self.trainer_stage2.autoencoder_gradients
+			.get_encoded_state(np.resize(gradients_p3[i]
+						, (64, 64, 1)))
+          feature_vector = 
+		np.concatenate((motion_features_d3.flatten()
+		,apperance_features.flatten()
+		, motion_features_p3.flatten()))
+          list_of_feature_vectors.append(feature_vector)
+      return np.array(list_of_feature_vectors),bounding_boxes
+\end{lstlisting}
+\end{footnotesize}
 \begin{figure}[h]
 \begin{center}
         \includegraphics[width=1\textwidth,height=8cm]{images/training_stage2_architecture}
@@ -318,6 +453,12 @@ Aplicând algoritmul de \emph{k-means clustering} se obţin k categorii de norma
 \end{figure}
 Pentru a obţine scorul unui eveniment, un pas foarte important este obţinerea vectorului de caracteristici corespunzător. Acesta se obţine folosind autoencoderele antrenate în etapa precedentă, după pre-procesarea cadrelor corespunzătoare evenimentului.  Pre-procesarea este asemanătoare etapei de antrenare, şi anume, pentru fiecare obiect dintr-un cadrul \emph{t}, se selectează aceeaşi zonă din cadrele \emph{t-3} si \emph{t+3} cu scopul de a calcula gradienţii ce reflectă mişcarea obiectului relativ la cadrul t. Odată obţinute aceste 3 date (imaginea obiectului şi cei 2 gradienţi) aşa cum este descris şi in figura
 ~\ref{fig:inference_architecture}, acestea sunt trecute prin autoencodere şi sunt obţinute reprezentările latente, ce sunt concatenate pentru a se obţine vectorul final de caracteristici. Vectorul de caracteristici este apoi clasificat de toţi cei k clasificatori binari antrenaţi anterior, iar scorul final de anormalitate este dat de formula : \[score = -max(g_{i}(v)), i \in [1..k]\] unde v este vectorul de caracteristici, iar \(g_{i}\) este un clasificator binar.
+Implementarea funcţiei ce generează scorul de anomalie a unui eveniment este : 
+\begin{lstlisting}
+ def get_inference_score(self,feature_vector):
+        scores = self.model.decision_function([feature_vector])[0]
+        return -max(scores)
+\end{lstlisting}
 \par
 Filmarea propriu zisă şi selecţia cadrelor este realizată pe partea de client, în timp ce pre-procesarea cadrelor, detecţia obiectelor şi calcularea scorului pentru fiecare dintre aceste obiecte este executat pe server. Astfel, atât timp cât există o conexiune la reţea, clientul nu este limitat de puterea de calcul proprie, şi poate analiza mai multe videouri simultan. Totuşi clientul trebuie sa încarce cadrele ce vor fi analizate catre o destinaţie S3 a serverului. Pentru a nu încetini semnificativ procesul de analiză, trimitere cadrelor în reţea trebuie facută în paralel, folosind eventualele posibilităţi de multi-threading ale clientului.
 \par
@@ -334,6 +475,7 @@ JSON-ul rezultat conţine 3 câmpuri :
 \item Result: ce conţine scorul cadrului de anormalitate, ce reprezintă maximul dintre scorurile obiectelor din cadru.
 \item boxes: o listă ce conţine coordonatele obiectelor ce sunt considerate anormale din cadrul principal
 \end{itemize}
+
 \par Codul de stare respectă standardul HTTP1.1, mai precis \emph{RFC7231}\cite{RFC7231} şi respectă valorile prezentate în tabelul de mai jos: 
 \begin{table}[h]
 \begin{tabular}{|c|c|}
@@ -354,7 +496,44 @@ Valoarea codului & Semnificaţie                                                
 \caption{Descrierea codurilor returnate de către server}
 \end{table}
 \par Modul în care este structurat serverul face foarte uşoară crearea de noi API-uri, cu aceeaşi funcţionalitate, dar orientate spre tipuri de anormalitate diferite. Aşa cum a fost descris şi în introducere, detectarea anomaliilor este dependentă de setul de date de referinţă. Astfel, fiecare model antrenat pe un set de date diferit, acoperă o arie diferită de anomalii. Altfel spus, în funcţie de setul de date folosit la antrenare, sistemul va detecta un alt set de evenimente drept anomalii. În final, un nou API este necesar pentru fiecare astfel de model. 
-\par Deoarece arhitectura curentă a serverului încarcă modelele pre-antrenate dintr-o destinaţie S3 la momentul iniţializării, pentru a creea un nou API ce a fost antrenat pe un alt set de date, este necesară doar crearea unei noi destinaţii S3, încarcarea modelelor pre-antrenate la acea destinaţie, schimbarea în cod a denumirii vechii destinaţii în cea nouă şi apoi un nou deployment. Astfel, cu un număr minim de paşi, poate fi creat un nou API ce execută etapa de inferenţă pentru un sistem ce a fost antrenat pe un nou set de date. \\
+\par Deoarece arhitectura curentă a serverului încarcă modelele pre-antrenate dintr-o destinaţie S3 la momentul iniţializării, pentru a creea un nou API ce a fost antrenat pe un alt set de date, este necesară doar crearea unei noi destinaţii S3, încarcarea modelelor pre-antrenate la acea destinaţie, schimbarea în cod a denumirii vechii destinaţii în cea nouă şi apoi un nou deployment. Astfel, cu un număr minim de paşi, poate fi creat un nou API ce execută etapa de inferenţă pentru un sistem ce a fost antrenat pe un nou set de date. 
+
+Codul ce se execută în momentul primirii pe server a unei cereri pe endpoint-ul descris mai sus este : 
+\begin{footnotesize}
+\begin{lstlisting}
+@app.route('/upload/<file_key>', methods=['POST'])
+def lambda_handler(file_key):
+    frame_name = file_key
+    arguments_tuples = [(frame_name,s3_client)
+			,(frame_name+"_d3", s3_client)
+			,(frame_name+"_p3", s3_client)]
+    pool = ThreadPool(processes=4)
+   #descarca imaginile necesare procesarii in mod parelel
+    results = pool.map(load_frame, arguments_tuples) 
+    frame = results[0]
+    frame_d3 = results[1]
+    frame_p3 = results[2]
+    feature_vectors, bounding_boxes = 
+	get_feature_vectors_and_bounding_boxes(frame_predictor,
+						frame,
+						frame_d3,
+						frame_p3)
+    frame_score = 0
+    boxes = []
+
+    for idx, vector in enumerate(feature_vectors):
+        score = frame_predictor.get_inference_score(vector)
+        if score > frame_predictor.threshold:
+            c1,l1,c2,l2 = bounding_boxes[idx]
+            boxes.append([c1,l1,c2,l2])
+        if  score > frame_score:
+            frame_score = score
+    response = {"statusCode": 200,
+            "body" : frame_score,
+            "boxes" : boxes}
+    return Response(json.dumps(response),  mimetype='application/json')
+\end{lstlisting}
+\end{footnotesize}
 
 \par Etapa de inferenţă a sistemului poate fi rulată şi local, dezvoltând în acest sens un program. Acesta execută toate etapele inferenţei folosind aceleaşi modele ca şi serverul plasat în cloud, deoarece la momentul execuţiei programului, acesta descarcă modelele necesare din aceeaşi destinaţie S3. Astfel se asigura faptul că nu există diferenţe între programul ce este executat local şi cel ce deserveşte API-ul, iar dacă modelele sunt îmbunătăţite şi schimbate, această schimbare se propagă automat către ambele moduri de execuţie.
 
