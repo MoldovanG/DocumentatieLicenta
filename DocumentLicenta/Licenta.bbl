@@ -38,6 +38,12 @@ R.~Fielding and J.~Reschke.
 \newblock Hypertext transfer protocol (http/1.1): Semantics and content.
 \newblock RFC 7231, RFC Editor, June 2014.
 
+\bibitem{2020autoencoders}
+{Francois Chollet}.
+\newblock Building autoencoders in keras.
+\newblock \url{https://blog.keras.io/building-autoencoders-in-keras.html}.
+\newblock Accesat la data de : 15-04-2020.
+
 \bibitem{goodfellow2016}
 I.~Goodfellow, Y.~Bengio, and A.~Courville.
 \newblock {\em Deep Learning}.

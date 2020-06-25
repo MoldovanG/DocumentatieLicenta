@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.22)  8 JUN 2020 19:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.22)  25 JUN 2020 11:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -489,72 +489,74 @@ Capitolul 2.
 File: images/convolution_operator.png Graphic file (type png)
 <use images/convolution_operator.png>
 Package pdftex.def Info: images/convolution_operator.png  used on input line 15
-7.
+8.
 (pdftex.def)             Requested size: 175.2664pt x 131.0715pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 160--160
+Underfull \hbox (badness 10000) in paragraph at lines 161--161
 []|\OT1/cmr/m/n/12 Surs^^Ua: \OT1/cmr/m/it/12 A gu-ide to con-vo-lu-tion
  []
 
 
-Overfull \hbox (11.18169pt too wide) in paragraph at lines 164--165
+Overfull \hbox (11.18169pt too wide) in paragraph at lines 165--166
 [][]\OT1/cmr/m/n/12 Operatorul de convolu[]ie per-mite ^^^Pntelegerea
  []
 
 
-Underfull \hbox (badness 7012) in paragraph at lines 164--165
+Underfull \hbox (badness 7012) in paragraph at lines 165--166
 \OT1/cmr/m/n/12 da-te-lor de in-trare prin apli-ca-rea unui
  []
 
 
-Underfull \hbox (badness 2856) in paragraph at lines 164--165
+Underfull \hbox (badness 2856) in paragraph at lines 165--166
 \OT1/cmr/m/n/12 da-te-lor asu-pra c^^Uarora este apli-cat, fapt
  []
 
 
-Underfull \hbox (badness 1817) in paragraph at lines 164--165
+Underfull \hbox (badness 1817) in paragraph at lines 165--166
 \OT1/cmr/m/n/12 ilus-trat ^^^Pn fi-gura  2.1[]. Auto-en-co-de-rele
  []
 
 
-Underfull \hbox (badness 5578) in paragraph at lines 164--165
+Underfull \hbox (badness 5578) in paragraph at lines 165--166
 \OT1/cmr/m/n/12 convolu[]ionale re-pre-zint^^Ua cea mai bun^^Ua
  []
 
 
-Overfull \hbox (0.58334pt too wide) in paragraph at lines 166--167
+Overfull \hbox (0.58334pt too wide) in paragraph at lines 168--169
 \OT1/cmr/m/it/12 LLoyd \OT1/cmr/m/n/12 im-ple-men-tat ^^^Pn bi-bli-o-teca py-th
 on \OT1/cmr/m/it/12 sk-learn\OT1/cmr/m/n/12 . Aplic^and acest al-go-ritm peste 
 vec-to-rii
  []
 
+[6 <./images/convolution_operator.PNG>]
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 1
-67.
+75.
+
 (c:/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 167.
- [6 <./images/convolution_operator.PNG>]
-Overfull \hbox (1.72964pt too wide) in paragraph at lines 185--187
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 175.
+ [7]
+Overfull \hbox (1.72964pt too wide) in paragraph at lines 194--196
 []\OT1/cmr/m/n/12 Odat^^Ua ob[]inute obiec-tele din ca-drul ana-li-zat, dupa ob
 []inerea gradien[]ilor din ca-drele
  []
 
-[7] [8]
-Overfull \hbox (2.29631pt too wide) in paragraph at lines 200--201
+[8]
+Overfull \hbox (2.29631pt too wide) in paragraph at lines 209--210
 \OT1/cmr/m/n/12 ofe-rite de Ama-zon Web Ser-vi-ces(AWS). Mai jos sunt pre-zen-t
 ate c^ateva din-tre avan-ta-jele
  []
 
 
-Overfull \hbox (1.6602pt too wide) in paragraph at lines 202--203
+Overfull \hbox (1.6602pt too wide) in paragraph at lines 211--212
 \OT1/cmr/m/n/12 Aceste instan[]e sunt ex-trem de con-fi-gu-ra-bile, pun^and la 
 dispozi[]ia dezvol-ta-to-ru-lui
  []
 
 
-Overfull \hbox (2.13243pt too wide) in paragraph at lines 205--207
+Overfull \hbox (2.13243pt too wide) in paragraph at lines 214--216
 []\OT1/cmr/m/n/12 Auto Sca-ling Group : acest ser-vi-ciu ofer^^Ua un mod auto-m
 at de lan-sare a instan[]elor
  []
@@ -563,403 +565,411 @@ at de lan-sare a instan[]elor
 <images/client_drawing.png, id=60, 610.53094pt x 279.29344pt>
 File: images/client_drawing.png Graphic file (type png)
 <use images/client_drawing.png>
-Package pdftex.def Info: images/client_drawing.png  used on input line 213.
+Package pdftex.def Info: images/client_drawing.png  used on input line 222.
 (pdftex.def)             Requested size: 438.17273pt x 200.45187pt.
 
-Overfull \hbox (7.56987pt too wide) in paragraph at lines 223--224
+Overfull \hbox (7.56987pt too wide) in paragraph at lines 232--233
  \OT1/cmr/m/n/12 Pen-tru a pu-tea vi-zu-a-liza ca-pa-cit^^Ua[]ile sis-te-mu-lui
  de detec[]ie a ano-ma-li-i-lor, am dezvol-tat
  []
 
 [10 <./images/client_drawing.png>]
-Overfull \hbox (16.60866pt too wide) in paragraph at lines 225--226
-[]\OT1/cmr/m/n/12 Un avan-taj al aces-tei libr^^Uarii este c^^Ua, de-o-a-rece a
-bs-trac-ti-zeaz^^Ua foarte efi-cient opera[]iunile
+Overfull \hbox (4.01434pt too wide) in paragraph at lines 233--234
+\OT1/cmr/m/n/12 este un fra-mework creat pen-tru a fa-ci-lita dezvol-ta-rea de 
+aplica[]ii des-k-top cross-platform,
  []
 
-[11]
+<images/interfata.png, id=65, 2258.4375pt x 1505.625pt>
+File: images/interfata.png Graphic file (type png)
+<use images/interfata.png>
+Package pdftex.def Info: images/interfata.png  used on input line 243.
+(pdftex.def)             Requested size: 438.17273pt x 292.11388pt.
+
+Overfull \hbox (12.43509pt too wide) in paragraph at lines 240--248
+\OT1/cmr/m/n/12 aplica[]ii des-k-top, se pot crea interfe[]e atrac-tive, sti-li
+-zate ^^Xsi aran-jate ast-fel ^^^Pnc^at experien[]a
+ []
+
+[11 <./images/interfata.png>] [12]
 Capitolul 3.
 
-Overfull \hbox (0.28938pt too wide) in paragraph at lines 235--236
+Overfull \hbox (0.28938pt too wide) in paragraph at lines 257--258
 \OT1/cmr/m/n/12 A^^Xsa cum se poate ob-serva ^^Xsi in sec[]iunea de ana-liz^^Ua
  a performan[]elor sistemului,detec[]ia
  []
 
-[12
+[13
 
 ]
-Overfull \hbox (13.37953pt too wide) in paragraph at lines 249--250
+Overfull \hbox (13.37953pt too wide) in paragraph at lines 271--272
  \OT1/cmr/m/n/12 Din ca-uza com-ple-xit^^Ua[]ii pro-ble-mei de a iden-ti-fica c
 om-por-ta-men-tul anor-mal al obiec-te-lor
  []
 
-<images/arhitectura_autoencoder.png, id=71, 530.98375pt x 308.15125pt>
+<images/arhitectura_autoencoder.png, id=75, 530.98375pt x 308.15125pt>
 File: images/arhitectura_autoencoder.png Graphic file (type png)
 <use images/arhitectura_autoencoder.png>
 Package pdftex.def Info: images/arhitectura_autoencoder.png  used on input line
- 256.
+ 278.
 (pdftex.def)             Requested size: 438.17273pt x 254.29373pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[13] [14 <./images/arhitectura_autoencoder.png>]
-Overfull \hbox (17.36473pt too wide) in paragraph at lines 274--275
+[14] [15 <./images/arhitectura_autoencoder.png>]
+Overfull \hbox (17.36473pt too wide) in paragraph at lines 296--297
 [][]\OT1/cmr/m/n/12 In ca-drul sis-te-mu-lui, clasa \OT1/cmr/m/it/12 Auto-En-co
 -der-Mo-del \OT1/cmr/m/n/12 im-ple-men-teaz^^Ua func[]ionalit^^Ua[]ile ne-ce-sa
 re
  []
 
 
-Overfull \hbox (23.83197pt too wide) in paragraph at lines 288--289
+Overfull \hbox (23.83197pt too wide) in paragraph at lines 310--311
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (35.83209pt too wide) in paragraph at lines 293--294
+Overfull \hbox (35.83209pt too wide) in paragraph at lines 315--316
 [][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (17.83191pt too wide) in paragraph at lines 301--302
+Overfull \hbox (17.83191pt too wide) in paragraph at lines 323--324
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[15]
-Overfull \hbox (5.83179pt too wide) in paragraph at lines 307--308
-[][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (17.83191pt too wide) in paragraph at lines 313--314
+[16]
+Overfull \hbox (5.83179pt too wide) in paragraph at lines 329--330
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (35.83209pt too wide) in paragraph at lines 334--335
+Overfull \hbox (17.83191pt too wide) in paragraph at lines 335--336
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (35.83209pt too wide) in paragraph at lines 356--357
 [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (17.83191pt too wide) in paragraph at lines 339--340
+Overfull \hbox (17.83191pt too wide) in paragraph at lines 361--362
 [][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (53.83228pt too wide) in paragraph at lines 345--346
+Overfull \hbox (53.83228pt too wide) in paragraph at lines 367--368
 [][][][][][][][][][] 
  []
 
 
-Overfull \hbox (41.83215pt too wide) in paragraph at lines 347--349
+Overfull \hbox (41.83215pt too wide) in paragraph at lines 369--371
 [][][][][][][][][][][][][][][][][][][][] 
  []
 
-[16]
-<images/training_stage1_architecture.png, id=88, 1233.60875pt x 597.23125pt>
+[17]
+<images/training_stage1_architecture.png, id=92, 1233.60875pt x 597.23125pt>
 File: images/training_stage1_architecture.png Graphic file (type png)
 <use images/training_stage1_architecture.png>
 Package pdftex.def Info: images/training_stage1_architecture.png  used on input
- line 365.
+ line 387.
 (pdftex.def)             Requested size: 438.17273pt x 212.13248pt.
 
-Overfull \hbox (10.31151pt too wide) in paragraph at lines 374--375
+Overfull \hbox (10.31151pt too wide) in paragraph at lines 396--397
 []\OT1/cmr/m/n/12 Dimensiunea ker-ne-lu-lui fo-lo-sit pen-tru cal-cu-la-rea gra
 dien[]ilor este foarte im-por-tant^^Ua
  []
 
-[17 <./images/training_stage1_architecture.png>]
-Overfull \hbox (13.92575pt too wide) in paragraph at lines 376--378
+[18 <./images/training_stage1_architecture.png>]
+Overfull \hbox (13.92575pt too wide) in paragraph at lines 398--400
 \OT1/cmr/m/n/12 const^^Ua ^^^Pn diferen[]a me-die a p^^Uatratelor, dat^^Ua de f
 or-mula : $\OML/cmm/m/it/12 L\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 I; O\OT1/cmr/m/n
 /12 ) = [] [][] [][](\OML/cmm/m/it/12 I[] \OMS/cmsy/m/n/12 ^^@
  []
 
-<images/gradients.png, id=93, 845.40843pt x 310.15875pt>
+<images/gradients.png, id=97, 845.40843pt x 310.15875pt>
 File: images/gradients.png Graphic file (type png)
 <use images/gradients.png>
-Package pdftex.def Info: images/gradients.png  used on input line 382.
+Package pdftex.def Info: images/gradients.png  used on input line 404.
 (pdftex.def)             Requested size: 175.2664pt x 64.29758pt.
 
-Underfull \hbox (badness 1655) in paragraph at lines 388--392
+Underfull \hbox (badness 1655) in paragraph at lines 410--414
 \OT1/cmr/m/n/12 se de-tec-teaz^^Ua toate obiec-tele pre-zente ^^^Pn
  []
 
 
-Underfull \hbox (badness 2057) in paragraph at lines 388--392
+Underfull \hbox (badness 2057) in paragraph at lines 410--414
 \OT1/cmr/m/n/12 cu-rent. Se cal-cu-leaz^^Ua gradien[]ii pen-tru
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 388--392
+Underfull \hbox (badness 10000) in paragraph at lines 410--414
 
  []
 
 
-Overfull \hbox (29.83203pt too wide) in paragraph at lines 404--405
+Overfull \hbox (29.83203pt too wide) in paragraph at lines 426--427
 [][][][][][][][][][][] 
  []
 
-[18 <./images/gradients.png>]
-Overfull \hbox (5.83179pt too wide) in paragraph at lines 412--413
+[19 <./images/gradients.png>]
+Overfull \hbox (5.83179pt too wide) in paragraph at lines 434--435
 [][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (5.83179pt too wide) in paragraph at lines 417--418
+Overfull \hbox (5.83179pt too wide) in paragraph at lines 439--440
 [][][][][][][][][][][][][][] 
  []
 
-<images/training_stage2_architecture.png, id=98, 1591.9475pt x 597.23125pt>
+<images/training_stage2_architecture.png, id=102, 1591.9475pt x 597.23125pt>
 File: images/training_stage2_architecture.png Graphic file (type png)
 <use images/training_stage2_architecture.png>
 Package pdftex.def Info: images/training_stage2_architecture.png  used on input
- line 435.
+ line 457.
 (pdftex.def)             Requested size: 438.16342pt x 227.62459pt.
-[19 <./images/training_stage2_architecture.png>]
-<images/inference_architecture.png, id=103, 1620.0525pt x 463.7325pt>
+[20 <./images/training_stage2_architecture.png>]
+<images/inference_architecture.png, id=107, 1620.0525pt x 463.7325pt>
 File: images/inference_architecture.png Graphic file (type png)
 <use images/inference_architecture.png>
 Package pdftex.def Info: images/inference_architecture.png  used on input line 
-449.
+471.
 (pdftex.def)             Requested size: 438.16162pt x 170.71506pt.
 
-Overfull \hbox (25.68634pt too wide) in paragraph at lines 454--455
+Overfull \hbox (25.68634pt too wide) in paragraph at lines 476--477
 \OT1/cmr/m/n/12 an-tre-nate ^^^Pn etapa pre-ce-dent^^Ua, dup^^Ua pre-procesarea
  ca-dre-lor co-res-punz^^Uatoare eve-ni-men-tu-lui.
  []
 
-[20 <./images/inference_architecture.png>]
-Overfull \hbox (27.12646pt too wide) in paragraph at lines 459--460
+[21 <./images/inference_architecture.png>]
+Overfull \hbox (27.12646pt too wide) in paragraph at lines 481--482
 [][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (65.28343pt too wide) in paragraph at lines 481--496
+Overfull \hbox (65.28343pt too wide) in paragraph at lines 503--518
 [][] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[21]
-Overfull \hbox (9.75873pt too wide) in paragraph at lines 499--500
+[22]
+Overfull \hbox (9.75873pt too wide) in paragraph at lines 521--522
 \OT1/cmr/m/n/12 mo-de-le-lor pre-antrenate la acea destina[]ie, schim-ba-rea ^^
 ^Pn cod a de-nu-mi-rii ve-chii destina[]ii
  []
 
 LaTeX Font Info:    Trying to load font information for OML+cmr on input line 5
-04.
+26.
 (c:/texlive/2019/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 504.
- [22]
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 526.
+ [23]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 531.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 553.
 
-Overfull \hbox (1.07271pt too wide) in paragraph at lines 542--543
+Overfull \hbox (1.07271pt too wide) in paragraph at lines 564--565
  \OT1/cmr/m/n/12 Acest sis-tem de detec[]ie a ano-ma-li-i-lor are aplica[]ii mu
 l-ti-ple ^^^Pn do-me-niul su-pra-ve-ghe-rii
  []
 
 
-Overfull \hbox (14.32813pt too wide) in paragraph at lines 542--543
+Overfull \hbox (14.32813pt too wide) in paragraph at lines 564--565
 \OT1/cmr/m/n/12 fapt ce li-mi-teaz^^Ua ca-pa-ci-ta-tea sis-te-mu-lui de a fi mo
 -ni-to-ri-zat, de-o-a-rece pen-tru su-pra-ve-ghe-rea
  []
 
-[23] [24]
+[24] [25]
 Capitolul 4.
 
-Overfull \hbox (5.87267pt too wide) in paragraph at lines 549--550
+Overfull \hbox (5.87267pt too wide) in paragraph at lines 571--572
 []\OT1/cmr/m/n/12 De^^Xsi op[]iunile pen-tru execu[]ia ^^^Pn cloud sunt vaste, 
 de la sis-teme com-plet ad-min-si-trate
  []
 
 
-Overfull \hbox (9.824pt too wide) in paragraph at lines 550--551
+Overfull \hbox (9.824pt too wide) in paragraph at lines 572--573
 \OT1/cmr/m/n/12 l^ang^^Ua asi-gu-ra-rea tu-tu-ror aces-tor fa-ci-lit^^Ua[]i, so
 lu[]iile cloud ofer^^Ua de multe ori si performan[]e
  []
 
-[25
+[26
 
 ]
-<images/cloudDiagram.png, id=125, 697.60625pt x 250.9375pt>
+<images/cloudDiagram.png, id=129, 697.60625pt x 250.9375pt>
 File: images/cloudDiagram.png Graphic file (type png)
 <use images/cloudDiagram.png>
-Package pdftex.def Info: images/cloudDiagram.png  used on input line 562.
+Package pdftex.def Info: images/cloudDiagram.png  used on input line 584.
 (pdftex.def)             Requested size: 438.17273pt x 157.61665pt.
 
-Overfull \hbox (9.49762pt too wide) in paragraph at lines 575--576
+Overfull \hbox (9.49762pt too wide) in paragraph at lines 597--598
 \OT1/cmr/m/n/12 ce prive^^Xste se-cu-ri-ta-tea, update-urile, sof-tu-rile ^^Xsi
  toate leg^^Uaturile din ca-drul in-fras-truc-tu-rii,
  []
 
 
-Overfull \hbox (3.77083pt too wide) in paragraph at lines 575--576
+Overfull \hbox (3.77083pt too wide) in paragraph at lines 597--598
 \OT1/cmr/m/n/12 aces-tea sunt ad-mi-nis-trate strict de c^^Uatre cli-ent. []Int
 re a rula un sis-tem pe o in-fras-truc-tur^^Ua
  []
 
-[26 <./images/cloudDiagram.png>]
-Overfull \hbox (4.41219pt too wide) in paragraph at lines 579--580
+[27 <./images/cloudDiagram.png>]
+Overfull \hbox (4.41219pt too wide) in paragraph at lines 601--602
 []\OT1/cmr/m/n/12 Solu[]iile \OT1/cmr/m/it/12 PaaS \OT1/cmr/m/n/12 re-pre-zint^
 ^Ua un mod de a crea me-dii de dezvol-tare, tes-tare sau produc[]ie
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 583--586
+Underfull \hbox (badness 10000) in paragraph at lines 605--608
 
  []
 
-[27]
-Overfull \hbox (54.36702pt too wide) in paragraph at lines 589--601
+[28]
+Overfull \hbox (54.36702pt too wide) in paragraph at lines 611--623
 [][] 
  []
 
 
-Overfull \hbox (2.25186pt too wide) in paragraph at lines 605--606
+Overfull \hbox (2.25186pt too wide) in paragraph at lines 627--628
 \OT1/cmr/m/n/12 con-tinu, ce ne-ce-sit^^Ua echi-li-bra-rea tra-fi-cu-lui ^^^Pnt
 re aces-tea, lan-sa-rea de noi ser-vere, lan-sa-rea
  []
 
 
-Overfull \hbox (13.41425pt too wide) in paragraph at lines 606--608
+Overfull \hbox (13.41425pt too wide) in paragraph at lines 628--630
 \OT1/cmr/m/n/12 lu^and orice res-pon-sa-bi-li-tate de pe ume-rii clien[]ilor at
 unci c^and vine vorba de ad-min-stra-rea
  []
 
-[28
+[29
 
 ]
-Overfull \hbox (5.89464pt too wide) in paragraph at lines 616--619
+Overfull \hbox (5.89464pt too wide) in paragraph at lines 638--641
  \OT1/cmr/m/n/12 Solu[]ia aleas^^Ua pen-tru execu[]ia eta-pei de inferen[]^^Ua 
 ^^^Pn cloud este \OT1/cmr/m/it/12 AWS Elas-tic Beanstalk\OT1/cmr/m/n/12 .
  []
 
-[29] [30]
+[30] [31]
 Capitolul 5.
-<images/rezultate_video_6.png, id=143, 642.4pt x 481.8pt>
+<images/rezultate_video_6.png, id=147, 642.4pt x 481.8pt>
 File: images/rezultate_video_6.png Graphic file (type png)
 <use images/rezultate_video_6.png>
-Package pdftex.def Info: images/rezultate_video_6.png  used on input line 637.
+Package pdftex.def Info: images/rezultate_video_6.png  used on input line 659.
 (pdftex.def)             Requested size: 219.08636pt x 164.30974pt.
 
-Overfull \hbox (21.90999pt too wide) in paragraph at lines 637--638
+Overfull \hbox (21.90999pt too wide) in paragraph at lines 659--660
  [] 
  []
 
 
-Underfull \hbox (badness 3291) in paragraph at lines 643--644
+Underfull \hbox (badness 3291) in paragraph at lines 665--666
 \OT1/cmr/m/n/12 sis-te-mul izo-leaz^^Ua cu suc-ces eve-ni-men-tele
  []
 
 
-Underfull \hbox (badness 4441) in paragraph at lines 643--644
+Underfull \hbox (badness 4441) in paragraph at lines 665--666
 \OT1/cmr/m/n/12 cel mai mare dez-a-van-taj al sis-te-mu-lui,
  []
 
 
-Underfull \hbox (badness 2035) in paragraph at lines 643--644
+Underfull \hbox (badness 2035) in paragraph at lines 665--666
 \OT1/cmr/m/n/12 GPU, ceea ce re-pre-zint^^Ua o ^^^Pmbun^^Uat^^Ua[]ire
  []
 
-[31
+[32
 
  <./images/rezultate_video_6.png>]
-<images/eroare_detectie.png, id=148, 959.83594pt x 264.23718pt>
+<images/eroare_detectie.png, id=152, 959.83594pt x 264.23718pt>
 File: images/eroare_detectie.png Graphic file (type png)
 <use images/eroare_detectie.png>
-Package pdftex.def Info: images/eroare_detectie.png  used on input line 647.
+Package pdftex.def Info: images/eroare_detectie.png  used on input line 669.
 (pdftex.def)             Requested size: 438.17273pt x 120.62726pt.
 
-Overfull \hbox (6.0685pt too wide) in paragraph at lines 659--660
+Overfull \hbox (6.0685pt too wide) in paragraph at lines 681--682
 []\OT1/cmr/m/n/12 Rezultatele em-pi-rice ob[]inute pe acest set de date, sunt s
 a-tisf^^Uac^^Uatoare, fi-ind de-tec-tate
  []
 
-<images/comparatie_cpu_usage.png, id=149, 910.15031pt x 344.03531pt>
+<images/comparatie_cpu_usage.png, id=153, 910.15031pt x 344.03531pt>
 File: images/comparatie_cpu_usage.png Graphic file (type png)
 <use images/comparatie_cpu_usage.png>
-Package pdftex.def Info: images/comparatie_cpu_usage.png  used on input line 66
-4.
+Package pdftex.def Info: images/comparatie_cpu_usage.png  used on input line 68
+6.
 (pdftex.def)             Requested size: 438.17273pt x 165.62852pt.
-[32 <./images/eroare_detectie.png>]
-Overfull \hbox (8.55284pt too wide) in paragraph at lines 669--671
+[33 <./images/eroare_detectie.png>]
+Overfull \hbox (8.55284pt too wide) in paragraph at lines 691--693
 \OT1/cmr/m/n/12 uti-li-zare a sis-te-mu-lui : prin ru-lare lo-cal^^Ua, sau prin
  ac-ce-sa-rea HTTP API-ului. Re-zul-ta-tele
  []
 
 
-Overfull \hbox (28.9502pt too wide) in paragraph at lines 678--679
+Overfull \hbox (28.9502pt too wide) in paragraph at lines 700--701
  \OT1/cmr/m/n/12 Sis-te-mul de de-tec-tare a ano-ma-li-i-lor dezvol-tat a ^^^Pn
 deplinit as-tept^^Uarile ini[]iale, ^^^Pmbun^^Uat^^Ua[]ind
  []
 
-[33 <./images/comparatie_cpu_usage.png>] (./Licenta.lof)
+[34 <./images/comparatie_cpu_usage.png>] (./Licenta.lof)
 \tf@lof=\write4
 \openout4 = `Licenta.lof'.
 
- [34
+ [35
 
 ] (./Licenta.lot)
 \tf@lot=\write5
 \openout5 = `Licenta.lot'.
 
 
-(./Licenta.bbl [35
+(./Licenta.bbl [36
+
+] [37
 
 ]
-Underfull \hbox (badness 2547) in paragraph at lines 73--78
+Underfull \hbox (badness 2547) in paragraph at lines 79--84
 []\OT1/cmr/m/n/12 E. Jo-nas, J. Schleier-Smith, V. Sre-e-kanti, C.-C. Tsai, A. 
 Khan-de-lwal,
  []
 
-[36
 
-]
-Underfull \hbox (badness 1226) in paragraph at lines 135--138
+Underfull \hbox (badness 1226) in paragraph at lines 141--144
 []\OT1/cmr/m/n/12 Amazon autos-ca-ling des-crip-tion.  $\OT1/cmtt/m/n/12 https 
 : / / aws . amazon . com / autoscaling/$\OT1/cmr/m/n/12 .
  []
 
 
-Underfull \hbox (badness 4060) in paragraph at lines 140--143
+Underfull \hbox (badness 4060) in paragraph at lines 146--149
 []\OT1/cmr/m/n/12 Amazon elas-tic load ba-lan-cing des-crip-tion.  $\OT1/cmtt/m
 /n/12 https : / / aws . amazon . com /
  []
 
-) [37] (./Licenta.aux) ) 
+) [38] [39] (./Licenta.aux) ) 
 Here is how much of TeX's memory you used:
- 6705 strings out of 480994
- 98440 string characters out of 5916032
- 395256 words of memory out of 5000000
- 22113 multiletter control sequences out of 15000+600000
+ 6715 strings out of 480994
+ 98641 string characters out of 5916032
+ 395272 words of memory out of 5000000
+ 22122 multiletter control sequences out of 15000+600000
  542108 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,12n,45p,1802b,1576s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm
--super-ts1.enc}<c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
-2.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/
-texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2
-019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2019/texmf
--dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2019/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r6.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/
-texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2
-019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2019/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2019/texmf-dist/font
-s/type1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/p
-ublic/cm-super/sfrm1000.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/cm-s
-uper/sfrm1200.pfb>
-Output written on Licenta.pdf (40 pages, 2245337 bytes).
+{c:/texlive/2019/texmf-dist/fonts/enc/dvips/cm-sup
+er/cm-super-ts1.enc}<c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmbx12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb
+><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texl
+ive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2019/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2019/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2019/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr6.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
+><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texl
+ive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2019/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2019/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2019/texmf-dist/fonts/ty
+pe1/public/cm-super/sfrm1000.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public
+/cm-super/sfrm1200.pfb>
+Output written on Licenta.pdf (42 pages, 2451439 bytes).
 PDF statistics:
- 225 PDF objects out of 1000 (max. 8388607)
- 141 compressed objects within 2 object streams
+ 232 PDF objects out of 1000 (max. 8388607)
+ 145 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 76 words of extra memory for PDF output out of 10000 (max. 10000000)
 

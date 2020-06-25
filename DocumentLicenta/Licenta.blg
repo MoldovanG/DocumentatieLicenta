@@ -1,0 +1,61 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/W32TeX)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Licenta.aux
+The style file: abbrv.bst
+Database file #1: References.bib
+I was expecting a `,' or a `}'---line 173 of file References.bib
+ :   howpublished = {\url{https://aws.amazon.com/s3/}}
+ :                                                    .
+I'm skipping whatever remains of this entry
+Warning--empty journal in cheng2015
+Warning--empty journal in christidis2019
+Warning--empty year in goodfellow2016
+Warning--empty journal in ionescu2019object
+Warning--empty publisher in adam2017
+Warning--empty booktitle in sobokrou2017
+Warning--empty booktitle in shet2006
+Warning--empty journal in sultani2018
+Warning--empty journal in wang2019
+Warning--empty booktitle in xu2015
+You've used 28 entries,
+            2118 wiz_defined-function locations,
+            646 strings with 8092 characters,
+and the built_in function-call counts, 9572 in all, are:
+= -- 904
+> -- 462
+< -- 11
++ -- 186
+- -- 156
+* -- 583
+:= -- 1490
+add.period$ -- 85
+call.type$ -- 28
+change.case$ -- 164
+chr.to.int$ -- 0
+cite$ -- 38
+duplicate$ -- 395
+empty$ -- 767
+format.name$ -- 156
+if$ -- 2093
+int.to.chr$ -- 0
+int.to.str$ -- 28
+missing$ -- 24
+newline$ -- 144
+num.names$ -- 46
+pop$ -- 243
+preamble$ -- 1
+purify$ -- 138
+quote$ -- 0
+skip$ -- 322
+stack$ -- 0
+substring$ -- 481
+swap$ -- 122
+text.length$ -- 11
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 106
+warning$ -- 10
+while$ -- 65
+width$ -- 30
+write$ -- 283
+(There was 1 error message)
